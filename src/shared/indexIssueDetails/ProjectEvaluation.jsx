@@ -1,9 +1,9 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import SpinnerWrapper from "./SpinnerWrapper";
-import EvaluationsContext from "./EvaluationsContext";
-import ProjectScoreChart from "./ProjectScoreChart";
+import SpinnerWrapper from "../SpinnerWrapper";
+import EvaluationsContext from "../EvaluationsContext";
+import ProjectScoreChart from "../ProjectScoreChart";
 import ProjectEvaluationTable from "./ProjectEvaluationTable";
 
 export default function ProjectEvaluation(props) {

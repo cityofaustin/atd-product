@@ -1,13 +1,13 @@
 import React from "react";
 import { useLocation } from "react-router-dom";
-import SpinnerWrapper from "./SpinnerWrapper";
-import EvaluationsContext from "./EvaluationsContext";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Alert from "react-bootstrap/Alert";
+import SpinnerWrapper from "../../shared/SpinnerWrapper";
+import EvaluationsContext from "../../shared/EvaluationsContext";
 import ProjectListItem from "./ProjectListItem";
 import ProjectFilters from "./ProjectFilters";
-import ProjectScoreChart from "./ProjectScoreChart";
-import Col from "react-bootstrap/Col";
-import Row from "react-bootstrap/Row";
-import Alert from "react-bootstrap/Alert";
+import ProjectScoreChart from "../../shared/ProjectScoreChart";
 
 function includedInArray(issue, field, arr) {
   return issue[field] ? arr.includes(issue[field]) : false;
@@ -51,45 +51,7 @@ function applyCurrentFilters(issues, currentFilters, filterDefs) {
   });
 }
 
-function FrontMatter() {
-  return (
-    <Col className="ml-2 mb-2 border-left border-secondary">
-      <p className="mb-0">
-        <strong>Projects</strong> are temporary endeavors — whether{" "}
-        <a
-          alt="link BI issue"
-          href="https://github.com/cityofaustin/atd-data-tech/issues/65"
-        >
-          identifying a vendor solution
-        </a>
-        ,{" "}
-        <a
-          alt="link to 311 module issue"
-          href="https://github.com/cityofaustin/atd-data-tech/issues/533"
-        >
-          building a major feature for an existing Product
-        </a>
-        ,{" "}
-        <a
-          alt="parking data overhaul issue"
-          href="https://github.com/cityofaustin/atd-data-tech/issues/254"
-        >
-          overhauling a dataset
-        </a>
-        , or{" "}
-        <a
-          alt="link to print bike map issue"
-          href="https://github.com/cityofaustin/atd-data-tech/issues/1911"
-        >
-          delivering a complex map
-        </a>
-        . They accomplish a singular goal and have a defined completion date.
-      </p>
-    </Col>
-  );
-}
-
-export default function Projects(props) {
+export default function ProjectsList(props) {
   const issues = props.issues;
   const projectIssues = props.projectIssues;
   const error = props.error;
@@ -146,9 +108,6 @@ export default function Projects(props) {
 
   return (
     <>
-      <Row key="front-matter" className="mb-2">
-        <FrontMatter />
-      </Row>
       <Row key="filter-row">
         <Col>
           <ProjectFilters

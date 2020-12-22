@@ -1,17 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./scss/custom.scss";
-import {
-  HomePage,
-  ProjectsPage,
-  ProductsPage,
-  AboutPage,
-  ProjectDetailsPage,
-  ProductDetailsPage,
-  Help,
-} from "./components/Pages";
-import { IssuesContextWrapper } from "./components/IssuesContextWrapper";
-import { EvaluationsContextWrapper } from "./components/EvaluationsContextWrapper";
+import HomeView from "./views/homeView/HomeView";
+import AboutView from "./views/aboutView/AboutView";
+import ProjectsView from "./views/projectsView/ProjectsView";
+import ProjectDetailsView from "./views/projectDetailsView/ProjectDetailsView";
+import ProductsView from "./views/productsView/ProductsView";
+import ProductDetailsView from "./views/productDetailsView/ProductDetailsView";
+import { IssuesContextWrapper } from "./shared/IssuesContextWrapper";
+import { EvaluationsContextWrapper } from "./shared/EvaluationsContextWrapper";
 
 const ISSUES_ENDPOINT =
   "https://data.austintexas.gov/resource/rzwg-fyv8.json?$limit=10000";
@@ -31,25 +28,22 @@ function App() {
         <Router>
           <Switch>
             <Route exact path="/">
-              <HomePage />
+              <HomeView />
             </Route>
             <Route exact path="/about">
-              <AboutPage />
-            </Route>
-            <Route exact path="/help">
-              <Help />
+              <AboutView />
             </Route>
             <Route exact path="/projects">
-              <ProjectsPage />
+              <ProjectsView />
             </Route>
             <Route exact path="/products">
-              <ProductsPage />
+              <ProductsView />
             </Route>
             <Route exact path="/projects/:issue_number">
-              <ProjectDetailsPage />
+              <ProjectDetailsView />
             </Route>
             <Route exact path="/products/:issue_number">
-              <ProductDetailsPage />
+              <ProductDetailsView />
             </Route>
           </Switch>
         </Router>

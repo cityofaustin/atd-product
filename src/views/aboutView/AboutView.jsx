@@ -2,6 +2,7 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
+import Page from "../../shared/Page";
 
 const TEAM_MEMBERS = [
   {
@@ -133,9 +134,9 @@ function ValueItem(props) {
   );
 }
 
-export default function About(props) {
+export default function AboutView(props) {
   return (
-    <>
+    <Page footer nav title="About Us">
       <Row className="text-primary">
         <Col>
           <p>
@@ -190,6 +191,6 @@ export default function About(props) {
           return <TeamMember key={person.name} {...person} />;
         })}
       </Row>
-    </>
+    </Page>
   );
 }

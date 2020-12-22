@@ -1,12 +1,12 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
-import IssuesContext from "./IssuesContext";
+import IssuesContext from "../../shared/IssuesContext";
+import Page from "../../shared/Page";
 import { FaGlobe, FaUsersCog, FaBusinessTime } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
-import ProjectListItem from "./ProjectListItem";
+import ProjectListItem from "../projectsView/ProjectListItem";
 
 function ServiceItem(props) {
   return (
@@ -25,13 +25,13 @@ function ServiceItem(props) {
   );
 }
 
-export default function Home(props) {
+export default function HomeView(props) {
   const context = React.useContext(IssuesContext);
   const projects = context.projectIssues;
 
   return (
     <>
-      <Container fluid>
+      <Page fluid nav hideSeparator footer>
         <Row>
           <Col xs={1} md={2}></Col>
           <Col sm={12} md={9} lg={4} className="py-5 px-4 text-primary">
@@ -101,7 +101,7 @@ export default function Home(props) {
             })}
           </Col>
         </Row>
-      </Container>
+      </Page>
     </>
   );
 }

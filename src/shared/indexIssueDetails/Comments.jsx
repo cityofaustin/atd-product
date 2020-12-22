@@ -3,22 +3,20 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import ReactMarkdown from "react-markdown";
-import SpinnerWrapper from "./SpinnerWrapper";
-
+import SpinnerWrapper from "../SpinnerWrapper";
 
 function Comment(props) {
   const createdAt = new Date(props.comment.created_at).toLocaleDateString();
   return (
     <Card className="mt-2">
       <Card.Header>
-      <b>{props.comment.user.login}</b> <span className="text-muted">commented on {createdAt}</span>
+        <b>{props.comment.user.login}</b>{" "}
+        <span className="text-muted">commented on {createdAt}</span>
       </Card.Header>
       <Card.Body className="py-1">
         <Row className="mb-2 mt-0 pt-0">
           <Col xs="auto" className="text-muted">
-            <i>
-              
-            </i>
+            <i></i>
           </Col>
         </Row>
         <Row>

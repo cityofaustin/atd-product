@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import ReactMarkdown from "react-markdown";
-import SpinnerWrapper from "./SpinnerWrapper";
+import SpinnerWrapper from "../SpinnerWrapper";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
