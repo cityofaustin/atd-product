@@ -45,9 +45,7 @@ function FrontMatter() {
 
 export default function ProjectsView(props) {
   const context = React.useContext(IssuesContext);
-  const issues = context.issues;
-  const isLoaded = context.isLoaded;
-  const error = context.error;
+  const { issues, isLoaded, error } = context;
 
   return (
     <Page nav title="Our work">

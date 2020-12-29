@@ -17,21 +17,22 @@ function Title(props) {
 }
 
 export default function Page(props) {
+  const { children, fluid, footer, hideSeparator, nav, title } = props;
   let location = useLocation();
   const [currentPageRoute] = React.useState(location.pathname);
   return (
     <>
-      {props.nav && (
+      {nav && (
         <Nav
-          hideSeparator={props.hideSeparator}
+          hideSeparator={hideSeparator}
           currentPageRoute={currentPageRoute}
         />
       )}
-      <Container fluid={props.fluid}>
-        {props.title && <Title title={props.title} />}
-        {props.children}
+      <Container fluid={fluid}>
+        {title && <Title title={title} />}
+        {children}
       </Container>
-      {props.footer && <Footer />}
+      {footer && <Footer />}
     </>
   );
 }

@@ -20,9 +20,8 @@ function FrontMatter() {
 
 export default function ProductsView(props) {
   const context = React.useContext(IssuesContext);
-  const issues = context.issues;
-  const isLoaded = context.isLoaded;
-  const error = context.error;
+  const { issues, productIssues, isLoaded, error } = context;
+
   return (
     <Page nav title="What we deliver">
       <Row key="front-matter" className="mb-2">
@@ -32,7 +31,7 @@ export default function ProductsView(props) {
         issues={issues}
         isLoaded={isLoaded}
         error={error}
-        productIssues={context.productIssues}
+        productIssues={productIssues}
       />
     </Page>
   );

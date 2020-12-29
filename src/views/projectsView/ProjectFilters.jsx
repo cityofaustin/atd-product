@@ -52,33 +52,42 @@ function formatSearchPath(currentFilters) {
 
 export default function ProjectFilters(props) {
   const history = useHistory();
-  const currentFilters = props.currentFilters;
-  const setCurrentFilters = props.setCurrentFilters;
+  const {
+    currentFilters,
+    setCurrentFilters,
+    showChartView,
+    setShowChartView,
+    workgroups,
+  } = props;
 
   React.useEffect(() => {
     history.replace({
       pathname: history.location.pathname,
       search: formatSearchPath(currentFilters),
     });
+    // disabled linting because setting history as a dependencie results in infinte
+    // rendering. todo: help wanted
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentFilters]);
 
   return (
     <Row className="text-center">
-      {STATUS_FILTERS.map((filterDef) => {
+      {STATUS_FILTERS.map((statusFilter) => {
         const active =
           currentFilters.status &&
-          currentFilters.status.includes(filterDef.key);
+          currentFilters.status.includes(statusFilter.key);
 
-        const tabClass = active ? "status-filter-active" : "status-filter-inactive";
+        const tabClass = active
+          ? "status-filter-active"
+          : "status-filter-inactive";
         return (
           <Col
             role="button"
             className={`align-items-stretch bg-light ${tabClass}`}
-            key={filterDef.key}
+            key={statusFilter.key}
             onClick={() => {
               handleChange(
-                filterDef.key,
+                statusFilter.key,
                 currentFilters,
                 setCurrentFilters,
                 "status"
@@ -86,7 +95,7 @@ export default function ProjectFilters(props) {
             }}
           >
             <Row className="h-100">
-              <Col className="align-self-center">{filterDef.label}</Col>
+              <Col className="align-self-center">{statusFilter.label}</Col>
             </Row>
           </Col>
         );
@@ -119,7 +128,7 @@ export default function ProjectFilters(props) {
               }
             >
               <option value="">Any workgroup</option>
-              {props.workgroups.map((workgroup) => {
+              {workgroups.map((workgroup) => {
                 return (
                   <option key={workgroup} value={workgroup}>
                     {WORKGROUP_NAMES[workgroup] || workgroup}
@@ -133,8 +142,8 @@ export default function ProjectFilters(props) {
       <Col key="projectListToggle" className="bg-light" md="auto">
         <Row className="h-100">
           <ProjectListToggle
-            showChartView={props.showChartView}
-            setShowChartView={props.setShowChartView}
+            showChartView={showChartView}
+            setShowChartView={setShowChartView}
           />
         </Row>
       </Col>

@@ -9,16 +9,17 @@ import { MdWeb } from "react-icons/md";
 import ProjectListItem from "../projectsView/ProjectListItem";
 
 function ServiceItem(props) {
+  const { icon, content } = props;
   return (
     <Col md={3} className="pb-4">
       <Row>
         <Col xs="auto" className="pr-0">
           <span style={{ color: "#00bfa5" }}>
-            <h1>{props.icon}</h1>
+            <h1>{icon}</h1>
           </span>
         </Col>
         <Col>
-          <h5>{props.content}</h5>
+          <h5>{content}</h5>
         </Col>
       </Row>
     </Col>

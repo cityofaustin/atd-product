@@ -2,6 +2,28 @@
 
 A website about ATD's Data & Technology Services team.
 
+## Get it running
+
+Local development requires `git` and `npm`.
+
+Clone this repo
+
+```
+$ git clone git@github.com:cityofaustin/atd-product.git
+```
+
+Install packages
+
+```
+$ npm install
+```
+
+Start server
+
+```
+$ npm start
+```
+
 ### Icon attributions
 
 - [Change](https://thenounproject.com/search/?q=alternate&i=3026571)
