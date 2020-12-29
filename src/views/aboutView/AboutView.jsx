@@ -98,34 +98,36 @@ const TEAM_MEMBERS = [
 ];
 
 function TeamMember(props) {
+  const { src, name, title, pronouns } = props;
   return (
     <Col xs={4} className="my-2 text-center text-primary">
-      <Image width={125} roundedCircle src={props.src} />
-      <h6 className="mt-2 mb-0">{props.name}</h6>
-      <p className="text-muted  mb-0">{props.title}</p>
-      {props.pronouns && <p className="text-muted ">{props.pronouns}</p>}
+      <Image width={125} roundedCircle src={src} />
+      <h6 className="mt-2 mb-0">{name}</h6>
+      <p className="text-muted  mb-0">{title}</p>
+      {props.pronouns && <p className="text-muted ">{pronouns}</p>}
     </Col>
   );
 }
 
 function ValueItem(props) {
+  const { src, title, content } = props;
   return (
     <Col xs={12} md={6} lg={4} className="pb-4">
       <Row>
         <Col xs="auto" className="pr-0">
           <span style={{ color: "#00bfa5" }}>
-            <Image width={"45"} src={props.src} alt="Generic placeholder" />
+            <Image width={"45"} src={src} alt="Value Icon" />
           </span>
         </Col>
         <Col>
           <Row>
             <Col>
-              <h4>{props.title}</h4>
+              <h4>{title}</h4>
             </Col>
           </Row>
           <Row>
             <Col>
-              <p>{props.content}</p>
+              <p>{content}</p>
             </Col>
           </Row>
         </Col>

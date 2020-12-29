@@ -52,6 +52,7 @@ function getLegendPayload(projectScore) {
 
 function handleConfidenceScore(score) {
   const SCALE = {
+    // sets radius of confidence circles
     Low: 15,
     Medium: 10,
     High: 5,
@@ -91,10 +92,12 @@ const CustomTooltip = ({ active, payload, label }) => {
 };
 
 const scatterClickHandler = (e, history) => {
+  // Redirects user to project details on click
   history.push(`/projects/${e.number}`);
 };
 
 export default function ProjectScoreChart(props) {
+  const { projectScore, scores } = props;
   const history = useHistory();
   return (
     <ResponsiveContainer width={"100%"} height="100%" minHeight={400}>
@@ -124,6 +127,7 @@ export default function ProjectScoreChart(props) {
           strokeDasharray="3 3"
         ></ReferenceLine>
         <ReferenceLine y={12.5} isFront stroke="gray" strokeDasharray="3 3" />
+        {/* Uncomment to turn on fun quadrant labels */}
         {/* <ReferenceArea
           x1={0.5}
           x2={19}
@@ -164,7 +168,7 @@ export default function ProjectScoreChart(props) {
           content={<CustomTooltip />}
           cursor={{ strokeDasharray: "3 3" }}
         />
-        {props.scores.map((score) => {
+        {scores.map((score) => {
           return (
             <ReferenceDot
               key={score.number}
@@ -179,14 +183,14 @@ export default function ProjectScoreChart(props) {
         <Scatter
           onClick={(e) => scatterClickHandler(e, history)}
           name="All projects"
-          data={props.scores}
+          data={scores}
           fill={CHART_STYLES.allProjects.fill}
           style={{ cursor: "pointer" }}
         />
-        {props.projectScore && (
+        {projectScore && (
           <Scatter
             name="This project"
-            data={[props.projectScore]}
+            data={[projectScore]}
             fill={CHART_STYLES.thisProject.fill}
             shape={CHART_STYLES.thisProject.shape}
             legendType={CHART_STYLES.thisProject.shape}
@@ -196,7 +200,7 @@ export default function ProjectScoreChart(props) {
           align="center"
           verticalAlign="bottom"
           iconSize={12}
-          payload={getLegendPayload(props.projectScore)}
+          payload={getLegendPayload(projectScore)}
         />
       </ScatterChart>
     </ResponsiveContainer>

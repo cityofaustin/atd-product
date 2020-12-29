@@ -4,8 +4,7 @@ import { FaChartArea } from "react-icons/fa";
 import { FaRegListAlt } from "react-icons/fa";
 
 export default function ProjectListToggle(props) {
-  const showChartView = props.showChartView;
-  const setShowChartView = props.setShowChartView;
+  const { showChartView, setShowChartView }= props;
   return (
     <>
       <Col

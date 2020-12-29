@@ -6,6 +6,12 @@ import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
 
+const PAGES = [
+  { label: "Our work", route: "/projects" },
+  { label: "What we deliver", route: "/products" },
+  { label: "About us", route: "/about" },
+];
+
 function IconSeparator(props) {
   return (
     <Row>
@@ -28,11 +34,8 @@ function IconSeparator(props) {
 }
 
 export default function Nav(props) {
-  const pages = [
-    { label: "Our work", route: "/projects" },
-    { label: "What we deliver", route: "/products" },
-    { label: "About us", route: "/about" },
-  ];
+  const { currentPageRoute, hideSeparator } = props;
+
   return (
     <Container key="nav-container" fluid>
       <Row className="py-2">
@@ -62,9 +65,9 @@ export default function Nav(props) {
           className="mt-3 my-md-auto ml-md-auto text-center"
         >
           <Row>
-            {pages.map((page, idx) => {
+            {PAGES.map((page, idx) => {
               const fontWeightClass =
-                props.currentPageRoute === page.route ? "font-weight-bold" : "";
+                currentPageRoute === page.route ? "font-weight-bold" : "";
               const borderClass =
                 idx === 0 ? "" : "border-left border-secondary";
 
@@ -96,7 +99,7 @@ export default function Nav(props) {
           </Row>
         </Col>
       </Row>
-      {!props.hideSeparator && <IconSeparator />}
+      {!hideSeparator && <IconSeparator />}
     </Container>
   );
 }

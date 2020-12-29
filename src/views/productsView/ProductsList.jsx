@@ -6,9 +6,7 @@ import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
 
 export default function ProductsView(props) {
-  const isLoaded = props.isLoaded;
-  const error = props.error;
-  const productIssues = props.productIssues;
+  const { isLoaded, error, productIssues } = props;
 
   if (error) {
     return <p>{error}</p>;

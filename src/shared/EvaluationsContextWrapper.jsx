@@ -2,7 +2,7 @@ import React from "react";
 import EvaluationsContext from "./EvaluationsContext";
 import IssuesContext from "./IssuesContext";
 
-function knackHeaders(appId) {
+function getKnackHeaders(appId) {
   return {
     "X-Knack-Application-Id": appId,
     "X-Knack-REST-API-KEY": "knack",
@@ -37,9 +37,10 @@ export function EvaluationsContextWrapper(props) {
   const [scores, setScores] = React.useState([]);
   const [error, setError] = React.useState(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
+  const { url, appId, children } = props;
 
   React.useEffect(() => {
-    fetch(props.url, { headers: knackHeaders(props.appId) })
+    fetch(url, { headers: getKnackHeaders(appId) })
       .then((res) => res.json())
       .then(
         (result) => {
@@ -51,7 +52,7 @@ export function EvaluationsContextWrapper(props) {
           setError(error.toString());
         }
       );
-  }, [props.url, props.appId]);
+  }, [url, appId]);
 
   React.useEffect(() => {
     const allScores = handleScores(data);
@@ -70,7 +71,7 @@ export function EvaluationsContextWrapper(props) {
     <EvaluationsContext.Provider
       value={{ scores: scores, error: error, isLoaded: isLoaded }}
     >
-      {props.children}
+      {children}
     </EvaluationsContext.Provider>
   );
 }

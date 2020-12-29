@@ -59,19 +59,10 @@ $theme-colors: (
 .form-control:focus {
   box-shadow: none !important;
 }
-// $utilities: (
-//   "border-width": (
-//     property: "border-width",
-//     class: "border",
-//     values: (
-//       1: "1px",
-//     )
-//   )
-// )
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
-// // DTS Colors
+// DTS Colors (for reference)
 // .color-1 {
 //     color:#5f7d8c;
 // }
