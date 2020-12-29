@@ -7,6 +7,7 @@ import Page from "../../shared/Page";
 
 export default function ProductDetailsView(props) {
   const context = React.useContext(IssuesContext);
+  const { issues, isLoaded, error } = context;
   const matches = useRouteMatch("/products/:issue_number");
   const issue_number = matches.params.issue_number;
   return (
@@ -14,9 +15,9 @@ export default function ProductDetailsView(props) {
       <Page nav={true} title={false}>
         <IndexIssueDetails
           indexType="product"
-          issues={context.issues}
-          isLoaded={context.isLoaded}
-          error={context.error}
+          issues={issues}
+          isLoaded={isLoaded}
+          error={error}
           issue_number={issue_number}
         />
       </Page>

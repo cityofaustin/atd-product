@@ -20,7 +20,6 @@ function parseBody(body) {
 
 export default function ProjectListItem(props) {
   let project = props.project;
-  project.pipeline = project.pipeline ? project.pipeline : "Closed";
   const [description, img] = parseBody(project.body);
   return (
     <Link

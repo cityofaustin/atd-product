@@ -16,11 +16,15 @@ function getProductIssues(data) {
 }
 
 function getUniqueWorkgroups(data) {
-  const allWorkgroupsLabels = data.map((issue) => {
-    return issue.workgroups;
-  });
-  const allWorkgroups = [].concat(...allWorkgroupsLabels);
-  return [...new Set(allWorkgroups)].filter((workgroup) => workgroup).sort();
+  const allWorkgroupsLabels = data
+    .map((issue) => {
+      return issue.workgroups;
+    })
+    // in addition to concatening sub-arrays of workgroups, flattening drops any empty
+    // arrays from issues with no workgroup(s)
+    .flat();
+
+  return [...new Set(allWorkgroupsLabels)].sort();
 }
 
 function getType(labels) {
@@ -87,9 +91,10 @@ export function IssuesContextWrapper(props) {
   const [workgroups, setWorkgroups] = React.useState([]);
   const [projectIssues, setProjectIssues] = React.useState([]);
   const [productIssues, setProductIssues] = React.useState([]);
+  const { url, children } = props;
 
   React.useEffect(() => {
-    fetch(props.url)
+    fetch(url)
       .then((res) => res.json())
       .then(
         (result) => {
@@ -106,7 +111,7 @@ export function IssuesContextWrapper(props) {
           setError(error.toString());
         }
       );
-  }, [props.url]);
+  }, [url]);
 
   React.useEffect(() => {
     const currentProjectIssues = getProjectIssues(data);
@@ -129,7 +134,7 @@ export function IssuesContextWrapper(props) {
         statuses: STATUSES,
       }}
     >
-      {props.children}
+      {children}
     </IssuesContext.Provider>
   );
 }
