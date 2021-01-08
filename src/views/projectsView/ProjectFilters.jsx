@@ -65,10 +65,7 @@ export default function ProjectFilters(props) {
       pathname: history.location.pathname,
       search: formatSearchPath(currentFilters),
     });
-    // disabled linting because setting history as a dependencie results in infinte
-    // rendering. todo: help wanted
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentFilters]);
+  }, [currentFilters, history]);
 
   return (
     <Row className="text-center">
