@@ -20,7 +20,7 @@ const TEAM_MEMBERS = [
   {
     name: "Diana Martin",
     title: "Lead Applications Architect",
-    pronouns: "She/her",
+    pronouns: "",
     src: "assets/headshots/diana_martin.jpg",
   },
   {
@@ -43,7 +43,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Jaime McKeown",
-    pronouns: "She/her",
+    pronouns: "",
     title: "Senior Geospatial Analyst",
     src: "assets/headshots/jaime_mckeown.jpeg",
   },
@@ -74,7 +74,7 @@ const TEAM_MEMBERS = [
   {
     name: "Stephanie Moorer",
     title: "Product Manager",
-    pronouns: "She/her",
+    pronouns: "",
     src: "assets/headshots/stephanie_moorer.jpeg",
   },
   {
@@ -86,13 +86,13 @@ const TEAM_MEMBERS = [
   {
     name: "Nadin Nader",
     title: "Senior Application Analyst",
-    pronouns: "He/him",
+    pronouns: "",
     src: "assets/headshots/nadin_nader.jpeg",
   },
   {
     name: "Chrispin Pullen",
     title: "Senior Application Analyst",
-    pronouns: "He/him",
+    pronouns: "",
     src: "assets/headshots/chrispin_pullen.jpeg",
   },
 ];
