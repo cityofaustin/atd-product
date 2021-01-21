@@ -38,7 +38,7 @@ function getStatus(pipeline) {
   switch (pipeline) {
     case "New":
       return "Backlog";
-    case "needs scoping":
+    case "Needs Scoping":
       return "Needs Scoping";
     case "Icebox":
       return "Backlog";
