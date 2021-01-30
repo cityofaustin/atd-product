@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import { Link } from "react-router-dom";
+import ReactMarkdown from "react-markdown";
 
 function parseBody(body) {
   // extract content up to the first linebreak to use as description
@@ -17,6 +18,22 @@ function parseBody(body) {
   }
   return [description, img];
 }
+
+const markdownRenderers = {
+  /*
+  This custom renderer suppresses default link handling by returning the plain link 
+  text. I believe we're working a round a ReactMarkdown bug here. The link arg should
+  include a `text` prop that we can return, but only `href` is available when
+  destructring the function args. We cannot render a normal <a> tag here because it will
+  result in nested <a> tags because of the wrapping Card <Link/>. To quote the warning
+  message: <a> cannot appear as a descendant of <a>.
+
+  Bug issue: https://github.com/remarkjs/react-markdown/issues/539
+  */
+  link: ({ children }) => {
+    return children[0].props.value;
+  },
+};
 
 export default function IndexIsssueListItem(props) {
   let { type, issue } = props;
@@ -40,7 +57,13 @@ export default function IndexIsssueListItem(props) {
             </Row>
           )}
           <Row>
-            <Col className="text-muted">{description}</Col>
+            <Col className="text-muted">
+              <ReactMarkdown
+                renderers={markdownRenderers}
+                escapeHtml={false}
+                children={description}
+              />
+            </Col>
           </Row>
         </Card.Body>
       </Card>
