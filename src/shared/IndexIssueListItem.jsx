@@ -18,21 +18,27 @@ function parseBody(body) {
   return [description, img];
 }
 
-export default function ProjectListItem(props) {
-  let project = props.project;
-  const [description, img] = parseBody(project.body);
+export default function IndexIsssueListItem(props) {
+  let { type, issue } = props;
+  const [description, img] = parseBody(issue.body);
   return (
     <Link
       className="text-primary text-decoration-none"
       to={{
-        pathname: `projects/${project.number}`,
+        pathname: `${type}s/${issue.number}`,
         state: { showBackLink: true },
       }}
     >
       <Card className="h-100 shadow-sm">
-        {img && <Card.Img variant="top" src={img.src} alt={img.alt} />}
         <Card.Body>
-          <Card.Title className="text-primary">{project.title}</Card.Title>
+          <Card.Title className="text-primary">{issue.title}</Card.Title>
+          {img && (
+            <Row className="pb-2">
+              <Col>
+                <Card.Img variant="top" src={img.src} alt={img.alt} />
+              </Col>
+            </Row>
+          )}
           <Row>
             <Col className="text-muted">{description}</Col>
           </Row>

@@ -6,7 +6,7 @@ import IssuesContext from "../../shared/IssuesContext";
 import Page from "../../shared/Page";
 import { FaGlobe, FaUsersCog, FaBusinessTime } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
-import ProjectListItem from "../projectsView/ProjectListItem";
+import IndexIsssueListItem from "../../shared/IndexIssueListItem";
 
 function ServiceItem(props) {
   const { icon, content } = props;
@@ -97,7 +97,7 @@ export default function HomeView(props) {
           <Col md={3}>
             {projects.map((project) => {
               return project.isFeatured ? (
-                <ProjectListItem key={project.number} project={project} />
+                <IndexIsssueListItem key={project.number} type="project" issue={project} />
               ) : null;
             })}
           </Col>

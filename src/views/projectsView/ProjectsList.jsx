@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 import SpinnerWrapper from "../../shared/SpinnerWrapper";
 import EvaluationsContext from "../../shared/EvaluationsContext";
-import ProjectListItem from "./ProjectListItem";
+import IndexIssueListItem from "../../shared/IndexIssueListItem";
 import ProjectFilters from "./ProjectFilters";
 import ProjectScoreChart from "../../shared/ProjectScoreChart";
 
@@ -132,7 +132,7 @@ export default function ProjectsList(props) {
         <Row key="issues-row">
           {displayIssues.map((project) => (
             <Col key={project.number} sm={12} md={6} lg={4} className="m-0 p-2">
-              <ProjectListItem project={project} />
+              <IndexIssueListItem type="project" issue={project} />
             </Col>
           ))}
         </Row>
