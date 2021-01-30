@@ -1,6 +1,6 @@
 import React from "react";
 import SpinnerWrapper from "../../shared/SpinnerWrapper";
-import ProductListItem from "./ProductListItem";
+import IndexIssueListItem from "../../shared/IndexIssueListItem";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Alert from "react-bootstrap/Alert";
@@ -21,7 +21,7 @@ export default function ProductsView(props) {
       <Row key="issues-row">
         {productIssues.map((product) => (
           <Col key={product.number} md={4} className="m-0 p-2">
-            <ProductListItem product={product} />
+            <IndexIssueListItem type="product" issue={product} />
           </Col>
         ))}
       </Row>
