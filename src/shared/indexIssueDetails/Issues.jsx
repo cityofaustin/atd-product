@@ -82,10 +82,8 @@ export default function Issues(props) {
     return <p>{context.error}</p>;
   } else if (!context.isLoaded && !context.error) {
     return <SpinnerWrapper />;
-  } else if (context.issues.length === 0) {
+  } else if (issues.length === 0) {
     return <p>No issues found.</p>;
-  } else if (!parentLabel) {
-    return <p> This index issue has been improperly labled :(</p>;
   }
 
   return (
