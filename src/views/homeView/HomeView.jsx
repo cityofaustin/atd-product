@@ -93,14 +93,16 @@ export default function HomeView(props) {
           </Col>
         </Row>
         <Row>
-          <Col md={2}></Col>
-          <Col md={3}>
-            {projects.map((project) => {
-              return project.isFeatured ? (
-                <IndexIsssueListItem key={project.number} type="project" issue={project} />
-              ) : null;
-            })}
-          </Col>
+          {projects.map((project) => {
+            return project.isFeatured ? (
+              <Col key={project.number} md={3} className="m-0 p-2">
+                <IndexIsssueListItem
+                  type="project"
+                  issue={project}
+                />
+              </Col>
+            ) : null;
+          })}
         </Row>
       </Page>
     </>
