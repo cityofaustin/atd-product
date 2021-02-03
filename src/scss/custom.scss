@@ -60,6 +60,14 @@ $theme-colors: (
   box-shadow: none !important;
 }
 
+@media only screen and (min-width: 768px) {
+  .navbar-menu-borders {
+    border-style: none none none solid;
+    border-color: #00bfa5;
+    border-width: 1px;
+  }
+}
+
 @import "node_modules/bootstrap/scss/bootstrap";
 
 // DTS Colors (for reference)

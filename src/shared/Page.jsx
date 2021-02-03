@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useLocation } from "react-router-dom";
-import Nav from "./Nav";
+import NavComponent from "./NavComponent";
 import Footer from "./Footer";
 
 function Title(props) {
@@ -21,18 +21,28 @@ export default function Page(props) {
   let location = useLocation();
   const [currentPageRoute] = React.useState(location.pathname);
   return (
-    <>
-      {nav && (
-        <Nav
-          hideSeparator={hideSeparator}
-          currentPageRoute={currentPageRoute}
-        />
-      )}
-      <Container fluid={fluid}>
-        {title && <Title title={title} />}
-        {children}
-      </Container>
-      {footer && <Footer />}
-    </>
+    <div>
+      <div
+        syle={{
+          minHeight: "100%",
+          display: "grid",
+          gridTemplateRows: "1fr auto",
+        }}
+      >
+        {nav && (
+          <NavComponent
+            hideSeparator={hideSeparator}
+            currentPageRoute={currentPageRoute}
+          />
+        )}
+        <Container fluid={fluid}>
+          {title && <Title title={title} />}
+          {children}
+        </Container>
+      </div>
+      <div style={{ gridRowStart: 2, gridRowEnd: 3 }}>
+        {footer && <Footer />}
+      </div>
+    </div>
   );
 }
