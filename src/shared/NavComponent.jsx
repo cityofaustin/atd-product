@@ -1,12 +1,5 @@
 import React from "react";
-import {
-  Row,
-  Col,
-  Button,
-  Image,
-  Nav,
-  Navbar,
-} from "react-bootstrap";
+import { Container, Row, Col, Button, Image, Nav, Navbar } from "react-bootstrap";
 import "../scss/custom.scss";
 
 const PAGES = [
@@ -40,31 +33,25 @@ export default function NavComponent(props) {
   const { currentPageRoute, hideSeparator } = props;
 
   return (
-    <div>
-      <Navbar expand="md">
-        <Navbar.Brand href="/">
-          <Image
-            width={400}
-            className="d-none d-md-inline"
-            src="/assets/new_10_1600.jpg"
-            alt="Generic placeholder"
-          />
-          <Image
-            fluid
-            className="d-inline d-md-none"
-            src="/assets/new_10_1600.jpg"
-            alt="Generic placeholder"
-          />
-        </Navbar.Brand>
-        <a
-          href="https://atd.knack.com/dts#new-service-request"
-          className="text-white d-inline d-md-none mt-1"
-        >
-          <Button size="sm" className="d-inline d-md-none mt-1">
-            Get help
-          </Button>
-        </a>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+    <Container key="nav-container" className="px-0" fluid>
+      <Navbar expand="md" className="py-1">
+        <div className="d-flex flex-nowrap">
+          <Navbar.Brand href="/" className="pl-0" key="logo-img">
+            <Image
+              width={400}
+              className="d-none d-md-inline"
+              src="/assets/new_10_1600.jpg"
+              alt="Generic placeholder"
+            />
+            <Image
+              fluid
+              className="d-inline d-md-none"
+              src="/assets/new_10_1600.jpg"
+              alt="Generic placeholder"
+            />
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
             {PAGES.map((page, idx) => {
@@ -78,7 +65,7 @@ export default function NavComponent(props) {
                   className={`flex-grow-1 mx-0 my-auto ${borderClass}`}
                 >
                   <Nav.Link
-                    className={`text-primary text-center ${fontWeightClass}`}
+                    className={`text-primary text-center px-3 navbar-menu-link ${fontWeightClass}`}
                     href={page.route}
                   >
                     {page.label}
@@ -88,19 +75,20 @@ export default function NavComponent(props) {
             })}
             <a
               href="https://atd.knack.com/dts#new-service-request"
-              className="text-white d-none d-md-inline my-auto"
+              className="text-white text-center d-inline d-md-none mt-2"
             >
-              <Button
-                size="sm"
-                className="d-none d-md-inline ml-1 mr-0 my-auto"
-              >
-                Get help
-              </Button>
+              <Button size="sm">Get help</Button>
+            </a>
+            <a
+              href="https://atd.knack.com/dts#new-service-request"
+              className="text-white text-center d-none d-md-inline mr-0 pl-3 my-auto"
+            >
+              <Button size="sm">Get help</Button>
             </a>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
       {!hideSeparator && <IconSeparator />}
-    </div>
+    </Container>
   );
 }
