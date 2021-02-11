@@ -21,28 +21,18 @@ export default function Page(props) {
   let location = useLocation();
   const [currentPageRoute] = React.useState(location.pathname);
   return (
-    <div>
-      <div
-        syle={{
-          minHeight: "100%",
-          display: "grid",
-          gridTemplateRows: "1fr auto",
-        }}
-      >
-        {nav && (
-          <NavComponent
-            hideSeparator={hideSeparator}
-            currentPageRoute={currentPageRoute}
-          />
-        )}
-        <Container fluid={fluid}>
-          {title && <Title title={title} />}
-          {children}
-        </Container>
-      </div>
-      <div style={{ gridRowStart: 2, gridRowEnd: 3 }}>
-        {footer && <Footer />}
-      </div>
-    </div>
+    <>
+      {nav && (
+        <NavComponent
+          hideSeparator={hideSeparator}
+          currentPageRoute={currentPageRoute}
+        />
+      )}
+      <Container fluid={fluid}>
+        {title && <Title title={title} />}
+        {children}
+      </Container>
+      {footer && <Footer />}
+    </>
   );
 }
