@@ -50,7 +50,7 @@ export default function NavComponent(props) {
               alt="Generic placeholder"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle"/>
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
