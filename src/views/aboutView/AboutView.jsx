@@ -48,6 +48,12 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/jaime_mckeown.jpeg",
   },
   {
+    name: "Amenity Applewhite",
+    pronouns: "She/her",
+    title: "Product Manager",
+    src: "assets/headshots/amenity_applewhite.jpeg"
+  },
+  {
     name: "Mike Dilley",
     title: "Software Developer",
     pronouns: "He/him",
@@ -76,12 +82,6 @@ const TEAM_MEMBERS = [
     title: "Product Manager",
     pronouns: "",
     src: "assets/headshots/stephanie_moorer.jpeg",
-  },
-  {
-    name: "Jace Deloney",
-    title: "Product Manager",
-    pronouns: "He/him",
-    src: "assets/headshots/jace_deloney.jpeg",
   },
   {
     name: "Nadin Nader",
