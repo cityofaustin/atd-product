@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { useLocation } from "react-router-dom";
-import Nav from "./Nav";
+import NavComponent from "./NavComponent";
 import Footer from "./Footer";
 
 function Title(props) {
@@ -23,7 +23,7 @@ export default function Page(props) {
   return (
     <>
       {nav && (
-        <Nav
+        <NavComponent
           hideSeparator={hideSeparator}
           currentPageRoute={currentPageRoute}
         />

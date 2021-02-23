@@ -47,7 +47,7 @@ export default function HomeView(props) {
           </Col>
           <Col lg={4} className="my-auto d-none d-lg-block">
             {/* hidden on xs and sm */}
-            <Image fluid src="/assets/sports.jpg" />
+            <Image fluid src="/assets/sports.jpg" alt="Illustration of a green bicycle"/>
           </Col>
         </Row>
         <Row className="py-3 text-primary bg-light">

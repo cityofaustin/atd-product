@@ -60,6 +60,27 @@ $theme-colors: (
   box-shadow: none !important;
 }
 
+.navbar-toggle {
+  // Use !important to override BootStrap class
+  border: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-menu-borders {
+    border-style: none none none solid;
+    border-color: #00bfa5;
+    border-width: 1px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  // Use !important to override BootStrap class
+  .navbar-menu-link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
 @import "node_modules/bootstrap/scss/bootstrap";
 
 // DTS Colors (for reference)
