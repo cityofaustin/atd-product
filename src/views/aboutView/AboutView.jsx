@@ -20,7 +20,7 @@ const TEAM_MEMBERS = [
   {
     name: "Diana Martin",
     title: "Lead Applications Architect",
-    pronouns: "",
+    pronouns: "she/her",
     src: "assets/headshots/diana_martin.jpg",
   },
   {
@@ -43,7 +43,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Jaime McKeown",
-    pronouns: "",
+    pronouns: "she/her",
     title: "Senior Geospatial Analyst",
     src: "assets/headshots/jaime_mckeown.jpeg",
   },
@@ -86,7 +86,7 @@ const TEAM_MEMBERS = [
   {
     name: "Nadin Nader",
     title: "Senior Application Analyst",
-    pronouns: "",
+    pronouns: "he/him",
     src: "assets/headshots/nadin_nader.jpeg",
   },
   {
