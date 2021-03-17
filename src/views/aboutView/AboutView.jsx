@@ -50,7 +50,7 @@ const TEAM_MEMBERS = [
   {
     name: "Amenity Applewhite",
     pronouns: "She/her",
-    title: "Product Manager",
+    title: "Lead Product Manager",
     src: "assets/headshots/amenity_applewhite.jpeg"
   },
   {
