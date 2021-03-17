@@ -95,6 +95,18 @@ const TEAM_MEMBERS = [
     pronouns: "",
     src: "assets/headshots/chrispin_pullen.jpeg",
   },
+  {
+    name: "Andrew Shensky",
+    title: "Senior Geospatial Analyst",
+    pronouns: "he/him",
+    src: "assets/headshots/andrew_shensky.png",
+  },
+  {
+    name: "Chia Berry",
+    title: "Software Developer",
+    pronouns: "she/her",
+    src: "assets/headshots/chia_berry.png",
+  },
 ];
 
 function TeamMember(props) {
