@@ -54,12 +54,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/amenity_applewhite.jpeg"
   },
   {
-    name: "Mike Dilley",
-    title: "Software Developer",
-    pronouns: "He/him",
-    src: "assets/headshots/mike_dilley.jpeg",
-  },
-  {
     name: "Sergio Garcia",
     title: "Senior Data Engineer",
     pronouns: "He/him",
