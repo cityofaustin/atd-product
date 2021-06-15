@@ -51,7 +51,7 @@ const TEAM_MEMBERS = [
     name: "Amenity Applewhite",
     pronouns: "She/her",
     title: "Lead Product Manager",
-    src: "assets/headshots/amenity_applewhite.jpeg"
+    src: "assets/headshots/amenity_applewhite.jpeg",
   },
   {
     name: "Sergio Garcia",
@@ -100,6 +100,24 @@ const TEAM_MEMBERS = [
     title: "Software Developer",
     pronouns: "she/her",
     src: "assets/headshots/chia_berry.png",
+  },
+  {
+    name: "Annie Phan",
+    title: "Data Science Intern",
+    pronouns: "she/her",
+    src: "assets/headshots/annie_phan.jpeg",
+  },
+  {
+    name: "Janet Chu",
+    title: "Design Researcher",
+    pronouns: "she/her",
+    src: "assets/headshots/janet_chu.jpg",
+  },
+  {
+    name: "Jorge Gabitto",
+    title: "Software Developer Intern",
+    pronouns: "",
+    src: "assets/headshots/jorge_gabitto.jpg",
   },
 ];
 
