@@ -8,68 +8,74 @@ const TEAM_MEMBERS = [
   {
     name: "John Clary",
     title: "Head of Technology",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     src: "assets/headshots/john_clary.jpg",
   },
   {
     name: "Scott Reedy",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     title: "Network Systems Administrator",
     src: "assets/headshots/scott_reedy.jpeg",
   },
   {
     name: "Diana Martin",
     title: "Lead Applications Architect",
-    pronouns: "she/her",
+    pronouns: "She/Her",
     src: "assets/headshots/diana_martin.jpg",
   },
   {
     name: "Tracy Linder",
     title: "Product Manager",
-    pronouns: "She/her",
+    pronouns: "She/Her",
     src: "assets/headshots/tracy_linder.jpeg",
   },
   {
     name: "Alan De Anda",
     title: "Senior Geospatial Analyst",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     src: "assets/headshots/alan_de_anda.jpeg",
   },
   {
     name: "Mateo Clarke",
     title: "Lead Software Developer",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     src: "assets/headshots/mateo_clarke.jpeg",
   },
   {
     name: "Jaime McKeown",
-    pronouns: "she/her",
+    pronouns: "She/Her",
     title: "Senior Geospatial Analyst",
     src: "assets/headshots/jaime_mckeown.jpeg",
   },
   {
     name: "Amenity Applewhite",
-    pronouns: "She/her",
+    pronouns: "She/Her",
     title: "Lead Product Manager",
-    src: "assets/headshots/amenity_applewhite.jpeg"
+    src: "assets/headshots/amenity_applewhite.jpeg",
   },
   {
     name: "Sergio Garcia",
     title: "Senior Data Engineer",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     src: "assets/headshots/sergio_garcia.jpeg",
   },
   {
     name: "Tilly Whitson",
     title: "Junior Software Developer",
-    pronouns: "She/her",
+    pronouns: "She/Her",
     src: "assets/headshots/tilly_whitson.jpeg",
   },
   {
     name: "Surbhi Bakshi",
     title: "Senior Application Analyst",
-    pronouns: "She/her",
+    pronouns: "She/Her",
     src: "assets/headshots/surbhi_bakshi.jpeg",
+  },
+  {
+    name: "Patrick McDonnell",
+    title: "Senior Product Manager",
+    pronouns: "He/Him",
+    src: "assets/headshots/patrick_mcdonnell.jpeg",
   },
   {
     name: "Stephanie Moorer",
@@ -80,7 +86,7 @@ const TEAM_MEMBERS = [
   {
     name: "Nadin Nader",
     title: "Senior Application Analyst",
-    pronouns: "he/him",
+    pronouns: "He/Him",
     src: "assets/headshots/nadin_nader.jpeg",
   },
   {
@@ -92,14 +98,32 @@ const TEAM_MEMBERS = [
   {
     name: "Andrew Shensky",
     title: "Senior Geospatial Analyst",
-    pronouns: "he/him",
+    pronouns: "He/Him",
     src: "assets/headshots/andrew_shensky.png",
   },
   {
     name: "Chia Berry",
     title: "Software Developer",
-    pronouns: "she/her",
+    pronouns: "She/Her",
     src: "assets/headshots/chia_berry.png",
+  },
+  {
+    name: "Annie Phan",
+    title: "Data Science Intern",
+    pronouns: "She/Her",
+    src: "assets/headshots/annie_phan.jpeg",
+  },
+  {
+    name: "Janet Chu",
+    title: "Design Researcher",
+    pronouns: "She/Her",
+    src: "assets/headshots/janet_chu.jpg",
+  },
+  {
+    name: "Jorge Gabitto",
+    title: "Software Developer Intern",
+    pronouns: "",
+    src: "assets/headshots/jorge_gabitto.jpg",
   },
 ];
 
