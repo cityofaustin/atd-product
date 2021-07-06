@@ -3,7 +3,11 @@ import { useHistory } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
+import { useMediaQuery } from "react-responsive";
 import ProjectListToggle from "./ProjectListToggle";
+import FiltersList from "./FiltersList";
+import FiltersModal from "./FiltersModal";
 
 const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "Needs Scoping" },
@@ -67,36 +71,37 @@ export default function ProjectFilters(props) {
     });
   }, [currentFilters, history]);
 
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 769px)" });
+
+  const [show, setShow] = React.useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   return (
     <Row className="text-center">
-      {STATUS_FILTERS.map((statusFilter) => {
-        const active =
-          currentFilters.status &&
-          currentFilters.status.includes(statusFilter.key);
-
-        const tabClass = active
-          ? "status-filter-active"
-          : "status-filter-inactive";
-        return (
-          <Col
-            role="button"
-            className={`align-items-stretch bg-light ${tabClass}`}
-            key={statusFilter.key}
-            onClick={() => {
-              handleChange(
-                statusFilter.key,
-                currentFilters,
-                setCurrentFilters,
-                "status"
-              );
-            }}
-          >
-            <Row className="h-100">
-              <Col className="align-self-center">{statusFilter.label}</Col>
-            </Row>
-          </Col>
-        );
-      })}
+      {isTabletOrMobile ? (
+        <>
+          <Button variant="primary" onClick={handleShow}>
+            Launch demo modal
+          </Button>
+          <FiltersModal
+            show={show}
+            handleClose={handleClose}
+            currentFilters={currentFilters}
+            handleChange={handleChange}
+            setCurrentFilters={setCurrentFilters}
+            statusFilters={STATUS_FILTERS}
+          />
+        </>
+      ) : (
+        <FiltersList
+          currentFilters={currentFilters}
+          handleChange={handleChange}
+          setCurrentFilters={setCurrentFilters}
+          statusFilters={STATUS_FILTERS}
+        />
+      )}
       <Col key="workgroupFilter" sm={12} md="auto" className="mx-2">
         <Row
           className={`bg-light h-100  ${
