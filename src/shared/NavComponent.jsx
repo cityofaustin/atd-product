@@ -1,5 +1,13 @@
 import React from "react";
-import { Container, Row, Col, Button, Image, Nav, Navbar } from "react-bootstrap";
+import {
+  Container,
+  Row,
+  Col,
+  Button,
+  Image,
+  Nav,
+  Navbar,
+} from "react-bootstrap";
 import "../scss/custom.scss";
 
 const PAGES = [
@@ -50,7 +58,10 @@ export default function NavComponent(props) {
               alt="Generic placeholder"
             />
           </Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" className="navbar-toggle"/>
+          <Navbar.Toggle
+            aria-controls="basic-navbar-nav"
+            className="navbar-toggle"
+          />
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto">
@@ -88,7 +99,11 @@ export default function NavComponent(props) {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      {!hideSeparator && <IconSeparator />}
+      {!hideSeparator && (
+        <div style={{ overflowX: "hidden" }}>
+          <IconSeparator />
+        </div>
+      )}
     </Container>
   );
 }
