@@ -53,6 +53,7 @@ function formatSearchPath(currentFilters) {
 }
 
 export default function ProjectFilters(props) {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 996px)" });
   const history = useHistory();
   const {
     currentFilters,
@@ -68,8 +69,6 @@ export default function ProjectFilters(props) {
       search: formatSearchPath(currentFilters),
     });
   }, [currentFilters, history]);
-
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 996px)" });
 
   return (
     <Row className="text-center">
