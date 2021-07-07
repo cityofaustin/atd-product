@@ -3,7 +3,9 @@ import { useHistory } from "react-router-dom";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
+import { useMediaQuery } from "react-responsive";
 import ProjectListToggle from "./ProjectListToggle";
+import FiltersList from "./FiltersList";
 
 const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "Needs Scoping" },
@@ -51,6 +53,7 @@ function formatSearchPath(currentFilters) {
 }
 
 export default function ProjectFilters(props) {
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 996px)" });
   const history = useHistory();
   const {
     currentFilters,
@@ -69,35 +72,49 @@ export default function ProjectFilters(props) {
 
   return (
     <Row className="text-center">
-      {STATUS_FILTERS.map((statusFilter) => {
-        const active =
-          currentFilters.status &&
-          currentFilters.status.includes(statusFilter.key);
-
-        const tabClass = active
-          ? "status-filter-active"
-          : "status-filter-inactive";
-        return (
-          <Col
-            role="button"
-            className={`align-items-stretch bg-light ${tabClass}`}
-            key={statusFilter.key}
-            onClick={() => {
-              handleChange(
-                statusFilter.key,
-                currentFilters,
-                setCurrentFilters,
-                "status"
-              );
-            }}
-          >
-            <Row className="h-100">
-              <Col className="align-self-center">{statusFilter.label}</Col>
-            </Row>
-          </Col>
-        );
-      })}
-      <Col key="workgroupFilter" sm={12} md="auto" className="mx-2">
+      {isTabletOrMobile ? (
+        <Col key="projectStatusFilter">
+          <Row className={`bg-light h-100 `}>
+            <Col>
+              <Form.Control
+                className={
+                  currentFilters.status
+                    ? "workgroup-select-active"
+                    : "workgroup-select-inactive"
+                }
+                key="status"
+                as="select"
+                value={currentFilters.status || "In Progress"}
+                onChange={(e) =>
+                  handleChange(
+                    e.target.value,
+                    currentFilters,
+                    setCurrentFilters,
+                    "status"
+                  )
+                }
+              >
+                <option value="">Project Status</option>
+                {STATUS_FILTERS.map((projectStatus) => {
+                  return (
+                    <option key={projectStatus.key} value={projectStatus.label}>
+                      {projectStatus.label}
+                    </option>
+                  );
+                })}
+              </Form.Control>
+            </Col>
+          </Row>
+        </Col>
+      ) : (
+        <FiltersList
+          currentFilters={currentFilters}
+          handleChange={handleChange}
+          setCurrentFilters={setCurrentFilters}
+          statusFilters={STATUS_FILTERS}
+        />
+      )}
+      <Col key="workgroupFilter" md={6} lg="auto">
         <Row
           className={`bg-light h-100  ${
             currentFilters.workgroup
