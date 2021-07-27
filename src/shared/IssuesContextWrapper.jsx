@@ -71,7 +71,7 @@ function handleData(data, setData) {
   // do some global tidying of the data.
   let dataHandled = data.map((issue) => {
     // remove html comments, which contain content we don't want to share
-    issue.body = issue.body.replace(/(<!-- .+? -->)/g, "");
+    issue.body = issue.body?.replace(/(<!-- .+? -->)/g, "");
     issue.labels = issue.labels ? issue.labels.split(", ") : [];
     issue.workgroups = issue.workgroups ? issue.workgroups.split(", ") : [];
     issue.type = getType(issue.labels);
