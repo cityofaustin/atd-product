@@ -1,0 +1,119 @@
+$theme-colors: (
+  "primary": #0d3e79,
+  "secondary": #00bfa5,
+);
+
+.homepage-header {
+  font-size: 3.5em !important;
+  color: #ff7261 !important;
+  font-weight: bold !important;
+}
+
+.status-filter-inactive {
+  border-radius: 0px !important;
+  border: none !important;
+  color: #6c757d !important;
+  padding-bottom: 5px !important;
+}
+
+.status-filter-active {
+  border-radius: 0px !important;
+  border: none !important;
+  border-bottom: 5px solid #ff7261 !important;
+  color: #ff7261 !important;
+}
+
+.status-filter:hover {
+  color: #ff7261 !important;
+}
+
+.chart-toggle-inactive {
+  border-radius: 0px !important;
+  border: none !important;
+  color: #6c757d !important;
+}
+
+.chart-toggle-active {
+  border-radius: 0px !important;
+  border: none !important;
+  color: #fff !important;
+  background-color: #00bfa5 !important;
+}
+
+.workgroup-select-inactive:hover {
+  color: #ff7261 !important;
+}
+
+.workgroup-select-inactive {
+  background-color: #f8f9fa !important;
+  color: #6c757d !important;
+  border: none !important;
+}
+
+.workgroup-select-active {
+  background-color: #f8f9fa !important;
+  color: #ff7261 !important;
+  border: none !important;
+}
+
+.form-control:focus {
+  box-shadow: none !important;
+}
+
+.navbar-toggle {
+  // Use !important to override BootStrap class
+  border: none !important;
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-menu-borders {
+    border-style: none none none solid;
+    border-color: #00bfa5;
+    border-width: 1px;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  // Use !important to override BootStrap class
+  .navbar-menu-link {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+}
+
+@import "node_modules/bootstrap/scss/bootstrap";
+
+// DTS Colors (for reference)
+// .color-1 {
+//     color:#5f7d8c;
+// }
+// .color-2 {
+//     color:#86b1c6;
+// }
+// .color-3 {
+//     color:#162b4c;
+// }
+// .color-4 {
+//     color:#0b3e79;
+// }
+// .color-5 {
+//     color:#007089;
+// }
+// .color-6 {
+//     color:#00bfa5;
+// }
+// .color-7 {
+//     color:#f2fc6d;
+// }
+// .color-8 {
+//     color:#ff7261;
+// }
+// .color-9 {
+//     color:#ff9a8e;
+// }
+// .color-10 {
+//     color:#ffc3bb;
+// }
+// .color-11 {
+//     color:#ffe2df;
+// }

@@ -8,7 +8,6 @@ import {
   Nav,
   Navbar,
 } from "react-bootstrap";
-import "../scss/custom.scss";
 
 const PAGES = [
   { label: "Our work", route: "/projects" },
