@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {
@@ -98,7 +98,7 @@ const scatterClickHandler = (e, history) => {
 
 export default function ProjectScoreChart(props) {
   const { projectScore, scores } = props;
-  const history = useHistory();
+  const history = useRouter();
   return (
     <ResponsiveContainer width={"100%"} height="100%" minHeight={400}>
       <ScatterChart>

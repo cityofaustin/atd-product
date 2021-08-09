@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 import {
   Container,
   Row,
@@ -74,12 +75,13 @@ export default function NavComponent(props) {
                   key={page.route}
                   className={`flex-grow-1 mx-0 my-auto ${borderClass}`}
                 >
-                  <Nav.Link
-                    className={`text-primary text-center px-3 navbar-menu-link ${fontWeightClass}`}
-                    href={page.route}
-                  >
-                    {page.label}
-                  </Nav.Link>
+                  <Link href={page.route} passHref>
+                    <Nav.Link
+                      className={`text-primary text-center px-3 navbar-menu-link ${fontWeightClass}`}
+                    >
+                      {page.label}
+                    </Nav.Link>
+                  </Link>
                 </div>
               );
             })}
