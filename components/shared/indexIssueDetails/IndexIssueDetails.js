@@ -129,7 +129,7 @@ export default function IndexIssueDetails(props) {
   const location = useRouter();
   const history = useRouter();
   console.log(location);
-  const [showBackLink] = React.useState(location.state?.showBackLink);
+  const [showBackLink] = React.useState(location.query?.showBackLink);
   if (error) {
     return <p>{error}</p>;
   } else if (!isLoaded && !error) {

@@ -2,6 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/products": "pages/products.js",
-  "/products/[issue_number]": "pages/products/[issue_number].js"
+  "/next/dist/pages/_error": "pages/next/dist/pages/_error.js",
+  "/products/[issue_number]": "pages/products/[issue_number].js",
+  "/products": "pages/products.js"
 }

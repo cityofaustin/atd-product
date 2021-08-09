@@ -43,7 +43,7 @@ export default function IndexIsssueListItem(props) {
       className="text-primary text-decoration-none"
       href={{
         pathname: `${type}s/${issue.number}`,
-        state: { showBackLink: true },
+        query: { showBackLink: true },
       }}
     >
       <Card className="h-100 shadow-sm">
