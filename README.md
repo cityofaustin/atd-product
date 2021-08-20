@@ -39,9 +39,20 @@ $ npm run dev
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#about-the-project">About Next.js</a>
+      <a href="#about-next.js">About Next.js</a>
     </li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#changes">Changes</a></li>
+    <li>
+        <a href="#changes">Changes</a>
+        <ul>
+        <li><a href="#architecture">Architecture Differences</a></li>
+        <li><a href="#code-change">Code Change</a></li>
+      </ul>
+    </li>
   </ol>
 </details>
+
+### About Next.js
+
+### Architecture
+
+### Code Change
