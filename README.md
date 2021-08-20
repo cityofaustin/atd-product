@@ -24,6 +24,11 @@ Start server
 $ npm run dev
 ```
 
+## Migration to Nextjs
+
+This app was converted from a Create React App to Next.js and includes the file structures of both of them. The Create React App file structure can be found in
+the craSrc folder.
+
 ### Icon attributions
 
 - [Change](https://thenounproject.com/search/?q=alternate&i=3026571)
