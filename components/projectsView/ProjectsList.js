@@ -59,7 +59,7 @@ export default function ProjectsList(props) {
   const isLoaded = props.isLoaded;
   const context = React.useContext(EvaluationsContext);
   const location = useRouter();
-  const [search] = React.useState(new URLSearchParams(location.search));
+  const [search] = React.useState(new URLSearchParams(location.query));
   const [currentFilters, setCurrentFilters] = React.useState({});
   const [displayIssues, setDisplayIssues] = React.useState([]);
   const [displayScores, setDisplayScores] = React.useState([]);

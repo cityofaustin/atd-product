@@ -64,11 +64,12 @@ export default function ProjectFilters(props) {
   } = props;
 
   React.useEffect(() => {
-    history.replace({
-      pathname: history.pathname,
-      search: formatSearchPath(currentFilters),
-    });
-  }, [currentFilters, history]);
+    history.replace(
+      `/projects/${formatSearchPath(currentFilters)}`,
+      undefined,
+      { shallow: true }
+    );
+  }, [currentFilters, history.isReady]);
 
   return (
     <Row className="text-center">
