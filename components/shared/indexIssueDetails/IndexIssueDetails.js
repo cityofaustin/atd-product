@@ -35,17 +35,16 @@ function Description(props) {
   );
 }
 
-function handleTabChange(eventKey, history, setActiveTab) {
-  history.replace({
-    pathname: history.location.pathname,
-    search: `?tab=${eventKey}`,
+function handleTabChange(eventKey, history, setActiveTab, issueNumber) {
+  history.replace(`/products/${issueNumber}?tab=${eventKey}`, undefined, {
+    shallow: true,
   });
   setActiveTab(eventKey);
 }
 
 function IssueTabs(props) {
   const history = useRouter();
-  const search = new URLSearchParams(useRouter().search);
+  const search = new URLSearchParams(useRouter().query);
   const [activeTab, setActiveTab] = React.useState(
     search.get("tab") || "description"
   );
@@ -55,7 +54,14 @@ function IssueTabs(props) {
       activeKey={activeTab}
       defaultActiveKey="description"
       id="uncontrolled-tab-example"
-      onSelect={(eventKey) => handleTabChange(eventKey, history, setActiveTab)}
+      onSelect={(eventKey) =>
+        handleTabChange(
+          eventKey,
+          history,
+          setActiveTab,
+          history.query.issue_number
+        )
+      }
     >
       <Tab eventKey="description" title="Description">
         <Description issue={props.issue} />
@@ -85,7 +91,7 @@ function BackLink(props) {
           className="btn-link bg-white border-white"
           onClick={(e) => {
             e.preventDefault();
-            props.history.goBack();
+            props.history.back();
           }}
         >
           <span className="text-muted">{`< Back to ${props.indexType}s`}</span>
@@ -126,10 +132,8 @@ export default function IndexIssueDetails(props) {
   const issues = props.issues;
   const error = props.error;
   const isLoaded = props.isLoaded;
-  const location = useRouter();
-  const history = useRouter();
-  console.log(location);
-  const [showBackLink] = React.useState(location.query?.showBackLink);
+  const router = useRouter();
+
   if (error) {
     return <p>{error}</p>;
   } else if (!isLoaded && !error) {
@@ -143,9 +147,7 @@ export default function IndexIssueDetails(props) {
   )[0];
   return (
     <>
-      {showBackLink && (
-        <BackLink indexType={props.indexType} history={history} />
-      )}
+      <BackLink indexType={props.indexType} history={router} />
       <h4 className="text-secondary mb-0">
         {props.indexType === "project" ? "Project details" : "Product Details"}
       </h4>

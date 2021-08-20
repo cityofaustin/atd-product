@@ -10,6 +10,7 @@ export default function ProductDetailsView(props) {
   const matches = useRouter("/products/:issue_number");
 
   const issue_number = matches.query.issue_number;
+
   return (
     <>
       <Page nav={true} title={false}>

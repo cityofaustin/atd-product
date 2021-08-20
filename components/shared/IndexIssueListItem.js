@@ -42,31 +42,33 @@ export default function IndexIsssueListItem(props) {
     <Link
       className="text-primary text-decoration-none"
       href={{
-        pathname: `${type}s/${issue.number}`,
-        query: { showBackLink: true },
+        pathname: `${type}s/[issue_number]`,
+        query: { issue_number: issue.number },
       }}
     >
-      <Card className="h-100 shadow-sm">
-        <Card.Body>
-          <Card.Title className="text-primary">{issue.title}</Card.Title>
-          {img && (
-            <Row className="pb-2">
-              <Col>
-                <Card.Img variant="top" src={img.src} alt={img.alt} />
+      <a>
+        <Card className="h-100 shadow-sm">
+          <Card.Body>
+            <Card.Title className="text-primary">{issue.title}</Card.Title>
+            {img && (
+              <Row className="pb-2">
+                <Col>
+                  <Card.Img variant="top" src={img.src} alt={img.alt} />
+                </Col>
+              </Row>
+            )}
+            <Row>
+              <Col className="text-muted">
+                <ReactMarkdown
+                  renderers={markdownRenderers}
+                  escapeHtml={false}
+                  children={description}
+                />
               </Col>
             </Row>
-          )}
-          <Row>
-            <Col className="text-muted">
-              <ReactMarkdown
-                renderers={markdownRenderers}
-                escapeHtml={false}
-                children={description}
-              />
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
+          </Card.Body>
+        </Card>
+      </a>
     </Link>
   );
 }

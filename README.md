@@ -21,7 +21,7 @@ $ npm install
 Start server
 
 ```
-$ npm start
+$ npm run dev
 ```
 
 ### Icon attributions
