@@ -66,8 +66,8 @@ Some differences between the 2 file structures
 
 - The views in the `craSrc folder` are now located in the pages folder (I tried to copy the name structure, but Next.js uses the folder name as the route. So I translated the name `nView.jsx` -> `n.js` where `n` is the component name)
 - The landing page is located in `/pages/index.js` file.
-- The contexts and head component (this was the head html in the `index.html` file) are located in the file `/pages/\_app.js` file. This file is analagous to the `App.js` file except there are no routes. It also contains an import for the `custom.scss` file (If you want to import global css, you need to import the file here).
-- Folder names are routes and folders that have the name `\[n\]` are routes for params. EX: `/products/307` -> `/products/\[issue_number\]`
+- The contexts and head component (this was the head html in the `index.html` file) are located in the file `/pages/_app.js` file. This file is analagous to the `App.js` file except there are no routes. It also contains an import for the `custom.scss` file (If you want to import global css, you need to import the file here).
+- Folder names are routes and folders that have the name `[n]` are routes for params. EX: `/products/307` -> `/products/[issue_number]`
 - The styles folder contains the `custom.scss` file.
 - The components associated with the views (or pages in this case), wrappers, and shared components are located in the components folder.
 - Context files are located in the contexts folder.
