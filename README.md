@@ -34,5 +34,14 @@ $ npm run dev
 
 ## Migration to Next.js
 
-This app was converted from a Create React App to Next.js and includes the file structures of both of them. The Create React App file structure can be found in
-the craSrc folder. The functionality of this app is 100% completed and should work exactly like it's Create React App counterpart.
+<!-- TABLE OF CONTENTS -->
+<details open="open">
+  <summary>Table of Contents</summary>
+  <ol>
+    <li>
+      <a href="#about-the-project">About Next.js</a>
+    </li>
+    <li><a href="#features">Features</a></li>
+    <li><a href="#changes">Changes</a></li>
+  </ol>
+</details>
