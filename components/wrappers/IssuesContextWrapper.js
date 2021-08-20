@@ -1,5 +1,5 @@
 import React from "react";
-import IssuesContext from "../contexts/IssuesContext";
+import IssuesContext from "../../contexts/IssuesContext";
 
 const STATUSES = ["Needs Scoping", "Backlog", "In Progress", "Completed"];
 

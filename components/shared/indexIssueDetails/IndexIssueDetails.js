@@ -36,10 +36,10 @@ function Description(props) {
 }
 
 function handleTabChange(eventKey, history, setActiveTab, issueNumber) {
+  setActiveTab(eventKey);
   history.replace(`/products/${issueNumber}?tab=${eventKey}`, undefined, {
     shallow: true,
   });
-  setActiveTab(eventKey);
 }
 
 function IssueTabs(props) {
@@ -48,7 +48,7 @@ function IssueTabs(props) {
   const [activeTab, setActiveTab] = React.useState(
     search.get("tab") || "description"
   );
-
+  console.log(props);
   return (
     <Tabs
       activeKey={activeTab}

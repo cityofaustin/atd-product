@@ -1,6 +1,6 @@
 import React from "react";
-import EvaluationsContext from "../contexts/EvaluationsContext";
-import IssuesContext from "../contexts/IssuesContext";
+import EvaluationsContext from "../../contexts/EvaluationsContext";
+import IssuesContext from "../../contexts/IssuesContext";
 
 function getKnackHeaders(appId) {
   return {

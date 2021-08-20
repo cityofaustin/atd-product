@@ -10,7 +10,7 @@ import { FaEdit } from "react-icons/fa";
 import { RiBankFill } from "react-icons/ri";
 import { FaDatabase } from "react-icons/fa";
 
-import IssuesContext from "../../contexts/IssuesContext";
+import IssuesContext from "../../../contexts/IssuesContext";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 
 function getTypeIcon(type) {

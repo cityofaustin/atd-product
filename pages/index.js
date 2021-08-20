@@ -5,7 +5,7 @@ import Image from "react-bootstrap/Image";
 import { FaGlobe, FaUsersCog, FaBusinessTime } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
 
-import IssuesContext from "../components/contexts/IssuesContext";
+import IssuesContext from "../contexts/IssuesContext";
 import Page from "../components/shared/Page";
 import IndexIsssueListItem from "../components/shared/IndexIssueListItem";
 

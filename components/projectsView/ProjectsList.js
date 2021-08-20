@@ -5,7 +5,7 @@ import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 
 import SpinnerWrapper from "../wrappers/SpinnerWrapper";
-import EvaluationsContext from "../contexts/EvaluationsContext";
+import EvaluationsContext from "../../contexts/EvaluationsContext";
 import IndexIssueListItem from "../shared/IndexIssueListItem";
 import ProjectFilters from "./ProjectFilters";
 import ProjectScoreChart from "../shared/ProjectScoreChart";
