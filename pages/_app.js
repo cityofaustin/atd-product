@@ -1,5 +1,6 @@
 import { IssuesContextWrapper } from "../components/wrappers/IssuesContextWrapper";
 import { EvaluationsContextWrapper } from "../components/wrappers/EvaluationsContextWrapper";
+import CustomHead from "./CustomHead";
 import "../styles/custom.scss";
 
 const ISSUES_ENDPOINT =
@@ -17,6 +18,7 @@ function App({ Component, pageProps }) {
         appId={EVALS_APP_ID}
         url={EVALUATIONS_ENDPOINT}
       >
+        <CustomHead />
         <Component {...pageProps} />
       </EvaluationsContextWrapper>
     </IssuesContextWrapper>
