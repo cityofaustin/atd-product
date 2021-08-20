@@ -35,11 +35,17 @@ function Description(props) {
   );
 }
 
-function handleTabChange(eventKey, history, setActiveTab, issueNumber) {
-  setActiveTab(eventKey);
-  history.replace(`/products/${issueNumber}?tab=${eventKey}`, undefined, {
+function handleTabChange(
+  eventKey,
+  history,
+  setActiveTab,
+  issueNumber,
+  indexType
+) {
+  history.replace(`/${indexType}s/${issueNumber}?tab=${eventKey}`, undefined, {
     shallow: true,
   });
+  setActiveTab(eventKey);
 }
 
 function IssueTabs(props) {
@@ -48,7 +54,7 @@ function IssueTabs(props) {
   const [activeTab, setActiveTab] = React.useState(
     search.get("tab") || "description"
   );
-  console.log(props);
+
   return (
     <Tabs
       activeKey={activeTab}
@@ -59,7 +65,8 @@ function IssueTabs(props) {
           eventKey,
           history,
           setActiveTab,
-          history.query.issue_number
+          history.query.issue_number,
+          props.indexType
         )
       }
     >

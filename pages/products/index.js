@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Col";
 import Col from "react-bootstrap/Col";
 
 import Page from "../../components/shared/Page";
-import IssuesContext from "../../components/contexts/IssuesContext";
+import IssuesContext from "../../contexts/IssuesContext";
 import ProductsList from "../../components/productsView/ProductsList";
 
 function FrontMatter() {
