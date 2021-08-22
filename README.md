@@ -42,17 +42,17 @@ $ npm run dev
       <a href="#project-status">Project Status</a>
     </li>
     <li>
-      <a href="#about-next.js">About Next.js</a>
+      <a href="#about-nextjs">About Next.js</a>
     </li>
     <li>
         <a href="#changes">Changes</a>
         <ul>
         <li><a href="#project-file-structure">Project File Structure</a></li>
-        <li><a href="#code-change">Code Changes</a></li>
+        <li><a href="#code-changes">Code Changes</a></li>
       </ul>
     </li>
     <li>
-      <a href="#what's-next">What's Next</a>
+      <a href="#whats-next">What's Next</a>
     </li>
   </ol>
 </details>
