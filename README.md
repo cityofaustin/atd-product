@@ -39,10 +39,10 @@ $ npm run dev
   <summary>Table of Contents</summary>
   <ol>
     <li>
-      <a href="#project-status">Project Status</a>
+      <a href="#about-nextjs">About Next.js</a>
     </li>
     <li>
-      <a href="#about-nextjs">About Next.js</a>
+      <a href="#project-status">Project Status</a>
     </li>
     <li>
         <a href="#changes">Changes</a>
@@ -57,13 +57,13 @@ $ npm run dev
   </ol>
 </details>
 
-### Project Status
-
-This Next.js version contains all the functionalities of it's create react app counterpart. With that being said, there are still some work to do to optimize and refactor code (See **What's Next** section below).
-
 ### About Next.js
 
 Next.js is a JavaScript framework created by Zeit. It lets you build server-side rendering and static web applications using React. It’s a great tool to build your next website. It has many great features and advantages, which can make Nextjs your first option for building your next web application.
+
+### Project Status
+
+This Next.js version contains all the functionalities of it's create react app counterpart. With that being said, there are still some work to do to optimize and refactor code (See <a href="#whats-next">**What's Next**</a> section below).
 
 ### Project File Structure
 
