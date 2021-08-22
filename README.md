@@ -67,11 +67,11 @@ This Next.js version contains all the functionalities of it's create react app c
 
 ### Project File Structure
 
-This app contains both create react app and next.js file structures. The app, however, is configured to run next.js and this can be seen in the scripts property of the package.json. I decided to intentionally leave the create react app architecture so components and file structure can be compared while making the migration. The create react app file structure can be found in the `craSrc` folder.
+This app contains both create react app and next.js file structures. The app, however, is configured to run next.js and this can be seen in the scripts property of the package.json. I decided to intentionally leave the create react app architecture so components and file structure can be compared while making the migration. The create react app file structure can be found in the `/craSrc` folder.
 
 Some differences between the 2 file structures
 
-- The component views in `/craSrc/views` are now located in the `/pages` folder (I tried to copy the name structure, but Next.js uses the folder name as the route. So I translated the name `nView.jsx` -> `n.js` where `n` is the component name)
+- The component views in original `/src/views` are located in the `/pages` folder (I tried to copy the name structure, but Next.js uses the folder name as the route. So I translated the name `nView.jsx` -> `n.js` where `n` is the component name)
 - The landing page is located in `/pages/index.js` file.
 - The contexts and head tags (this was the head html in the `index.html` file) are located in the file `/pages/_app.js` file. This file is analagous to the `App.js` file rom `create react app` except there are no routes. It also contains an import for the `custom.scss` file (If you want to import global css, you need to import the file here).
 - Folder names are routes and folders that have the name `[n]` are routes for params. EX: `/products/[issue_number]` -> `/products/307`
