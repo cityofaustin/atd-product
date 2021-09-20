@@ -91,3 +91,4 @@ Some differences between the 2 file structures
 - Add Catch all route (Page).
 - [Look at differences between Server Side Rendering and Static Generation.](https://nextjs.org/docs/basic-features/pages)
 - [Check out Preview mode.](https://nextjs.org/docs/advanced-features/preview-mode)
+
