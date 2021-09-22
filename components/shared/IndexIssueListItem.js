@@ -20,16 +20,6 @@ function parseBody(body) {
 }
 
 const markdownRenderers = {
-  /*
-  This custom renderer suppresses default link handling by returning the plain link 
-  text. I believe we're working a round a ReactMarkdown bug here. The link arg should
-  include a `text` prop that we can return, but only `href` is available when
-  destructring the function args. We cannot render a normal <a> tag here because it will
-  result in nested <a> tags because of the wrapping Card <Link/>. To quote the warning
-  message: <a> cannot appear as a descendant of <a>.
-
-  Bug issue: https://github.com/remarkjs/react-markdown/issues/539
-  */
   link: ({ children }) => {
     return children[0].props.value;
   },
