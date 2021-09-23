@@ -67,12 +67,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/tilly_whitson.jpeg",
   },
   {
-    name: "Surbhi Bakshi",
-    title: "Senior Application Analyst",
-    pronouns: "She/Her",
-    src: "assets/headshots/surbhi_bakshi.jpeg",
-  },
-  {
     name: "Patrick McDonnell",
     title: "Senior Product Manager",
     pronouns: "He/Him",
