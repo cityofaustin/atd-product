@@ -108,24 +108,6 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/chia_berry.png",
   },
-  {
-    name: "Annie Phan",
-    title: "Data Science Intern",
-    pronouns: "She/Her",
-    src: "assets/headshots/annie_phan.jpeg",
-  },
-  {
-    name: "Janet Chu",
-    title: "Design Researcher",
-    pronouns: "She/Her",
-    src: "assets/headshots/janet_chu.jpg",
-  },
-  {
-    name: "Jorge Gabitto",
-    title: "Software Developer Intern",
-    pronouns: "",
-    src: "assets/headshots/jorge_gabitto.jpg",
-  },
 ];
 
 function TeamMember(props) {
