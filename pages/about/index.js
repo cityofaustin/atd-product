@@ -108,6 +108,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/chia_berry.png",
   },
+  {
+    name: "Frank Hereford",
+    title: "Software Developer",
+    pronouns: "He/Him",
+    src: "assets/headshots/frank_hereford.jpeg",
+  },
 ];
 
 function TeamMember(props) {
