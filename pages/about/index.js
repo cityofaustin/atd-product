@@ -110,6 +110,45 @@ const TEAM_MEMBERS = [
   },
 ];
 
+const TEAM_MEMBER_ALUMNI = [
+  {
+    name: "Jace Deloney",
+    title: "Product Manager",
+    pronouns: "He/him",
+    src: "assets/headshots/jace_deloney.jpeg",
+  },
+  {
+    name: "Mike Dilley",
+    title: "Software Developer",
+    pronouns: "He/him",
+    src: "assets/headshots/mike_dilley.jpeg",
+  },
+  {
+    name: "Janet Chu",
+    title: "Design Researcher",
+    pronouns: "She/Her",
+    src: "assets/headshots/janet_chu.jpg",
+  },
+  {
+    name: "Annie Phan",
+    title: "Data Science Intern",
+    pronouns: "She/Her",
+    src: "assets/headshots/annie_phan.jpeg",
+  },
+  {
+    name: "Jorge Gabitto",
+    title: "Software Developer Intern",
+    pronouns: "",
+    src: "assets/headshots/jorge_gabitto.jpg",
+  },
+  {
+    name: "Surbhi Bakshi",
+    title: "Senior Application Analyst",
+    pronouns: "She/Her",
+    src: "assets/headshots/surbhi_bakshi.jpeg",
+  },
+];
+
 function TeamMember(props) {
   const { src, name, title, pronouns } = props;
   return (
@@ -203,6 +242,16 @@ export default function AboutView(props) {
       </Row>
       <Row>
         {TEAM_MEMBERS.map((person) => {
+          return <TeamMember key={person.name} {...person} />;
+        })}
+      </Row>
+      <Row className="text-primary mt-5 mb-4">
+        <Col>
+          <h2>Team alumni</h2>
+        </Col>
+      </Row>
+      <Row>
+        {TEAM_MEMBER_ALUMNI.map((person) => {
           return <TeamMember key={person.name} {...person} />;
         })}
       </Row>
