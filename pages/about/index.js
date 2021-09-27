@@ -51,7 +51,7 @@ const TEAM_MEMBERS = [
   {
     name: "Amenity Applewhite",
     pronouns: "She/Her",
-    title: "Lead Product Manager",
+    title: "Head of Product",
     src: "assets/headshots/amenity_applewhite.jpeg",
   },
   {
@@ -67,12 +67,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/tilly_whitson.jpeg",
   },
   {
-    name: "Surbhi Bakshi",
-    title: "Senior Application Analyst",
-    pronouns: "She/Her",
-    src: "assets/headshots/surbhi_bakshi.jpeg",
-  },
-  {
     name: "Patrick McDonnell",
     title: "Senior Product Manager",
     pronouns: "He/Him",
@@ -86,7 +80,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Nadin Nader",
-    title: "Senior Application Analyst",
+    title: "Product Delivery Manager",
     pronouns: "He/Him",
     src: "assets/headshots/nadin_nader.jpeg",
   },
@@ -109,10 +103,25 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/chia_berry.png",
   },
   {
-    name: "Annie Phan",
-    title: "Data Science Intern",
-    pronouns: "She/Her",
-    src: "assets/headshots/annie_phan.jpeg",
+    name: "Frank Hereford",
+    title: "Software Developer",
+    pronouns: "He/Him",
+    src: "assets/headshots/frank_hereford.jpeg",
+  },
+];
+
+const TEAM_MEMBER_ALUMNI = [
+  {
+    name: "Jace Deloney",
+    title: "Product Manager",
+    pronouns: "He/him",
+    src: "assets/headshots/jace_deloney.jpeg",
+  },
+  {
+    name: "Mike Dilley",
+    title: "Software Developer",
+    pronouns: "He/him",
+    src: "assets/headshots/mike_dilley.jpeg",
   },
   {
     name: "Janet Chu",
@@ -121,10 +130,22 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/janet_chu.jpg",
   },
   {
+    name: "Annie Phan",
+    title: "Data Science Intern",
+    pronouns: "She/Her",
+    src: "assets/headshots/annie_phan.jpeg",
+  },
+  {
     name: "Jorge Gabitto",
     title: "Software Developer Intern",
     pronouns: "",
     src: "assets/headshots/jorge_gabitto.jpg",
+  },
+  {
+    name: "Surbhi Bakshi",
+    title: "Senior Application Analyst",
+    pronouns: "She/Her",
+    src: "assets/headshots/surbhi_bakshi.jpeg",
   },
 ];
 
@@ -221,6 +242,16 @@ export default function AboutView(props) {
       </Row>
       <Row>
         {TEAM_MEMBERS.map((person) => {
+          return <TeamMember key={person.name} {...person} />;
+        })}
+      </Row>
+      <Row className="text-primary mt-5 mb-4">
+        <Col>
+          <h2>Team alumni</h2>
+        </Col>
+      </Row>
+      <Row>
+        {TEAM_MEMBER_ALUMNI.map((person) => {
           return <TeamMember key={person.name} {...person} />;
         })}
       </Row>
