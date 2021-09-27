@@ -80,7 +80,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Nadin Nader",
-    title: "Senior Application Analyst",
+    title: "Product Delivery Manager",
     pronouns: "He/Him",
     src: "assets/headshots/nadin_nader.jpeg",
   },
