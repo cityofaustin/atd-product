@@ -152,8 +152,8 @@ export default function IndexIssueDetails(props) {
   const issue = issues.filter(
     (issue) => issue.number === props.issue_number
   )[0];
-  
-  if (!issue) return <p>Unable to locate project.</p>
+
+  if (!issue) return <p>Unable to locate project.</p>;
 
   return (
     <>
