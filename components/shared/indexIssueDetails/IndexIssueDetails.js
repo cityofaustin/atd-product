@@ -1,6 +1,7 @@
 import React from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
+import Alert from "react-bootstrap/Alert";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
@@ -135,10 +136,13 @@ function InfoRow(props) {
   );
 }
 
-export default function IndexIssueDetails(props) {
-  const issues = props.issues;
-  const error = props.error;
-  const isLoaded = props.isLoaded;
+export default function IndexIssueDetails({
+  issue_number,
+  issues,
+  indexType,
+  error,
+  isLoaded,
+}) {
   const router = useRouter();
 
   if (error) {
@@ -146,24 +150,34 @@ export default function IndexIssueDetails(props) {
   } else if (!isLoaded && !error) {
     return <SpinnerWrapper />;
   } else if (issues.length === 0) {
-    return <p>No data found.</p>;
+    // this would suggest we failed to fetch issues. e.g. Socrata is down
+    return (
+      <Alert variant="danger">
+        We're unable to load project data at this time.
+      </Alert>
+    );
   }
 
-  const issue = issues.filter(
-    (issue) => issue.number === props.issue_number
-  )[0];
+  const issue = issues.filter((issue) => issue.number === issue_number)[0];
 
-  if (!issue) return <p>Unable to locate project.</p>;
+  if (!issue) {
+    // this would suggest the user provided an invalid issue ID in the URL
+    return (
+      <Alert variant="danger">
+        No project data found for project ID #{issue.number}
+      </Alert>
+    );
+  }
 
   return (
     <>
-      <BackLink indexType={props.indexType} history={router} />
+      <BackLink indexType={indexType} history={router} />
       <h4 className="text-secondary mb-0">
-        {props.indexType === "project" ? "Project details" : "Product Details"}
+        {indexType === "project" ? "Project details" : "Product Details"}
       </h4>
       <h1 className="text-primary">{issue.title}</h1>
-      <InfoRow indexType={props.indexType} issue={issue} />
-      <IssueTabs indexType={props.indexType} issue={issue} issues={issue} />
+      <InfoRow indexType={indexType} issue={issue} />
+      <IssueTabs indexType={indexType} issue={issue} issues={issue} />
     </>
   );
 }
