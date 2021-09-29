@@ -162,6 +162,7 @@ export default function IndexIssueDetails({
 
   if (!issue) {
     // this would suggest the user provided an invalid issue ID in the URL
+    debugger;
     return (
       <Alert variant="danger">
         No project data found for project ID #{issue.number}
