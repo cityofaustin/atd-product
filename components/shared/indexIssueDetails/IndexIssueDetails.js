@@ -164,7 +164,7 @@ export default function IndexIssueDetails({
     // this would suggest the user provided an invalid issue ID in the URL
     return (
       <Alert variant="danger">
-        No project data found for project ID #{issue.number}
+        No project data found for project ID #{issue_number}
       </Alert>
     );
   }
