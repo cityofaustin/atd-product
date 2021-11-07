@@ -1,7 +1,7 @@
 import React from "react";
 import IssuesContext from "../../contexts/IssuesContext";
 
-const STATUSES = ["Needs Scoping", "Backlog", "In Progress", "Completed"];
+const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 
 function sortByUpdatedDate(a, b) {
   return new Date(b.updated_at) - new Date(a.updated_at);
@@ -35,29 +35,29 @@ function getType(labels) {
 }
 
 function getStatus(pipeline) {
-  switch (pipeline) {
-    case "New":
-      return "Backlog";
-    case "Needs Scoping":
-      return "Needs Scoping";
-    case "Icebox":
-      return "Backlog";
-    case "Backlog":
-      return "Backlog";
+  switch (pipeline && pipeline.toLowerCase()) {
+    case "new":
+      return "backlog";
+    case "needs scoping":
+      return "needs_scoping";
+    case "icebox":
+      return "backlog";
+    case "backlog":
+      return "backlog";
     case "on deck":
-      return "Backlog";
-    case "In Progress":
-      return "In Progress";
-    case "Blocked":
-      return "In Progress";
-    case "Ongoing":
-      return "In Progress";
-    case "Review/QA":
-      return "In Progress";
-    case "Ready to Deploy":
-      return "In Progress";
-    case "Closed":
-      return "Completed";
+      return "backlog";
+    case "in progress":
+      return "in_progress";
+    case "blocked":
+      return "in_progress";
+    case "ongoing":
+      return "in_progress";
+    case "review/qa":
+      return "in_progress";
+    case "ready to deploy":
+      return "in_progress";
+    case "closed":
+      return "completed";
     default:
       return null;
   }
