@@ -24,7 +24,7 @@ const FILTER_DEFS = [
     name: "Status",
     field: "status",
     matchFunc: includedInArray,
-    default: "In Progress",
+    default: "in_progress",
   },
   {
     key: "workgroup",

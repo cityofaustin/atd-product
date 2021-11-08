@@ -8,10 +8,10 @@ import ProjectListToggle from "./ProjectListToggle";
 import FiltersList from "./FiltersList";
 
 const STATUS_FILTERS = [
-  { label: "Needs Scoping", key: "Needs Scoping" },
-  { label: "Backlog", key: "Backlog" },
-  { label: "In Progress", key: "In Progress" },
-  { label: "Completed", key: "Completed" },
+  { label: "Needs Scoping", key: "needs_scoping" },
+  { label: "Backlog", key: "backlog" },
+  { label: "In Progress", key: "in_progress" },
+  { label: "Completed", key: "completed" },
 ];
 
 const WORKGROUP_NAMES = {
