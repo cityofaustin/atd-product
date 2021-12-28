@@ -67,12 +67,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/tilly_whitson.jpeg",
   },
   {
-    name: "Patrick McDonnell",
-    title: "Senior Product Manager",
-    pronouns: "He/Him",
-    src: "assets/headshots/patrick_mcdonnell.jpeg",
-  },
-  {
     name: "Stephanie Moorer",
     title: "Product Manager",
     pronouns: "",
@@ -101,6 +95,12 @@ const TEAM_MEMBERS = [
     title: "Software Developer",
     pronouns: "She/Her",
     src: "assets/headshots/chia_berry.png",
+  },
+  {
+    name: "Patrick McDonnell",
+    title: "Senior Product Manager",
+    pronouns: "He/Him",
+    src: "assets/headshots/patrick_mcdonnell.jpeg",
   },
   {
     name: "Frank Hereford",
