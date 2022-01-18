@@ -112,7 +112,7 @@ const TEAM_MEMBERS = [
     name: "Charlie Henry",
     title: "Data Scientist",
     pronouns: "He/Him",
-    src: "assets/headshots/charlie_henry.jpeg",
+    src: "assets/headshots/charlie_henry.jpg",
   },
 ];
 
