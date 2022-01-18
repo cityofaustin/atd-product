@@ -108,6 +108,12 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/frank_hereford.jpeg",
   },
+  {
+    name: "Charlie Henry",
+    title: "Data Scientist",
+    pronouns: "He/Him",
+    src: "assets/headshots/charlie_henry.jpg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
