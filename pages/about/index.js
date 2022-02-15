@@ -55,12 +55,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/amenity_applewhite.jpeg",
   },
   {
-    name: "Sergio Garcia",
-    title: "Senior Data Engineer",
-    pronouns: "He/Him",
-    src: "assets/headshots/sergio_garcia.jpeg",
-  },
-  {
     name: "Tilly Whitson",
     title: "Junior Software Developer",
     pronouns: "She/Her",
@@ -152,6 +146,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Senior Application Analyst",
     pronouns: "She/Her",
     src: "assets/headshots/surbhi_bakshi.jpeg",
+  },
+  {
+    name: "Sergio Garcia",
+    title: "Senior Data Engineer",
+    pronouns: "He/Him",
+    src: "assets/headshots/sergio_garcia.jpeg",
   },
 ];
 
