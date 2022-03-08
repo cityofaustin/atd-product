@@ -108,6 +108,12 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/charlie_henry.jpg",
   },
+  {
+    name: "Karo Engstrom",
+    title: "Application Architect",
+    pronouns: "She/Her",
+    src: "assets/headshots/karo_engstrom.jpg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
