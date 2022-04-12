@@ -43,12 +43,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/mateo_clarke.jpeg",
   },
   {
-    name: "Jaime McKeown",
-    pronouns: "She/Her",
-    title: "Senior Geospatial Analyst",
-    src: "assets/headshots/jaime_mckeown.jpeg",
-  },
-  {
     name: "Amenity Applewhite",
     pronouns: "She/Her",
     title: "Head of Product",
@@ -158,6 +152,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Senior Data Engineer",
     pronouns: "He/Him",
     src: "assets/headshots/sergio_garcia.jpeg",
+  },
+  {
+    name: "Jaime McKeown",
+    pronouns: "She/Her",
+    title: "Senior Geospatial Analyst",
+    src: "assets/headshots/jaime_mckeown.jpeg",
   },
 ];
 
