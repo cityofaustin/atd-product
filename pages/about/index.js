@@ -111,7 +111,7 @@ const TEAM_MEMBERS = [
   {
     name: "Mike Dilley",
     title: "Software Developer",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     src: "assets/headshots/mike_dilley.jpeg",
   },
 ];
