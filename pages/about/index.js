@@ -108,6 +108,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/karo_engstrom.jpg",
   },
+  {
+    name: "Mike Dilley",
+    title: "Software Developer",
+    pronouns: "He/Him",
+    src: "assets/headshots/mike_dilley.jpeg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
@@ -116,12 +122,6 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Product Manager",
     pronouns: "He/him",
     src: "assets/headshots/jace_deloney.jpeg",
-  },
-  {
-    name: "Mike Dilley",
-    title: "Software Developer",
-    pronouns: "He/him",
-    src: "assets/headshots/mike_dilley.jpeg",
   },
   {
     name: "Janet Chu",
