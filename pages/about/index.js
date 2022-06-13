@@ -7,10 +7,10 @@ import Page from "../../components/shared/Page";
 
 const TEAM_MEMBERS = [
   {
-    name: "John Clary",
-    title: "Head of Technology",
-    pronouns: "He/Him",
-    src: "assets/headshots/john_clary.jpg",
+    name: "Peggy MacCallum",
+    pronouns: "She/Her",
+    title: "Division Manager",
+    src: "assets/headshots/peggy_maccallum.jpg",
   },
   {
     name: "Scott Reedy",
@@ -38,7 +38,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Mateo Clarke",
-    title: "Lead Software Developer",
+    title: "Head of Software Engineering",
     pronouns: "He/Him",
     src: "assets/headshots/mateo_clarke.jpeg",
   },
@@ -114,6 +114,18 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/mike_dilley.jpeg",
   },
+  {
+    name: "Rebecca Brand",
+    title: "UX/UI Design Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/rebecca_brand.jpg",
+  },
+  {
+    name: "Rose Eichelmann",
+    title: "Software Engineering Fellow",
+    pronouns: "She/They",
+    src: "assets/headshots/rose_eichelmann.jpg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
@@ -158,6 +170,12 @@ const TEAM_MEMBER_ALUMNI = [
     pronouns: "She/Her",
     title: "Senior Geospatial Analyst",
     src: "assets/headshots/jaime_mckeown.jpeg",
+  },
+  {
+    name: "John Clary",
+    title: "Head of Technology",
+    pronouns: "He/Him",
+    src: "assets/headshots/john_clary.jpg",
   },
 ];
 
