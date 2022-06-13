@@ -88,7 +88,7 @@ const TEAM_MEMBERS = [
     name: "Patrick McDonnell",
     title: "Senior Product Manager",
     pronouns: "He/Him",
-    src: "assets/headshots/patrick_mcdonnell.jpeg",
+    src: "assets/headshots/patrick_mcdonnell.jpg",
   },
   {
     name: "Frank Hereford",
