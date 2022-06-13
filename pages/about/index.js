@@ -10,7 +10,7 @@ const TEAM_MEMBERS = [
     name: "Peggy MacCallum",
     pronouns: "She/Her",
     title: "Division Manager",
-    src: "assets/headshots/peggy_maccallum.jpg",
+    src: "assets/headshots/peggy_maccallum.jpeg",
   },
   {
     name: "Scott Reedy",
