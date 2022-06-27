@@ -25,8 +25,7 @@ const markdownRenderers = {
   },
 };
 
-export default function IndexIsssueListItem(props) {
-  let { type, issue } = props;
+export default function IndexIsssueListItem({ type, issue }) {
   const [description, img] = parseBody(issue.body);
   return (
     <Link

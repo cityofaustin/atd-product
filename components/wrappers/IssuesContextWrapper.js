@@ -84,14 +84,13 @@ function handleData(data, setData) {
   setData(dataHandled.sort(sortByUpdatedDate));
 }
 
-export function IssuesContextWrapper(props) {
+export function IssuesContextWrapper({ url, children }) {
   const [data, setData] = React.useState([]);
   const [error, setError] = React.useState(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
   const [workgroups, setWorkgroups] = React.useState([]);
   const [projectIssues, setProjectIssues] = React.useState([]);
   const [productIssues, setProductIssues] = React.useState([]);
-  const { url, children } = props;
 
   React.useEffect(() => {
     fetch(url)
