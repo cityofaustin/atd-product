@@ -4,7 +4,7 @@ import CustomHead from "./CustomHead";
 import "../styles/custom.scss";
 
 const ISSUES_ENDPOINT =
-  "https://data.austintexas.gov/resource/rzwg-fyv8.json?$limit=10000";
+  "https://data.austintexas.gov/resource/rzwg-fyv8.json?$limit=100000";
 
 const EVALUATIONS_ENDPOINT =
   "https://api.knack.com/v1/pages/scene_162/views/view_311/records";
