@@ -1,39 +1,10 @@
-import React from "react";
+import { useMemo } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Table from "react-bootstrap/Table";
-import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
-import { BsFilePlus } from "react-icons/bs";
-import { FaWrench } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
-import { RiBankFill } from "react-icons/ri";
-import { FaDatabase } from "react-icons/fa";
-
-import IssuesContext from "../../../contexts/IssuesContext";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
-
-function getTypeIcon(type) {
-  // TODO: move to issues context wrapper
-  switch (type) {
-    case "Feature":
-      return <BsFilePlus />;
-    case "New Application":
-      return <BsReverseLayoutTextWindowReverse />;
-    case "Enhancement":
-      return <FaWrench />;
-    case "Tech Debt":
-      return <RiBankFill />;
-    case "Research":
-      return <FaSearch />;
-    case "Data":
-      return <FaDatabase />;
-    case "Documentation":
-      return <FaEdit />;
-    default:
-      return null;
-  }
-}
+import { useSocrata, handleIssueData, getTypeIcon } from "../../utils";
+import { ISSUES_ENDPOINT } from "../../settings";
 
 const BASE_URL = "https://github.com/cityofaustin/atd-data-tech/issues";
 
@@ -47,41 +18,33 @@ function getParentLabel(labels, type) {
   return matchedLabels[0];
 }
 
-function getRelatedIssues(label, parentIssueNumber, issues) {
-  // identify all issues (exculding this project's issue) that share the same project
-  // label
-  if (!label) {
-    return [];
-  }
-  return issues.filter(
-    (issue) =>
-      issue.labels.includes(label) && issue.number !== parentIssueNumber
-  );
-}
+export default function Issues({ indexType, parent }) {
+  const parentLabel = getParentLabel(parent.labels, indexType);
 
-export default function Issues(props) {
-  const context = React.useContext(IssuesContext);
-  const indexType = props.indexType;
-
-  const [parentLabel] = React.useState(
-    getParentLabel(props.parent.labels, indexType)
+  // query for issues that share the same parentLabel, excluding this issue
+  const url = encodeURI(
+    `${ISSUES_ENDPOINT}?$limit=100000&$where=labels like '%${parentLabel}%' and number != ${parent.number}`
   );
-  const [issues, setIssues] = React.useState([]);
-  React.useEffect(() => {
-    let relatedIssues = getRelatedIssues(
-      parentLabel,
-      props.parent.number,
-      context.issues
-    );
-    relatedIssues.forEach((issue) => {
+
+  // if there is no parent label configured in github, we pass `null` to SWR to prevent it from fetching
+  const { error, isLoaded, data } = useSocrata({
+    url: parentLabel ? url : null,
+  });
+
+  const issues = useMemo(() => {
+    if (!data || data.length === 0) {
+      return [];
+    }
+    const handledData = handleIssueData(data);
+    handledData.forEach((issue) => {
       issue.icon = getTypeIcon(issue.type);
     });
-    setIssues(relatedIssues);
-  }, [context.issues, parentLabel, props.parent.number]);
+    return handledData;
+  }, [data]);
 
-  if (context.error) {
-    return <p>{context.error}</p>;
-  } else if (!context.isLoaded && !context.error) {
+  if (error) {
+    return <p>{error}</p>;
+  } else if (!isLoaded) {
     return <SpinnerWrapper />;
   } else if (issues.length === 0) {
     return <p>No issues found.</p>;
