@@ -1,6 +1,5 @@
-export const ISSUES_ENDPOINT = encodeURI(
-  "https://data.austintexas.gov/resource/rzwg-fyv8.json?$limit=100000&$where=labels like '%Project Index%' or labels like '%Product Index%'"
-);
+export const ISSUES_ENDPOINT =
+  "https://data.austintexas.gov/resource/rzwg-fyv8.json";
 
 export const EVALUATIONS_ENDPOINT =
   "https://api.knack.com/v1/pages/scene_162/views/view_311/records";

@@ -1,8 +1,11 @@
 import { useMemo } from "react";
 import IssuesContext from "../../contexts/IssuesContext";
 import { useSocrata } from "../utils";
+import { ISSUES_ENDPOINT } from "../settings";
 
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
+const QUERY =
+  "$limit=100000&$where=labels like '%Project Index%' or labels like '%Product Index%'";
 
 function sortByUpdatedDate(a, b) {
   return new Date(b.updated_at) - new Date(a.updated_at);
@@ -96,7 +99,8 @@ function handleData(data) {
   return dataHandled.sort(sortByUpdatedDate);
 }
 
-export function IssuesContextWrapper({ url, children }) {
+export function IssuesContextWrapper({ children }) {
+  const url = encodeURI(`${ISSUES_ENDPOINT}?${QUERY}`);
   const { data, isLoaded, error } = useSocrata({ url });
 
   const dataHandled = useMemo(() => {
