@@ -47,7 +47,7 @@ function handleTabChange(
   setActiveTab(eventKey);
 }
 
-function IssueTabs(props) {
+function IssueTabs({ indexType, issue }) {
   const history = useRouter();
   const search = new URLSearchParams(useRouter().query);
   const [activeTab, setActiveTab] = React.useState(
@@ -65,23 +65,23 @@ function IssueTabs(props) {
           history,
           setActiveTab,
           history.query.issue_number,
-          props.indexType
+          indexType
         )
       }
     >
       <Tab eventKey="description" title="Description">
-        <Description issue={props.issue} />
+        <Description issue={issue} />
       </Tab>
-      {props.indexType === "project" && (
+      {indexType === "project" && (
         <Tab eventKey="evaluation" title="Evaluation">
-          <ProjectEvaluation project={props.issue} issues={props.issues} />
+          <ProjectEvaluation project={issue} />
         </Tab>
       )}
       <Tab eventKey="activity" title="Activity">
-        <Comments issueNumber={props.issue.number} />
+        <Comments issueNumber={issue.number} />
       </Tab>
       <Tab eventKey="issues" title="Issues">
-        <Issues indexType={props.indexType} parent={props.issue} />
+        <Issues indexType={indexType} parent={issue} />
       </Tab>
     </Tabs>
   );
@@ -107,28 +107,28 @@ function BackLink(props) {
   );
 }
 
-function InfoRow(props) {
+function InfoRow({ issue }) {
   return (
     <Row className="mb-4">
-      {props.issue.type && (
+      {issue.type && (
         <Col sm={3} md="auto">
-          <h6 className="mb-0 mt-2 text-muted">Type</h6> {props.issue.type}
+          <h6 className="mb-0 mt-2 text-muted">Type</h6> {issue.type}
         </Col>
       )}
       <Col sm={3} md="auto">
-        <h6 className="mb-0 mt-2 text-muted">Status</h6> {props.issue.pipeline}
+        <h6 className="mb-0 mt-2 text-muted">Status</h6> {issue.pipeline}
       </Col>
-      {props.issue.workgroups.length > 0 && (
+      {issue.workgroups.length > 0 && (
         <Col sm={3} md="auto">
           <h6 className="mb-0 mt-2 text-muted">Workgroup(s)</h6>
-          {props.issue.workgroups.join(", ")}
+          {issue.workgroups.join(", ")}
         </Col>
       )}
       <Col sm={3} md="auto">
         <h6 className="mb-0 mt-2 text-muted">Issue</h6>
         <a
-          href={`https://github.com/cityofaustin/atd-data-tech/issues/${props.issue.number}`}
-        >{`#${props.issue.number}`}</a>
+          href={`https://github.com/cityofaustin/atd-data-tech/issues/${issue.number}`}
+        >{`#${issue.number}`}</a>
       </Col>
     </Row>
   );
@@ -136,7 +136,7 @@ function InfoRow(props) {
 
 export default function IndexIssueDetails({
   issue_number,
-  issues,
+  issue,
   indexType,
   error,
   isLoaded,
@@ -147,16 +147,7 @@ export default function IndexIssueDetails({
     return <p>{error}</p>;
   } else if (!isLoaded && !error) {
     return <SpinnerWrapper />;
-  } else if (issues.length === 0) {
-    // this would suggest we failed to fetch issues. e.g. Socrata is down
-    return (
-      <Alert variant="danger">
-        We're unable to load project data at this time.
-      </Alert>
-    );
   }
-
-  const issue = issues.filter((issue) => issue.number === issue_number)[0];
 
   if (!issue) {
     // this would suggest the user provided an invalid issue ID in the URL
@@ -175,7 +166,7 @@ export default function IndexIssueDetails({
       </h4>
       <h1 className="text-primary">{issue.title}</h1>
       <InfoRow indexType={indexType} issue={issue} />
-      <IssueTabs indexType={indexType} issue={issue} issues={issue} />
+      <IssueTabs indexType={indexType} issue={issue} />
     </>
   );
 }
