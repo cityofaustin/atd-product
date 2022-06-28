@@ -42,7 +42,7 @@ export default function IndexIsssueListItem({ type, issue }) {
           )}
           <Row>
             <Col className="text-muted">
-              <ReactMarkdown escapeHtml={false} children={description} />
+              <ReactMarkdown skipHtml children={description} />
             </Col>
           </Row>
         </Card.Body>
