@@ -6,13 +6,12 @@ import EvaluationsContext from "../../../contexts/EvaluationsContext";
 import ProjectScoreChart from "../ProjectScoreChart";
 import ProjectEvaluationTable from "./ProjectEvaluationTable";
 
-export default function ProjectEvaluation(props) {
+export default function ProjectEvaluation({ project }) {
   const context = React.useContext(EvaluationsContext);
   const scores = context.scores;
   const [projectScore, setProjectScore] = React.useState(null);
   const isLoaded = context.isLoaded;
   const error = context.error;
-  const project = props.project;
 
   React.useEffect(() => {
     if (project) {
@@ -25,7 +24,7 @@ export default function ProjectEvaluation(props) {
           : null;
       setProjectScore(thisProjectScore);
     }
-  }, [props.issues, scores, project]);
+  }, [scores, project]);
 
   if (error) {
     return <p>{error}</p>;
