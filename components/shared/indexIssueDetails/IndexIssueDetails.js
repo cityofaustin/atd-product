@@ -14,12 +14,10 @@ import ProjectEvaluation from "./ProjectEvaluation";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 import Issues from "./Issues";
 
-const markdownRenderers = {
-  //This custom renderer changes how images are rendered
-  //we use it to constrain the max width of an image to its container
-  image: ({ alt, src, title }) => (
-    <Image className="img-fluid" alt={alt} src={src} title={title} />
-  ),
+const markdownComponents = {
+  // This custom renderer changes how images are rendered
+  // we use it to constrain the max width of an image to its container
+  img: ({ node, ...props }) => <Image className="img-fluid" {...props} />,
 };
 
 function Description(props) {
@@ -27,8 +25,8 @@ function Description(props) {
     <Row className="mt-2">
       <Col>
         <ReactMarkdown
-          escapeHtml={false}
-          renderers={markdownRenderers}
+          skipHtml
+          components={markdownComponents}
           children={props.issue.body}
         />
       </Col>

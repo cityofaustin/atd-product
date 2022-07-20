@@ -19,12 +19,6 @@ function parseBody(body) {
   return [description, img];
 }
 
-const markdownRenderers = {
-  link: ({ children }) => {
-    return children[0].props.value;
-  },
-};
-
 export default function IndexIsssueListItem({ type, issue }) {
   const [description, img] = parseBody(issue.body);
   return (
@@ -48,11 +42,7 @@ export default function IndexIsssueListItem({ type, issue }) {
           )}
           <Row>
             <Col className="text-muted">
-              <ReactMarkdown
-                renderers={markdownRenderers}
-                escapeHtml={false}
-                children={description}
-              />
+              <ReactMarkdown skipHtml children={description} />
             </Col>
           </Row>
         </Card.Body>
