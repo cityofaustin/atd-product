@@ -28,7 +28,7 @@ const TEAM_MEMBERS = [
     name: "Tracy Linder",
     title: "Product Manager",
     pronouns: "She/Her",
-    src: "assets/headshots/tracy_linder.jpeg",
+    src: "assets/headshots/tracy_linder.jpg",
   },
   {
     name: "Alan De Anda",
@@ -125,6 +125,12 @@ const TEAM_MEMBERS = [
     title: "Software Engineering Fellow",
     pronouns: "She/They",
     src: "assets/headshots/rose_eichelmann.jpg",
+  },
+  {
+    name: "Kate Lunceford",
+    title: "Business Process Consultant",
+    pronouns: "She/Her",
+    src: "assets/headshots/kate_lunceford.jpg",
   },
 ];
 
