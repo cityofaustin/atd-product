@@ -28,7 +28,7 @@ const TEAM_MEMBERS = [
     name: "Tracy Linder",
     title: "Product Manager",
     pronouns: "She/Her",
-    src: "assets/headshots/tracy_linder.jpeg",
+    src: "assets/headshots/tracy_linder.jpg",
   },
   {
     name: "Alan De Anda",
@@ -126,6 +126,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/They",
     src: "assets/headshots/rose_eichelmann.jpg",
   },
+  {
+    name: "Kate Lunceford",
+    title: "Business Process Consultant",
+    pronouns: "She/Her",
+    src: "assets/headshots/kate_lunceford.jpg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
@@ -137,19 +143,19 @@ const TEAM_MEMBER_ALUMNI = [
   },
   {
     name: "Janet Chu",
-    title: "Design Researcher",
+    title: "Design Research Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/janet_chu.jpg",
   },
   {
     name: "Annie Phan",
-    title: "Data Science Intern",
+    title: "Data Science Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/annie_phan.jpeg",
   },
   {
     name: "Jorge Gabitto",
-    title: "Software Developer Intern",
+    title: "Software Developer Fellow",
     pronouns: "",
     src: "assets/headshots/jorge_gabitto.jpg",
   },
