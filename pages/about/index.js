@@ -143,19 +143,19 @@ const TEAM_MEMBER_ALUMNI = [
   },
   {
     name: "Janet Chu",
-    title: "Design Researcher",
+    title: "Design Research Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/janet_chu.jpg",
   },
   {
     name: "Annie Phan",
-    title: "Data Science Intern",
+    title: "Data Science Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/annie_phan.jpeg",
   },
   {
     name: "Jorge Gabitto",
-    title: "Software Developer Intern",
+    title: "Software Developer Fellow",
     pronouns: "",
     src: "assets/headshots/jorge_gabitto.jpg",
   },
