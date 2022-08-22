@@ -115,12 +115,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/mike_dilley.jpeg",
   },
   {
-    name: "Rebecca Brand",
-    title: "UX/UI Design Fellow",
-    pronouns: "She/Her",
-    src: "assets/headshots/rebecca_brand.jpg",
-  },
-  {
     name: "Rose Eichelmann",
     title: "Software Engineering Fellow",
     pronouns: "She/They",
@@ -182,6 +176,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Head of Technology",
     pronouns: "He/Him",
     src: "assets/headshots/john_clary.jpg",
+  },
+  {
+    name: "Rebecca Brand",
+    title: "UX/UI Design Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/rebecca_brand.jpg",
   },
 ];
 
