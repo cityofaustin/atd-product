@@ -20,7 +20,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Diana Martin",
-    title: "Lead Applications Architect",
+    title: "Head of Solutions",
     pronouns: "She/Her",
     src: "assets/headshots/diana_martin.jpg",
   },
@@ -35,12 +35,6 @@ const TEAM_MEMBERS = [
     title: "Senior Geospatial Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/alan_de_anda.jpeg",
-  },
-  {
-    name: "Mateo Clarke",
-    title: "Head of Software Engineering",
-    pronouns: "He/Him",
-    src: "assets/headshots/mateo_clarke.jpeg",
   },
   {
     name: "Amenity Applewhite",
@@ -74,13 +68,13 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Andrew Shensky",
-    title: "Senior Geospatial Analyst",
+    title: "Head of Geospatial Analysis",
     pronouns: "He/Him",
     src: "assets/headshots/andrew_shensky.png",
   },
   {
     name: "Chia Berry",
-    title: "Software Developer",
+    title: "Head of Software Engineering",
     pronouns: "She/Her",
     src: "assets/headshots/chia_berry.png",
   },
@@ -116,7 +110,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Rose Eichelmann",
-    title: "Software Engineering Fellow",
+    title: "Junior Software Developer",
     pronouns: "She/They",
     src: "assets/headshots/rose_eichelmann.jpg",
   },
@@ -183,6 +177,12 @@ const TEAM_MEMBER_ALUMNI = [
     pronouns: "She/Her",
     src: "assets/headshots/rebecca_brand.jpg",
   },
+  {
+    name: "Mateo Clarke",
+    title: "Head of Software Engineering",
+    pronouns: "He/Him",
+    src: "assets/headshots/mateo_clarke.jpeg",
+  },
 ];
 
 function TeamMember(props) {
@@ -239,7 +239,9 @@ export default function AboutView(props) {
       </Row>
       <Row className="text-primary mt-5 mb-4">
         <Col>
-          <h2>How we work</h2>
+          <a alt="anchor tag for Our team" href="#work">
+            <h2>How we work</h2>
+          </a>
         </Col>
       </Row>
       <Row className="text-primary">
@@ -273,7 +275,9 @@ export default function AboutView(props) {
       </Row>
       <Row className="text-primary mt-5 mb-4">
         <Col>
-          <h2>Our team</h2>
+          <a alt="anchor tag for Our team" href="#team">
+            <h2 id="team">Our team</h2>
+          </a>
         </Col>
       </Row>
       <Row>
@@ -283,7 +287,9 @@ export default function AboutView(props) {
       </Row>
       <Row className="text-primary mt-5 mb-4">
         <Col>
-          <h2>Team alumni</h2>
+          <a alt="anchor tag for Our team" href="#alumni">
+            <h2 id="alumni">Team alumni</h2>
+          </a>
         </Col>
       </Row>
       <Row>
