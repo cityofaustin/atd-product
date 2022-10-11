@@ -65,6 +65,10 @@ $theme-colors: (
   border: none !important;
 }
 
+.footer {
+  background-color: #162b4c;
+}
+
 @media only screen and (min-width: 768px) {
   .navbar-menu-borders {
     border-style: none none none solid;
