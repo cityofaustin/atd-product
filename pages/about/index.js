@@ -183,7 +183,7 @@ function TeamMember(props) {
   const { src, name, title, pronouns } = props;
   return (
     <Col xs={4} className="my-2 text-center text-primary">
-      <Image width={125} roundedCircle src={src} />
+      <Image width={125} roundedCircle src={src} alt="headshot image" />
       <h6 className="mt-2 mb-0">{name}</h6>
       <p className="text-muted  mb-0">{title}</p>
       {props.pronouns && <p className="text-muted ">{pronouns}</p>}
