@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -31,11 +31,11 @@ function Comment({ comment }) {
 }
 
 export default function Comments({ issueNumber }) {
-  const [data, setData] = React.useState(null);
-  const [error, setError] = React.useState(null);
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const url = `https://api.github.com/repos/cityofaustin/atd-data-tech/issues/${issueNumber}/comments?per_page=100`;
 
     fetch(url)

@@ -1,7 +1,6 @@
-import React from "react";
+import { useContext } from "react";
 import Row from "react-bootstrap/Col";
 import Col from "react-bootstrap/Col";
-
 import Page from "../../components/shared/Page";
 import IssuesContext from "../../contexts/IssuesContext";
 import ProductsList from "../../components/productsView/ProductsList";
@@ -19,9 +18,8 @@ function FrontMatter() {
   );
 }
 
-export default function ProductsView(props) {
-  const context = React.useContext(IssuesContext);
-  const { issues, productIssues, isLoaded, error } = context;
+export default function ProductsView() {
+  const { issues, productIssues, isLoaded, error } = useContext(IssuesContext);
 
   return (
     <Page nav title="What we deliver">

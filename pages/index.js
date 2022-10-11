@@ -1,10 +1,9 @@
-import React from "react";
+import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { FaGlobe, FaUsersCog, FaBusinessTime } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
-
 import IssuesContext from "../contexts/IssuesContext";
 import Page from "../components/shared/Page";
 import IndexIsssueListItem from "../components/shared/IndexIssueListItem";
@@ -28,8 +27,7 @@ function ServiceItem(props) {
 }
 
 export default function HomeView(props) {
-  const context = React.useContext(IssuesContext);
-  const projects = context.projectIssues;
+  const { projectIssues: projects } = useContext(IssuesContext);
 
   return (
     <>

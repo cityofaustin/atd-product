@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
 import Alert from "react-bootstrap/Alert";
@@ -50,7 +50,7 @@ function handleTabChange(
 function IssueTabs({ indexType, issue }) {
   const history = useRouter();
   const search = new URLSearchParams(useRouter().query);
-  const [activeTab, setActiveTab] = React.useState(
+  const [activeTab, setActiveTab] = useState(
     search.get("tab") || "description"
   );
 

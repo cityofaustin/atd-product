@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -63,7 +63,7 @@ export default function ProjectFilters(props) {
     workgroups,
   } = props;
 
-  React.useEffect(() => {
+  useEffect(() => {
     history.replace(
       `/projects/${formatSearchPath(currentFilters)}`,
       undefined,
