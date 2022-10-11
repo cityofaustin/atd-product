@@ -17,18 +17,18 @@ import Issues from "./Issues";
 const markdownComponents = {
   // This custom renderer changes how images are rendered
   // we use it to constrain the max width of an image to its container
-  img: ({ node, ...props }) => <Image className="img-fluid" {...props} />,
+  img: ({ node, ...props }) => (
+    <Image className="img-fluid" alt="image from github" {...props} />
+  ),
 };
 
 function Description(props) {
   return (
     <Row className="mt-2">
       <Col>
-        <ReactMarkdown
-          skipHtml
-          components={markdownComponents}
-          children={props.issue.body}
-        />
+        <ReactMarkdown skipHtml components={markdownComponents}>
+          {props.issue.body}
+        </ReactMarkdown>
       </Col>
     </Row>
   );

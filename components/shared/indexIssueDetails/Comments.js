@@ -22,7 +22,7 @@ function Comment({ comment }) {
         </Row>
         <Row>
           <Col>
-            <ReactMarkdown skipHtml children={comment.body} />
+            <ReactMarkdown skipHtml>{comment.body}</ReactMarkdown>
           </Col>
         </Row>
       </Card.Body>
@@ -56,7 +56,7 @@ export default function Comments({ issueNumber }) {
           setError(error.toString());
         }
       );
-  }, []);
+  }, [issueNumber]);
 
   if (error) {
     return <p>{error}</p>;
