@@ -54,7 +54,7 @@ function applyCurrentFilters(issues, currentFilters, filterDefs) {
 const useDisplayIssues = ({ currentFilters, projectIssues }) =>
   useMemo(() => {
     return applyCurrentFilters(projectIssues, currentFilters, FILTER_DEFS);
-  }, [currentFilters, projectIssues, FILTER_DEFS]);
+  }, [currentFilters, projectIssues]);
 
 const useDisplayScores = ({ displayIssues, scores }) =>
   useMemo(() => {
