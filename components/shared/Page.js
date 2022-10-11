@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -16,10 +16,16 @@ function Title(props) {
   );
 }
 
-export default function Page(props) {
-  const { children, fluid, footer, hideSeparator, nav, title } = props;
+export default function Page({
+  children,
+  fluid,
+  footer,
+  hideSeparator,
+  nav,
+  title,
+}) {
   let location = useRouter();
-  const [currentPageRoute] = React.useState(location.pathname);
+  const [currentPageRoute] = useState(location.pathname);
   return (
     <>
       {nav && (

@@ -26,7 +26,7 @@ function ServiceItem(props) {
   );
 }
 
-export default function HomeView(props) {
+export default function HomeView() {
   const { projectIssues: projects } = useContext(IssuesContext);
 
   return (
