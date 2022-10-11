@@ -39,8 +39,8 @@ export default function HomeView() {
               <strong>Tech support for ATX mobility</strong>
             </h1>
             <p className="text-muted">
-              We build and buy technology to help city staff tackle Austin's
-              mobility challenges. We're obsessed with efficiencies, open data,
+              We build and buy technology to help city staff tackle Austin&apos;s
+              mobility challenges. We&apos;re obsessed with efficiencies, open data,
               and delivering human-centered tech to government services.
             </p>
           </Col>
@@ -57,7 +57,7 @@ export default function HomeView() {
           <Col md={2}></Col>
           <Col>
             <h2>
-              <strong>We're here to help</strong>
+              <strong>We&apos;re here to help</strong>
             </h2>
           </Col>
         </Row>
