@@ -7,7 +7,6 @@ import ReactMarkdown from "react-markdown";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 
 function Comment({ comment }) {
-  console.log("comment", comment);
   const createdAt = new Date(comment.created_at).toLocaleDateString();
   return (
     <Card className="mt-2">
@@ -23,7 +22,10 @@ function Comment({ comment }) {
         </Row>
         <Row>
           <Col>
-            <ReactMarkdown source={comment.body} />
+            <ReactMarkdown
+              skipHtml
+              children={comment.body}
+            />
           </Col>
         </Row>
       </Card.Body>
