@@ -56,7 +56,6 @@ export default function Comments({ issueNumber }) {
           setError(error.toString());
         }
       );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   if (error) {
