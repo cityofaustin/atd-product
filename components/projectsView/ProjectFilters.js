@@ -52,24 +52,25 @@ function formatSearchPath(currentFilters) {
   return `?${searchKwargs}`;
 }
 
-export default function ProjectFilters(props) {
+export default function ProjectFilters({
+  currentFilters,
+  setCurrentFilters,
+  showChartView,
+  setShowChartView,
+  workgroups,
+}) {
   const isTabletOrMobile = useMediaQuery({ query: "(max-width: 996px)" });
-  const history = useRouter();
-  const {
-    currentFilters,
-    setCurrentFilters,
-    showChartView,
-    setShowChartView,
-    workgroups,
-  } = props;
+  const router = useRouter();
 
   useEffect(() => {
-    history.replace(
+    router.replace(
       `/projects/${formatSearchPath(currentFilters)}`,
       undefined,
       { shallow: true }
     );
-  }, [currentFilters, history.isReady]);
+    // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentFilters]);
 
   return (
     <Row className="text-center">
