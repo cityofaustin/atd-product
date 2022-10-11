@@ -11,7 +11,7 @@ function Comment({ comment }) {
   return (
     <Card className="mt-2">
       <Card.Header>
-        <b>{comment.user.login}</b>{" "}
+        <b>{comment.user.login}</b>
         <span className="text-muted">commented on {createdAt}</span>
       </Card.Header>
       <Card.Body className="py-1">
@@ -22,10 +22,7 @@ function Comment({ comment }) {
         </Row>
         <Row>
           <Col>
-            <ReactMarkdown
-              skipHtml
-              children={comment.body}
-            />
+            <ReactMarkdown skipHtml children={comment.body} />
           </Col>
         </Row>
       </Card.Body>
