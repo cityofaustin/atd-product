@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext, useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
@@ -7,13 +7,10 @@ import ProjectScoreChart from "../ProjectScoreChart";
 import ProjectEvaluationTable from "./ProjectEvaluationTable";
 
 export default function ProjectEvaluation({ project }) {
-  const context = React.useContext(EvaluationsContext);
-  const scores = context.scores;
-  const [projectScore, setProjectScore] = React.useState(null);
-  const isLoaded = context.isLoaded;
-  const error = context.error;
+  const { scores, isLoaded, error } = useContext(EvaluationsContext);
+  const [projectScore, setProjectScore] = useState(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (project) {
       const matchesThisProjectScores = scores.filter(
         (score) => score.number === parseInt(project.number)
