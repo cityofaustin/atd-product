@@ -16,14 +16,14 @@ const PAGES = [
   { label: "About us", route: "/about" },
 ];
 
-function IconSeparator(props) {
+function IconSeparator() {
   return (
     <Row>
       <Col className="flex-grow-1 pl-0">
         <hr className="w-100" />
       </Col>
       <Col xs="auto" className="pt-2 px-sm-0 mx-sm-0">
-        <img
+        <Image
           className="float-right"
           height={17}
           src="/assets/icos.jpg"
