@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -57,15 +57,15 @@ export default function ProjectsList(props) {
   const projectIssues = props.projectIssues;
   const error = props.error;
   const isLoaded = props.isLoaded;
-  const context = React.useContext(EvaluationsContext);
+  const { scores } = useContext(EvaluationsContext);
   const location = useRouter();
-  const [search] = React.useState(new URLSearchParams(location.query));
-  const [currentFilters, setCurrentFilters] = React.useState({});
-  const [displayIssues, setDisplayIssues] = React.useState([]);
-  const [displayScores, setDisplayScores] = React.useState([]);
-  const [showChartView, setShowChartView] = React.useState(false);
+  const [search] = useState(new URLSearchParams(location.query));
+  const [currentFilters, setCurrentFilters] = useState({});
+  const [displayIssues, setDisplayIssues] = useState([]);
+  const [displayScores, setDisplayScores] = useState([]);
+  const [showChartView, setShowChartView] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     /*
     check current url for filter params after issues are loaded. set them if present, 
     otherwise set default filter values
@@ -78,7 +78,7 @@ export default function ProjectsList(props) {
     setCurrentFilters(paramFilters);
   }, [issues, search]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const displayIssuesCurrent = applyCurrentFilters(
       projectIssues,
       currentFilters,
@@ -87,8 +87,8 @@ export default function ProjectsList(props) {
     setDisplayIssues(displayIssuesCurrent);
   }, [currentFilters, projectIssues]);
 
-  React.useEffect(() => {
-    const displayScoresCurrent = context.scores.filter((score) => {
+  useEffect(() => {
+    const displayScoresCurrent = scores.filter((score) => {
       const number = score.number;
       // exclude issues that do not have a score
       const matchesIssues = displayIssues.filter(
@@ -97,7 +97,7 @@ export default function ProjectsList(props) {
       return matchesIssues.length > 0;
     });
     setDisplayScores(displayScoresCurrent);
-  }, [displayIssues, context.scores]);
+  }, [displayIssues, scores]);
 
   if (error) {
     return <p>{error}</p>;
