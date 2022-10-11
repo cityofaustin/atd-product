@@ -6,12 +6,13 @@ import ReactMarkdown from "react-markdown";
 
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 
-function Comment(props) {
-  const createdAt = new Date(props.comment.created_at).toLocaleDateString();
+function Comment({ comment }) {
+  console.log("comment", comment);
+  const createdAt = new Date(comment.created_at).toLocaleDateString();
   return (
     <Card className="mt-2">
       <Card.Header>
-        <b>{props.comment.user.login}</b>{" "}
+        <b>{comment.user.login}</b>{" "}
         <span className="text-muted">commented on {createdAt}</span>
       </Card.Header>
       <Card.Body className="py-1">
@@ -22,7 +23,7 @@ function Comment(props) {
         </Row>
         <Row>
           <Col>
-            <ReactMarkdown source={props.comment.body} />
+            <ReactMarkdown source={comment.body} />
           </Col>
         </Row>
       </Card.Body>
@@ -30,13 +31,12 @@ function Comment(props) {
   );
 }
 
-export default function Comments(props) {
+export default function Comments({ issueNumber }) {
   const [data, setData] = React.useState(null);
   const [error, setError] = React.useState(null);
   const [isLoaded, setIsLoaded] = React.useState(false);
 
   React.useEffect(() => {
-    const issueNumber = props.issueNumber;
     const url = `https://api.github.com/repos/cityofaustin/atd-data-tech/issues/${issueNumber}/comments?per_page=100`;
 
     fetch(url)
