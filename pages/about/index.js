@@ -226,7 +226,7 @@ function ValueItem(props) {
 
 export default function AboutView(props) {
   return (
-    <Page footer nav title="About Us">
+    <Page nav title="About Us">
       <Row className="text-primary">
         <Col>
           <p>
