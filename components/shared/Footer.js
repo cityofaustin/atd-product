@@ -50,13 +50,13 @@ export default function Footer({ links }) {
                 alt="Generic placeholder"
               />
               <div
-                className="d-flex flex-column align-items-start text-white ms-3"
+                className="d-flex flex-column align-items-start text-white ml-3"
                 style={{ lineHeight: 1 }}
               >
-                <span className="fs-5 fw-bold py-1">
+                <span className="font-weight-bold py-1">
                   Data & Technology Services
                 </span>
-                <span className="fs-6 fw-light py-1">
+                <span className="font-weight-light py-1">
                   Austin Transportation
                 </span>
               </div>
@@ -64,7 +64,7 @@ export default function Footer({ links }) {
           </div>
         </Col>
 
-        <Col className="text-white fw-light">
+        <Col className="text-white font-weight-light">
           <Row className="align-self-center">
             {LINKS.map((link) => (
               <FooterLink key={link.href} {...link} />
