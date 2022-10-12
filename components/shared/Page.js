@@ -17,7 +17,7 @@ function Title(props) {
 }
 
 export default function Page(props) {
-  const { children, fluid, footer, hideSeparator, nav, title } = props;
+  const { children, fluid, hideSeparator, nav, title } = props;
   let location = useRouter();
   const [currentPageRoute] = React.useState(location.pathname);
   return (
@@ -32,7 +32,7 @@ export default function Page(props) {
         {title && <Title title={title} />}
         {children}
       </Container>
-      {footer && <Footer />}
+      <Footer />
     </>
   );
 }
