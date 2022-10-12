@@ -33,7 +33,7 @@ export default function HomeView(props) {
 
   return (
     <>
-      <Page fluid nav hideSeparator footer>
+      <Page fluid nav hideSeparator>
         <Row>
           <Col xs={1} md={2}></Col>
           <Col sm={12} md={9} lg={4} className="py-5 px-4 text-primary">
