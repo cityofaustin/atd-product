@@ -6,7 +6,7 @@ import { FaRegEnvelope } from "react-icons/fa";
 import IconLabel from "./IconLabel";
 
 export const LINKS = [
-  { label: "About", href: "https://austinmobility.io" },
+  { label: "About", href: "https://austinmobility.io/about" },
   { label: "Data", href: "https://data.austintexas.gov" },
   {
     label: "Disclaimer",
@@ -14,7 +14,7 @@ export const LINKS = [
   },
   {
     label: "Code",
-    href: "https://github.com/cityofaustin/atd-data-and-performance",
+    href: "https://github.com/cityofaustin/atd-product",
   },
   { label: "Privacy", href: "https://www.austintexas.gov/page/privacy-policy" },
   {
