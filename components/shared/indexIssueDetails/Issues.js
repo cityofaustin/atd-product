@@ -26,9 +26,8 @@ export default function Issues({ indexType, parent }) {
     `${ISSUES_ENDPOINT}?$limit=100000&$where=labels like '%${parentLabel}%' and number != ${parent.number}`
   );
 
-  // if there is no parent label configured in github, we pass `null` to SWR to prevent it from fetching
   const { error, isLoaded, data } = useSocrata({
-    url: parentLabel ? url : null,
+    url,
   });
 
   const issues = useMemo(() => {
