@@ -24,10 +24,6 @@ function Comment({ comment }) {
         <Row>
           <Col>
             <ReactMarkdown skipHtml>{comment.body}</ReactMarkdown>
-            <ReactMarkdown
-              components={markdownComponents}
-              children={props.comment.body}
-            />
           </Col>
         </Row>
       </Card.Body>

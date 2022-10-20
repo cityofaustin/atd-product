@@ -16,15 +16,7 @@ function Title(props) {
   );
 }
 
-
-export default function Page({
-  children,
-  fluid,
-  hideSeparator,
-  nav,
-  title,
-}) {
-export default function Page(props) {
+export default function Page({ children, fluid, hideSeparator, nav, title }) {
   let location = useRouter();
   const [currentPageRoute] = useState(location.pathname);
   return (
