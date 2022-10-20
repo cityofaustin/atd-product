@@ -22,9 +22,9 @@ export default function Issues({ indexType, parent }) {
   const parentLabel = getParentLabel(parent.labels, indexType);
 
   // query for issues that share the same parentLabel, excluding this issue
-  const url = encodeURI(
-    `${ISSUES_ENDPOINT}?$limit=100000&$where=labels like '%${parentLabel}%' and number != ${parent.number}`
-  );
+  const url = `${ISSUES_ENDPOINT}?$limit=100000&$where=labels like ${encodeURIComponent(
+    `'%${parentLabel}%'`
+  )} and number != ${parent.number}`;
 
   const { error, isLoaded, data } = useSocrata({
     url,
