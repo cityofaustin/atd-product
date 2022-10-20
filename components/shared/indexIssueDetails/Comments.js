@@ -7,6 +7,12 @@ import ReactMarkdown from "react-markdown";
 
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 
+const markdownComponents = {
+  // This custom renderer changes how images are rendered
+  // we use it to constrain the max width of an image to its container
+  img: ({ node, ...props }) => <Image className="img-fluid" {...props} />,
+};
+
 function Comment({ comment }) {
   const createdAt = new Date(comment.created_at).toLocaleDateString();
   return (
@@ -23,7 +29,9 @@ function Comment({ comment }) {
         </Row>
         <Row>
           <Col>
-            <ReactMarkdown skipHtml>{comment.body}</ReactMarkdown>
+            <ReactMarkdown skipHtml components={markdownComponents}>
+              {comment.body}
+            </ReactMarkdown>
           </Col>
         </Row>
       </Card.Body>
