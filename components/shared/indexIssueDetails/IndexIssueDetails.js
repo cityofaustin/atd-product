@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 import Alert from "react-bootstrap/Alert";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -26,7 +27,11 @@ function Description(props) {
   return (
     <Row className="mt-2">
       <Col>
-        <ReactMarkdown skipHtml components={markdownComponents}>
+        <ReactMarkdown
+          skipHtml
+          components={markdownComponents}
+          remarkPlugins={[remarkGfm]}
+        >
           {props.issue.body}
         </ReactMarkdown>
       </Col>
