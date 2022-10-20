@@ -1,10 +1,9 @@
-import React from "react";
+import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { FaGlobe, FaUsersCog, FaBusinessTime } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
-
 import IssuesContext from "../contexts/IssuesContext";
 import Page from "../components/shared/Page";
 import IndexIsssueListItem from "../components/shared/IndexIssueListItem";
@@ -27,9 +26,8 @@ function ServiceItem(props) {
   );
 }
 
-export default function HomeView(props) {
-  const context = React.useContext(IssuesContext);
-  const projects = context.projectIssues;
+export default function HomeView() {
+  const { projectIssues: projects } = useContext(IssuesContext);
 
   return (
     <>
@@ -41,8 +39,8 @@ export default function HomeView(props) {
               <strong>Tech support for ATX mobility</strong>
             </h1>
             <p className="text-muted">
-              We build and buy technology to help city staff tackle Austin's
-              mobility challenges. We're obsessed with efficiencies, open data,
+              We build and buy technology to help city staff tackle Austin&apos;s
+              mobility challenges. We&apos;re obsessed with efficiencies, open data,
               and delivering human-centered tech to government services.
             </p>
           </Col>
@@ -59,7 +57,7 @@ export default function HomeView(props) {
           <Col md={2}></Col>
           <Col>
             <h2>
-              <strong>We're here to help</strong>
+              <strong>We&apos;re here to help</strong>
             </h2>
           </Col>
         </Row>

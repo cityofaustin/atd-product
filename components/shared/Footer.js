@@ -63,7 +63,6 @@ export default function Footer({ links }) {
             </div>
           </div>
         </Col>
-
         <Col className="text-white font-weight-light">
           <Row className="align-self-center">
             {LINKS.map((link) => (

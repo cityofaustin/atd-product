@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext, useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -39,7 +39,6 @@ function applyCurrentFilters(issues, currentFilters, filterDefs) {
   const activeFilterDefs = filterDefs.filter(
     (filterDef) => currentFilters[filterDef.key]
   );
-
   return issues.filter((issue) => {
     // test each issue against all active filters
     return activeFilterDefs.every((filterDef) => {
@@ -52,20 +51,35 @@ function applyCurrentFilters(issues, currentFilters, filterDefs) {
   });
 }
 
+const useDisplayIssues = ({ currentFilters, projectIssues }) =>
+  useMemo(() => {
+    return applyCurrentFilters(projectIssues, currentFilters, FILTER_DEFS);
+  }, [currentFilters, projectIssues]);
+
+const useDisplayScores = ({ displayIssues, scores }) =>
+  useMemo(() => {
+    return scores.filter((score) => {
+      const number = score.number;
+      // exclude issues that do not have a score
+      const matchesIssues = displayIssues.filter(
+        (issue) => parseInt(issue.number) === number
+      );
+      return matchesIssues.length > 0;
+    });
+  }, [displayIssues, scores]);
+
 export default function ProjectsList(props) {
   const issues = props.issues;
   const projectIssues = props.projectIssues;
   const error = props.error;
   const isLoaded = props.isLoaded;
-  const context = React.useContext(EvaluationsContext);
+  const { scores } = useContext(EvaluationsContext);
   const location = useRouter();
-  const [search] = React.useState(new URLSearchParams(location.query));
-  const [currentFilters, setCurrentFilters] = React.useState({});
-  const [displayIssues, setDisplayIssues] = React.useState([]);
-  const [displayScores, setDisplayScores] = React.useState([]);
-  const [showChartView, setShowChartView] = React.useState(false);
+  const [search] = useState(new URLSearchParams(location.query));
+  const [currentFilters, setCurrentFilters] = useState({});
+  const [showChartView, setShowChartView] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     /*
     check current url for filter params after issues are loaded. set them if present, 
     otherwise set default filter values
@@ -78,26 +92,9 @@ export default function ProjectsList(props) {
     setCurrentFilters(paramFilters);
   }, [issues, search]);
 
-  React.useEffect(() => {
-    const displayIssuesCurrent = applyCurrentFilters(
-      projectIssues,
-      currentFilters,
-      FILTER_DEFS
-    );
-    setDisplayIssues(displayIssuesCurrent);
-  }, [currentFilters, projectIssues]);
+  const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
 
-  React.useEffect(() => {
-    const displayScoresCurrent = context.scores.filter((score) => {
-      const number = score.number;
-      // exclude issues that do not have a score
-      const matchesIssues = displayIssues.filter(
-        (issue) => parseInt(issue.number) === number
-      );
-      return matchesIssues.length > 0;
-    });
-    setDisplayScores(displayScoresCurrent);
-  }, [displayIssues, context.scores]);
+  const displayScores = useDisplayScores({ displayIssues, scores });
 
   if (error) {
     return <p>{error}</p>;

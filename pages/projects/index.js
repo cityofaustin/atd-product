@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import IssuesContext from "../../contexts/IssuesContext";
@@ -43,10 +43,10 @@ function FrontMatter() {
   );
 }
 
-export default function ProjectsView(props) {
-  const context = React.useContext(IssuesContext);
-  const { issues, isLoaded, error } = context;
-
+export default function ProjectsView() {
+  // todo: why not useContext inside of <ProjectList> ?
+  const { issues, isLoaded, error, projectIssues, statuses, workgroups } =
+    useContext(IssuesContext);
   return (
     <Page nav title="Our work">
       <Row key="front-matter" className="mb-2">
@@ -56,9 +56,9 @@ export default function ProjectsView(props) {
         issues={issues}
         isLoaded={isLoaded}
         error={error}
-        projectIssues={context.projectIssues}
-        statuses={context.statuses}
-        workgroups={context.workgroups}
+        projectIssues={projectIssues}
+        statuses={statuses}
+        workgroups={workgroups}
       />
     </Page>
   );

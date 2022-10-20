@@ -1,4 +1,4 @@
-import React from "react";
+import { useContext, useEffect, useState } from "react";
 import EvaluationsContext from "../../contexts/EvaluationsContext";
 import IssuesContext from "../../contexts/IssuesContext";
 
@@ -31,15 +31,14 @@ function handleScores(scores) {
 }
 
 export function EvaluationsContextWrapper(props) {
-  const context = React.useContext(IssuesContext);
-  const issues = context.issues;
-  const [data, setData] = React.useState([]);
-  const [scores, setScores] = React.useState([]);
-  const [error, setError] = React.useState(null);
-  const [isLoaded, setIsLoaded] = React.useState(false);
+  const { issues } = useContext(IssuesContext);
+  const [data, setData] = useState([]);
+  const [scores, setScores] = useState([]);
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
   const { url, appId, children } = props;
 
-  React.useEffect(() => {
+  useEffect(() => {
     fetch(url, { headers: getKnackHeaders(appId) })
       .then((res) => res.json())
       .then(
@@ -54,7 +53,7 @@ export function EvaluationsContextWrapper(props) {
       );
   }, [url, appId]);
 
-  React.useEffect(() => {
+  useEffect(() => {
     const allScores = handleScores(data);
     const scoresWithIssues = allScores.filter((score) => {
       const number = score.number;

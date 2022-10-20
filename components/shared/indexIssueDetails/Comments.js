@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
@@ -10,15 +10,17 @@ import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 const markdownComponents = {
   // This custom renderer changes how images are rendered
   // we use it to constrain the max width of an image to its container
-  img: ({ node, ...props }) => <Image className="img-fluid" {...props} />,
+  img: ({ node, ...props }) => (
+    <Image className="img-fluid" alt="image from github" {...props} />
+  ),
 };
 
-function Comment(props) {
-  const createdAt = new Date(props.comment.created_at).toLocaleDateString();
+function Comment({ comment }) {
+  const createdAt = new Date(comment.created_at).toLocaleDateString();
   return (
     <Card className="mt-2">
       <Card.Header>
-        <b>{props.comment.user.login}</b>{" "}
+        <b>{comment.user.login}</b>
         <span className="text-muted">commented on {createdAt}</span>
       </Card.Header>
       <Card.Body className="py-1">
@@ -29,10 +31,9 @@ function Comment(props) {
         </Row>
         <Row>
           <Col>
-            <ReactMarkdown
-              components={markdownComponents}
-              children={props.comment.body}
-            />
+            <ReactMarkdown skipHtml components={markdownComponents}>
+              {comment.body}
+            </ReactMarkdown>
           </Col>
         </Row>
       </Card.Body>
@@ -40,13 +41,12 @@ function Comment(props) {
   );
 }
 
-export default function Comments(props) {
-  const [data, setData] = React.useState(null);
-  const [error, setError] = React.useState(null);
-  const [isLoaded, setIsLoaded] = React.useState(false);
+export default function Comments({ issueNumber }) {
+  const [data, setData] = useState(null);
+  const [error, setError] = useState(null);
+  const [isLoaded, setIsLoaded] = useState(false);
 
-  React.useEffect(() => {
-    const issueNumber = props.issueNumber;
+  useEffect(() => {
     const url = `https://api.github.com/repos/cityofaustin/atd-data-tech/issues/${issueNumber}/comments?per_page=100`;
 
     fetch(url)
@@ -67,8 +67,7 @@ export default function Comments(props) {
           setError(error.toString());
         }
       );
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [issueNumber]);
 
   if (error) {
     return <p>{error}</p>;
