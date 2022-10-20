@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
+import Image from "react-bootstrap/Image";
 import ReactMarkdown from "react-markdown";
 
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
@@ -23,6 +24,10 @@ function Comment({ comment }) {
         <Row>
           <Col>
             <ReactMarkdown skipHtml>{comment.body}</ReactMarkdown>
+            <ReactMarkdown
+              components={markdownComponents}
+              children={props.comment.body}
+            />
           </Col>
         </Row>
       </Card.Body>

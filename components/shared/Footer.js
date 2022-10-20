@@ -1,21 +1,75 @@
-import React from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
+import { FaRegEnvelope } from "react-icons/fa";
+import IconLabel from "./IconLabel";
 
-export default function Footer(props) {
+export const LINKS = [
+  { label: "About", href: "https://austinmobility.io/about" },
+  { label: "Data", href: "https://data.austintexas.gov" },
+  {
+    label: "Disclaimer",
+    href: "https://www.austintexas.gov/page/city-austin-open-data-terms-use",
+  },
+  {
+    label: "Code",
+    href: "https://github.com/cityofaustin/atd-product",
+  },
+  { label: "Privacy", href: "https://www.austintexas.gov/page/privacy-policy" },
+  {
+    label: "Contact",
+    href: "mailto:transportation.data@austintexas.gov",
+    icon: FaRegEnvelope,
+  },
+];
+
+const FooterLink = ({ label, href, icon }) => (
+  <Col xs={6} md={4} className="py-1">
+    <a
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="text-reset text-decoration-none footer-link"
+    >
+      {icon ? <IconLabel Icon={icon} label={label} /> : label}
+    </a>
+  </Col>
+);
+
+export default function Footer({ links }) {
   return (
-    <Container fluid>
-      <Row className="mt-5 py-4 bg-primary text-white">
-        <Col md={2}></Col>
-        <Col xs={1}>
-          <Image src="assets/coa_seal_transparent_white.png" alt="City of Austin seal" fluid />
+    <Container fluid className="footer mt-5 p-5">
+      <Row className="align-items-center">
+        <Col xs={12} md={6} lg={8}>
+          <div className="d-flex flex-nowrap">
+            <div className="d-flex align-items-center">
+              <Image
+                height={80}
+                src="/assets/coa_seal_full_white.svg"
+                alt="Generic placeholder"
+              />
+              <div
+                className="d-flex flex-column align-items-start text-white ml-3"
+                style={{ lineHeight: 1 }}
+              >
+                <span className="font-weight-bold py-1">
+                  Data & Technology Services
+                </span>
+                <span className="font-weight-light py-1">
+                  Austin Transportation
+                </span>
+              </div>
+            </div>
+          </div>
         </Col>
-        <Col xs="auto d-flex align-items-center">
-          <h5>City of Austin Transportation Department</h5>
+        <Col className="text-white font-weight-light">
+          <Row className="align-self-center">
+            {LINKS.map((link) => (
+              <FooterLink key={link.href} {...link} />
+            ))}
+          </Row>
         </Col>
-        <Col md={2}></Col>
       </Row>
     </Container>
   );

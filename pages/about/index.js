@@ -20,7 +20,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Diana Martin",
-    title: "Lead Applications Architect",
+    title: "Head of Solutions",
     pronouns: "She/Her",
     src: "assets/headshots/diana_martin.jpg",
   },
@@ -28,19 +28,13 @@ const TEAM_MEMBERS = [
     name: "Tracy Linder",
     title: "Product Manager",
     pronouns: "She/Her",
-    src: "assets/headshots/tracy_linder.jpeg",
+    src: "assets/headshots/tracy_linder.jpg",
   },
   {
     name: "Alan De Anda",
     title: "Senior Geospatial Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/alan_de_anda.jpeg",
-  },
-  {
-    name: "Mateo Clarke",
-    title: "Head of Software Engineering",
-    pronouns: "He/Him",
-    src: "assets/headshots/mateo_clarke.jpeg",
   },
   {
     name: "Amenity Applewhite",
@@ -74,13 +68,13 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Andrew Shensky",
-    title: "Senior Geospatial Analyst",
+    title: "Head of Geospatial Analysis",
     pronouns: "He/Him",
     src: "assets/headshots/andrew_shensky.png",
   },
   {
     name: "Chia Berry",
-    title: "Software Developer",
+    title: "Head of Software Engineering",
     pronouns: "She/Her",
     src: "assets/headshots/chia_berry.png",
   },
@@ -115,16 +109,16 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/mike_dilley.jpeg",
   },
   {
-    name: "Rebecca Brand",
-    title: "UX/UI Design Fellow",
-    pronouns: "She/Her",
-    src: "assets/headshots/rebecca_brand.jpg",
-  },
-  {
     name: "Rose Eichelmann",
-    title: "Software Engineering Fellow",
+    title: "Junior Software Developer",
     pronouns: "She/They",
     src: "assets/headshots/rose_eichelmann.jpg",
+  },
+  {
+    name: "Kate Lunceford",
+    title: "Business Process Consultant",
+    pronouns: "She/Her",
+    src: "assets/headshots/kate_lunceford.jpg",
   },
 ];
 
@@ -137,19 +131,19 @@ const TEAM_MEMBER_ALUMNI = [
   },
   {
     name: "Janet Chu",
-    title: "Design Researcher",
+    title: "Design Research Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/janet_chu.jpg",
   },
   {
     name: "Annie Phan",
-    title: "Data Science Intern",
+    title: "Data Science Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/annie_phan.jpeg",
   },
   {
     name: "Jorge Gabitto",
-    title: "Software Developer Intern",
+    title: "Software Developer Fellow",
     pronouns: "",
     src: "assets/headshots/jorge_gabitto.jpg",
   },
@@ -176,6 +170,18 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Head of Technology",
     pronouns: "He/Him",
     src: "assets/headshots/john_clary.jpg",
+  },
+  {
+    name: "Rebecca Brand",
+    title: "UX/UI Design Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/rebecca_brand.jpg",
+  },
+  {
+    name: "Mateo Clarke",
+    title: "Head of Software Engineering",
+    pronouns: "He/Him",
+    src: "assets/headshots/mateo_clarke.jpeg",
   },
 ];
 
@@ -220,7 +226,7 @@ function ValueItem(props) {
 
 export default function AboutView(props) {
   return (
-    <Page footer nav title="About Us">
+    <Page nav title="About Us">
       <Row className="text-primary">
         <Col>
           <p>
@@ -233,7 +239,9 @@ export default function AboutView(props) {
       </Row>
       <Row className="text-primary mt-5 mb-4">
         <Col>
-          <h2>How we work</h2>
+          <a alt="anchor tag for Our team" href="#work">
+            <h2>How we work</h2>
+          </a>
         </Col>
       </Row>
       <Row className="text-primary">
@@ -267,7 +275,9 @@ export default function AboutView(props) {
       </Row>
       <Row className="text-primary mt-5 mb-4">
         <Col>
-          <h2>Our team</h2>
+          <a alt="anchor tag for Our team" href="#team">
+            <h2 id="team">Our team</h2>
+          </a>
         </Col>
       </Row>
       <Row>
@@ -277,7 +287,9 @@ export default function AboutView(props) {
       </Row>
       <Row className="text-primary mt-5 mb-4">
         <Col>
-          <h2>Team alumni</h2>
+          <a alt="anchor tag for Our team" href="#alumni">
+            <h2 id="alumni">Team alumni</h2>
+          </a>
         </Col>
       </Row>
       <Row>
