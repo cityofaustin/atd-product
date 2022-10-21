@@ -63,11 +63,9 @@ export default function ProjectFilters({
   const router = useRouter();
 
   useEffect(() => {
-    router.replace(
-      `/projects/${formatSearchPath(currentFilters)}`,
-      undefined,
-      { shallow: true }
-    );
+    router.replace(`/projects/${formatSearchPath(currentFilters)}`, undefined, {
+      shallow: true,
+    });
     // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentFilters]);
