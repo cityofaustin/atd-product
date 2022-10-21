@@ -19,18 +19,18 @@ const PAGES = [
 function IconSeparator() {
   return (
     <Row>
-      <Col className="flex-grow-1 pl-0">
+      <Col className="flex-grow-1 ps-0">
         <hr className="w-100" />
       </Col>
       <Col xs="auto" className="pt-2 px-sm-0 mx-sm-0">
         <Image
-          className="float-right"
+          className="float-end"
           height={17}
           src="/assets/icos.jpg"
           alt="Generic placeholder"
         />
       </Col>
-      <Col sm={1} className="d-none d-sm-block pr-0">
+      <Col sm={1} className="d-none d-sm-block pe-0">
         <hr className="w-100" />
       </Col>
     </Row>
@@ -42,9 +42,9 @@ export default function NavComponent(props) {
 
   return (
     <Container key="nav-container" className="px-0" fluid>
-      <Navbar expand="md" className="py-1">
+      <Navbar expand="md" className="py-1 ps-3">
         <div className="d-flex flex-nowrap">
-          <Navbar.Brand href="/" className="pl-0" key="logo-img">
+          <Navbar.Brand href="/" className="ps-0" key="logo-img">
             <Image
               width={400}
               className="d-none d-md-inline"
@@ -64,10 +64,10 @@ export default function NavComponent(props) {
           />
         </div>
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto">
+          <Nav className="ms-auto">
             {PAGES.map((page, idx) => {
               const fontWeightClass =
-                currentPageRoute === page.route ? "font-weight-bold" : "";
+                currentPageRoute === page.route ? "fw-bold" : "";
               const borderClass = idx === 0 ? "" : "navbar-menu-borders";
 
               return (
@@ -93,7 +93,7 @@ export default function NavComponent(props) {
             </a>
             <a
               href="https://atd.knack.com/dts#new-service-request"
-              className="text-white text-center d-none d-md-inline mr-0 pl-3 my-auto"
+              className="text-white text-center d-none d-md-inline me-3 ps-3 my-auto"
             >
               <Button size="sm">Get help</Button>
             </a>
