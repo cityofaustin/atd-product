@@ -13,7 +13,7 @@ function ServiceItem(props) {
   return (
     <Col md={3} className="pb-4">
       <Row>
-        <Col xs="auto" className="pr-0">
+        <Col xs="auto" className="pe-0">
           <span style={{ color: "#00bfa5" }}>
             <h1>{icon}</h1>
           </span>
