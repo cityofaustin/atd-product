@@ -121,7 +121,7 @@ export default function ProjectsList(props) {
       </Row>
       {!showChartView && (
         <Row>
-          <Col className="text-right text-muted">
+          <Col className="text-end text-muted">
             <small>Showing {displayIssues.length} projects</small>
           </Col>
         </Row>
