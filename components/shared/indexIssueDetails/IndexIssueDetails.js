@@ -133,6 +133,7 @@ function InfoRow({ issue }) {
         <h6 className="mb-0 mt-2 text-muted">Issue</h6>
         <a
           href={`https://github.com/cityofaustin/atd-data-tech/issues/${issue.number}`}
+          className="text-primary text-decoration-none"
         >{`#${issue.number}`}</a>
       </Col>
     </Row>
