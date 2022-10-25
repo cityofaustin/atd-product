@@ -55,7 +55,7 @@ export default function HomeView() {
           </Col>
         </Row>
         <Row
-          className="py-3 text-primary bg-light"
+          className="py-3 text-primary"
           style={{
             backgroundColor: "#f8f9fa",
           }}
