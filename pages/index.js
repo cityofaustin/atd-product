@@ -54,7 +54,12 @@ export default function HomeView() {
             />
           </Col>
         </Row>
-        <Row className="py-3 text-primary bg-light">
+        <Row
+          className="py-3 text-primary bg-light"
+          style={{
+            backgroundColor: "#f8f9fa",
+          }}
+        >
           <Col md={2}></Col>
           <Col>
             <h2>
@@ -62,7 +67,12 @@ export default function HomeView() {
             </h2>
           </Col>
         </Row>
-        <Row className="text-primary bg-light">
+        <Row
+          className="text-primary"
+          style={{
+            backgroundColor: "#f8f9fa",
+          }}
+        >
           <Col md={2}></Col>
           <ServiceItem
             content="Modernize software development processes while introducing good agile and human-centered design practices"
@@ -75,7 +85,12 @@ export default function HomeView() {
           />
           <Col md={2}></Col>
         </Row>
-        <Row className="pb-4 text-primary bg-light">
+        <Row
+          className="pb-4 text-primary"
+          style={{
+            backgroundColor: "#f8f9fa",
+          }}
+        >
           <Col md={2}></Col>
           <ServiceItem
             content="Improve public-facing services like websites or applications"
