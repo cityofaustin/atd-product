@@ -1,7 +1,5 @@
 import { useContext } from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
+import { Row, Col, Card, Image } from "react-bootstrap";
 import { FaGlobe, FaUsersCog, FaBusinessTime } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
 import IssuesContext from "../contexts/IssuesContext";
@@ -33,26 +31,22 @@ export default function HomeView() {
     <>
       <Page fluid nav hideSeparator>
         <Row>
-          <Col xs={1} md={2}></Col>
-          <Col sm={12} md={9} lg={4} className="py-5 px-4 text-primary">
-            <h1 className="homepage-header">
-              <strong>Tech support for ATX mobility</strong>
-            </h1>
-            <p className="text-muted">
-              We build and buy technology to help city staff tackle
-              Austin&apos;s mobility challenges. We&apos;re obsessed with
-              efficiencies, open data, and delivering human-centered tech to
-              government services.
-            </p>
-          </Col>
-          <Col lg={4} className="my-auto d-none d-lg-block">
-            {/* hidden on xs and sm */}
-            <Image
-              fluid
-              src="/assets/sports.jpg"
-              alt="Illustration of a green bicycle"
-            />
-          </Col>
+          <Card className="p-0">
+            <Card.Img src="/assets/skyline.png" alt="Card Image" />
+            <Card.ImgOverlay>
+              <Card.Body>
+                <Card.Title className="pt-5 text-center text-white fw-bold">
+                  <h1 className="fw-bold">Tech Support for ATX Mobility</h1>
+                </Card.Title>
+                <Card.Text className="text-center text-white">
+                  <h3>
+                    We build and buy technology to help city staff <br></br>
+                    tackle Austin&apos;s mobility challenges.
+                  </h3>
+                </Card.Text>
+              </Card.Body>
+            </Card.ImgOverlay>
+          </Card>
         </Row>
         <Row
           className="py-3 text-primary"
