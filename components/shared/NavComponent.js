@@ -11,9 +11,9 @@ import {
 } from "react-bootstrap";
 
 const PAGES = [
-  { label: "Our work", route: "/projects" },
-  { label: "What we deliver", route: "/products" },
-  { label: "About us", route: "/about" },
+  { label: "Projects", route: "/projects" },
+  { label: "Products", route: "/products" },
+  { label: "About", route: "/about" },
 ];
 
 function IconSeparator() {
@@ -41,28 +41,30 @@ export default function NavComponent(props) {
   const { currentPageRoute, hideSeparator } = props;
 
   return (
-    <Container key="nav-container" className="px-0" fluid>
-      <Navbar expand="md" className="py-1 ps-3">
-        <div className="d-flex flex-nowrap">
-          <Navbar.Brand href="/" className="ps-0" key="logo-img">
-            <Image
-              width={400}
-              className="d-none d-md-inline"
-              src="/assets/new_10_1600.jpg"
-              alt="Generic placeholder"
-            />
-            <Image
-              fluid
-              className="d-inline d-md-none"
-              src="/assets/new_10_1600.jpg"
-              alt="Generic placeholder"
-            />
+    <Navbar expand="lg" className={`py-1`}>
+      <Container fluid key="nav-container">
+        <Link href="/" passHref>
+          <Navbar.Brand style={{ cursor: "pointer" }} className="ps-2 me-auto">
+            <div className="d-flex align-items-center">
+              <div className="me-1">
+                <Image
+                  height={50}
+                  src="/assets/coa_seal_full_navy.svg"
+                  alt="City of Austin seal"
+                />
+              </div>
+              <Image
+                height={20}
+                src="/assets/transportation_din_navy.svg"
+                alt="Austin transportation logo"
+              />
+            </div>
           </Navbar.Brand>
-          <Navbar.Toggle
-            aria-controls="basic-navbar-nav"
-            className="navbar-toggle"
-          />
-        </div>
+        </Link>
+        <Navbar.Toggle
+          aria-controls="basic-navbar-nav"
+          className="navbar-toggle"
+        />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
             {PAGES.map((page, idx) => {
@@ -99,12 +101,7 @@ export default function NavComponent(props) {
             </a>
           </Nav>
         </Navbar.Collapse>
-      </Navbar>
-      {!hideSeparator && (
-        <div style={{ overflowX: "hidden" }}>
-          <IconSeparator />
-        </div>
-      )}
-    </Container>
+      </Container>
+    </Navbar>
   );
 }
