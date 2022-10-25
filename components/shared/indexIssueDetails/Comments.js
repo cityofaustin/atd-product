@@ -21,7 +21,7 @@ function Comment({ comment }) {
     <Card className="mt-2">
       <Card.Header>
         <b>{comment.user.login}</b>
-        <span className="text-muted">commented on {createdAt}</span>
+        <span className="text-muted ms-1">commented on {createdAt}</span>
       </Card.Header>
       <Card.Body className="py-1">
         <Row className="mb-2 mt-0 pt-0">
