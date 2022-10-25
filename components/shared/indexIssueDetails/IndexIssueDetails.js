@@ -168,7 +168,7 @@ export default function IndexIssueDetails({
     <>
       <BackLink indexType={indexType} history={router} />
       <h4 className="text-secondary mb-0">
-        {indexType === "project" ? "Project details" : "Product Details"}
+        {indexType === "project" ? "Project Details" : "Product Details"}
       </h4>
       <h1 className="text-primary">{issue.title}</h1>
       <InfoRow indexType={indexType} issue={issue} />
