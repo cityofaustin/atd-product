@@ -13,7 +13,6 @@ function FrontMatter() {
         <a
           alt="link BI issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/65"
-          className="text-primary text-decoration-none"
         >
           identifying a vendor solution
         </a>
@@ -21,7 +20,6 @@ function FrontMatter() {
         <a
           alt="link to 311 module issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/533"
-          className="text-primary text-decoration-none"
         >
           building a major feature for an existing Product
         </a>
@@ -29,7 +27,6 @@ function FrontMatter() {
         <a
           alt="parking data overhaul issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/254"
-          className="text-primary text-decoration-none"
         >
           overhauling a dataset
         </a>
@@ -37,7 +34,6 @@ function FrontMatter() {
         <a
           alt="link to print bike map issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/1911"
-          className="text-primary text-decoration-none"
         >
           delivering a complex map
         </a>
