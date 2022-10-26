@@ -11,8 +11,8 @@ import {
 } from "react-bootstrap";
 
 const PAGES = [
-  { label: "Projects", route: "/projects" },
   { label: "Products", route: "/products" },
+  { label: "Projects", route: "/projects" },
   { label: "About", route: "/about" },
 ];
 
@@ -75,7 +75,7 @@ export default function NavComponent(props) {
               return (
                 <div
                   key={page.route}
-                  className={`flex-grow-1 mx-0 my-auto ${borderClass}`}
+                  className={`fw-bold flex-grow-1 mx-0 my-auto`}
                 >
                   <Link href={page.route} passHref>
                     <Nav.Link
@@ -89,15 +89,20 @@ export default function NavComponent(props) {
             })}
             <a
               href="https://atd.knack.com/dts#new-service-request"
+              //why are there two of these?
               className="text-white text-center d-inline d-md-none mt-2"
             >
-              <Button size="sm">Get help</Button>
+              <Button size="sm">
+                <div className="fw-bold">Get help</div>
+              </Button>
             </a>
             <a
               href="https://atd.knack.com/dts#new-service-request"
               className="text-white text-center d-none d-md-inline me-3 ps-3 my-auto"
             >
-              <Button size="sm">Get help</Button>
+              <Button size="sm">
+                <div className="fw-bold">Get help</div>
+              </Button>
             </a>
           </Nav>
         </Navbar.Collapse>
