@@ -74,12 +74,7 @@ export default function ProjectFilters({
     <Row className="text-center">
       {isTabletOrMobile ? (
         <Col key="projectStatusFilter">
-          <Row
-            className={`h-100`}
-            style={{
-              backgroundColor: "#f8f9fa",
-            }}
-          >
+          <Row className="h-100 bg-light">
             <Col>
               <Form.Select
                 className={
@@ -120,14 +115,11 @@ export default function ProjectFilters({
       )}
       <Col key="workgroupFilter" md={6} lg="auto">
         <Row
-          className={`h-100  ${
+          className={`bg-light h-100  ${
             currentFilters.workgroup
               ? "workgroup-select-row-active"
               : "workgroup-select-row-inactive"
           } `}
-          style={{
-            backgroundColor: "#f8f9fa",
-          }}
         >
           <Col>
             <Form.Select
@@ -160,12 +152,7 @@ export default function ProjectFilters({
         </Row>
       </Col>
       <Col key="projectListToggle" md="auto">
-        <Row
-          className="h-100"
-          style={{
-            backgroundColor: "#f8f9fa",
-          }}
-        >
+        <Row className="h-100 bg-light">
           <ProjectListToggle
             showChartView={showChartView}
             setShowChartView={setShowChartView}
