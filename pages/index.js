@@ -79,13 +79,29 @@ export default function HomeView() {
             <h4 className="fw-bold">Featured projects</h4>
           </Col>
         </Row>
-        <Row>
-          <Carousel>
-            <Carousel.Item></Carousel.Item>
-
-            <Carousel.Item></Carousel.Item>
-          </Carousel>
-        </Row>
+        <Carousel>
+          <Carousel.Item>
+            <Row>
+              {projects.map((project) => {
+                return project.isFeatured ? (
+                  <Col key={project.number} md={3} className="m-0 p-2">
+                    <IndexIsssueListItem type="project" issue={project} />
+                  </Col>
+                ) : null;
+              })}
+            </Row>
+          </Carousel.Item>
+          <Row>
+            {projects.map((project) => {
+              return project.isFeatured ? (
+                <Col key={project.number} md={3} className="m-0 p-2">
+                  <IndexIsssueListItem type="project" issue={project} />
+                </Col>
+              ) : null;
+            })}
+          </Row>
+          <Carousel.Item></Carousel.Item>
+        </Carousel>
       </Page>
     </>
   );
