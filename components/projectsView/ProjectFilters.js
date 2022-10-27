@@ -114,13 +114,7 @@ export default function ProjectFilters({
         />
       )}
       <Col key="workgroupFilter" md={6} lg="auto">
-        <Row
-          className={`bg-light h-100  ${
-            currentFilters.workgroup
-              ? "workgroup-select-row-active"
-              : "workgroup-select-row-inactive"
-          } `}
-        >
+        <Row className="bg-light h-100">
           <Col>
             <Form.Select
               className={
