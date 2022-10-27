@@ -1,12 +1,13 @@
 $theme-colors: (
   "primary": #0d3e79,
   "secondary": #00bfa5,
+  "light": #f8f9fa,
 );
 
 $link-color: #0d3e79;
+$link-decoration: none;
 $hr-color: #dee2e6;
 $hr-opacity: 1;
-$link-decoration: none;
 
 .homepage-header {
   font-size: 3.5em !important;
