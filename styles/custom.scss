@@ -8,25 +8,6 @@ $hr-color: #dee2e6;
 $hr-opacity: 1;
 $link-decoration: none;
 
-body {
-  font-family: -apple-system,
-    // Windows
-    "Segoe UI",
-    // Android
-    Roboto,
-    // Basic web fallback
-    "Helvetica Neue",
-    Arial,
-    // Linux
-    "Noto Sans",
-    "Liberation Sans",
-    // Sans serif fallback
-    sans-serif,
-    // Emoji fonts
-    "Apple Color Emoji",
-    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
-}
-
 .homepage-header {
   font-size: 3.5em !important;
   color: #ff7261 !important;
