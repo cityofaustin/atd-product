@@ -7,8 +7,8 @@ import ProjectsList from "../../components/projectsView/ProjectsList";
 
 function FrontMatter() {
   return (
-    <Col className="ml-2 mb-2 border-left border-secondary">
-      <p className="mb-0">
+    <Col className="ms-2 mb-2 border-start border-secondary">
+      <p className="mb-0 ms-1">
         <strong>Projects</strong> are temporary endeavors — whether{" "}
         <a
           alt="link BI issue"

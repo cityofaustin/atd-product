@@ -202,7 +202,7 @@ function ValueItem(props) {
   return (
     <Col xs={12} md={6} lg={4} className="pb-4">
       <Row>
-        <Col xs="auto" className="pr-0">
+        <Col xs="auto" className="pe-0">
           <span style={{ color: "#00bfa5" }}>
             <Image width={"45"} src={src} alt="Value Icon" />
           </span>

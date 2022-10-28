@@ -70,18 +70,18 @@ const CustomTooltip = ({ active, payload, label }) => {
         >
           <p
             key="title"
-            className="font-weight-bold small m-0 p-0"
+            className="fw-bold small m-0 p-0"
           >{`${payload[0].payload.name}`}</p>
           <p key="value" className="small m-0 p-0">
-            <span className="font-weight-bold">Value: </span>
+            <span className="fw-bold">Value: </span>
             {`${payload[0].payload.value}`}
           </p>
           <p key="effort" className="small m-0 p-0">
-            <span className="font-weight-bold">Effort: </span>
+            <span className="fw-bold">Effort: </span>
             {`${payload[0].payload.effort}`}
           </p>
           <p key="confidence" className="small m-0 p-0">
-            <span className="font-weight-bold">Confidence: </span>
+            <span className="fw-bold">Confidence: </span>
             {`${payload[0].payload.confidence}`}
           </p>
         </Col>

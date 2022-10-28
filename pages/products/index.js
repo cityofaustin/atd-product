@@ -7,8 +7,8 @@ import ProductsList from "../../components/productsView/ProductsList";
 
 function FrontMatter() {
   return (
-    <Col className="ml-2 mb-2 border-left border-secondary">
-      <p className="mb-0">
+    <Col className="ms-2 mb-2 border-start border-secondary">
+      <p className="mb-0 ms-3">
         <strong>Products</strong> are the solutions we build for our customers,
         including Knack apps, AMANDA apps, custom software, and data systems. We
         improve and extend our products over time so that they deliver

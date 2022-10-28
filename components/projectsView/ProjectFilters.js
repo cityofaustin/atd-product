@@ -63,11 +63,9 @@ export default function ProjectFilters({
   const router = useRouter();
 
   useEffect(() => {
-    router.replace(
-      `/projects/${formatSearchPath(currentFilters)}`,
-      undefined,
-      { shallow: true }
-    );
+    router.replace(`/projects/${formatSearchPath(currentFilters)}`, undefined, {
+      shallow: true,
+    });
     // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentFilters]);
@@ -76,16 +74,15 @@ export default function ProjectFilters({
     <Row className="text-center">
       {isTabletOrMobile ? (
         <Col key="projectStatusFilter">
-          <Row className={`bg-light h-100 `}>
+          <Row className="h-100 bg-light">
             <Col>
-              <Form.Control
+              <Form.Select
                 className={
                   currentFilters.status
-                    ? "workgroup-select-active"
-                    : "workgroup-select-inactive"
+                    ? "workgroup-select-active form-select"
+                    : "workgroup-select-inactive form-select"
                 }
                 key="status"
-                as="select"
                 value={currentFilters.status || "In Progress"}
                 onChange={(e) =>
                   handleChange(
@@ -104,7 +101,7 @@ export default function ProjectFilters({
                     </option>
                   );
                 })}
-              </Form.Control>
+              </Form.Select>
             </Col>
           </Row>
         </Col>
@@ -117,22 +114,15 @@ export default function ProjectFilters({
         />
       )}
       <Col key="workgroupFilter" md={6} lg="auto">
-        <Row
-          className={`bg-light h-100  ${
-            currentFilters.workgroup
-              ? "workgroup-select-row-active"
-              : "workgroup-select-row-inactive"
-          } `}
-        >
+        <Row className="bg-light h-100">
           <Col>
-            <Form.Control
+            <Form.Select
               className={
                 currentFilters.workgroup
                   ? "workgroup-select-active"
                   : "workgroup-select-inactive"
               }
               key="status"
-              as="select"
               value={currentFilters.workgroup || "Any workgroup"}
               onChange={(e) =>
                 handleChange(
@@ -151,12 +141,12 @@ export default function ProjectFilters({
                   </option>
                 );
               })}
-            </Form.Control>
+            </Form.Select>
           </Col>
         </Row>
       </Col>
-      <Col key="projectListToggle" className="bg-light" md="auto">
-        <Row className="h-100">
+      <Col key="projectListToggle" md="auto">
+        <Row className="h-100 bg-light">
           <ProjectListToggle
             showChartView={showChartView}
             setShowChartView={setShowChartView}

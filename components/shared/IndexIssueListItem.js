@@ -23,7 +23,6 @@ export default function IndexIsssueListItem({ type, issue }) {
   const [description, img] = parseBody(issue.body);
   return (
     <Link
-      className="text-primary text-decoration-none"
       href={{
         pathname: `${type}s/[issue_number]`,
         query: { issue_number: issue.number },

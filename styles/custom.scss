@@ -1,7 +1,13 @@
 $theme-colors: (
   "primary": #0d3e79,
   "secondary": #00bfa5,
+  "light": #f8f9fa,
 );
+
+$link-color: #0d3e79;
+$link-decoration: none;
+$hr-color: #dee2e6;
+$hr-opacity: 1;
 
 .homepage-header {
   font-size: 3.5em !important;
@@ -56,7 +62,7 @@ $theme-colors: (
   border: none !important;
 }
 
-.form-control:focus {
+.form-select:focus {
   box-shadow: none !important;
 }
 
@@ -70,19 +76,7 @@ $theme-colors: (
 }
 
 .footer-link:hover {
-  font-weight: bold;
-}
-
-.font-weight-bold.py-1 {
-  font-size: 1.25rem;
-}
-
-.font-weight-light.py-1 {
-  font-size: 1rem;
-}
-
-.ms-1 {
-  margin-left: 0.25rem;
+  font-weight: bolder;
 }
 
 @media only screen and (min-width: 768px) {
@@ -98,6 +92,16 @@ $theme-colors: (
   .navbar-menu-link {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  .container-lg,
+  .container-md,
+  .container-sm,
+  .container-xl {
+    max-width: 1140px !important;
   }
 }
 
