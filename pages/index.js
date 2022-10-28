@@ -1,6 +1,10 @@
 import { useContext } from "react";
 import { Row, Col, Card, Carousel } from "react-bootstrap";
-import { IoIosPeople } from "react-icons/io";
+import {
+  IoIosPeople,
+  IoIosArrowDropleft,
+  IoIosArrowDropright,
+} from "react-icons/io";
 import { FaGlobe, FaBriefcase } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
 import IssuesContext from "../contexts/IssuesContext";
@@ -22,7 +26,15 @@ function ServiceItem(props) {
 }
 
 export default function HomeView() {
-  const { projectIssues: projects } = useContext(IssuesContext);
+  const { issues } = useContext(IssuesContext);
+
+  const featuredIssues = [];
+
+  issues.map((issue) => {
+    if (issue.isFeatured) {
+      featuredIssues.push(issue);
+    }
+  });
 
   return (
     <>
@@ -79,29 +91,43 @@ export default function HomeView() {
             <h4 className="fw-bold">Featured projects</h4>
           </Col>
         </Row>
-        <Carousel>
-          <Carousel.Item>
-            <Row>
-              {projects.map((project) => {
-                return project.isFeatured ? (
-                  <Col key={project.number} md={3} className="m-0 p-2">
-                    <IndexIsssueListItem type="project" issue={project} />
-                  </Col>
-                ) : null;
-              })}
-            </Row>
-          </Carousel.Item>
-          <Row>
-            {projects.map((project) => {
-              return project.isFeatured ? (
-                <Col key={project.number} md={3} className="m-0 p-2">
-                  <IndexIsssueListItem type="project" issue={project} />
-                </Col>
-              ) : null;
-            })}
-          </Row>
-          <Carousel.Item></Carousel.Item>
-        </Carousel>
+        <Row>
+          <Col>
+            <Carousel
+              variant="dark"
+              indicators={false}
+              nextIcon={<IoIosArrowDropright className="fs-1 text-primary" />}
+              prevIcon={<IoIosArrowDropleft className="fs-1 text-primary" />}
+            >
+              <Carousel.Item>
+                <Row>
+                  <Col></Col>
+                  {featuredIssues.slice(0, 4).map((issue) => {
+                    return (
+                      <Col>
+                        <IndexIsssueListItem issue={issue} type={"product"} />
+                      </Col>
+                    );
+                  })}
+                  <Col></Col>
+                </Row>
+              </Carousel.Item>
+              <Carousel.Item>
+                <Row>
+                  <Col></Col>
+                  {featuredIssues.slice(4, 9).map((issue) => {
+                    return (
+                      <Col>
+                        <IndexIsssueListItem issue={issue} type={"product"} />
+                      </Col>
+                    );
+                  })}
+                  <Col></Col>
+                </Row>
+              </Carousel.Item>
+            </Carousel>
+          </Col>
+        </Row>
       </Page>
     </>
   );
