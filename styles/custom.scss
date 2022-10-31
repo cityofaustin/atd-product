@@ -73,6 +73,17 @@ $link-decoration: none;
   font-weight: bolder;
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+  width: 7% !important;
+}
+
+.hero-section {
+  background-image: url("/assets/skyline.png") !important;
+  background-size: cover;
+  min-height: 350px;
+}
+
 @media only screen and (min-width: 768px) {
   .navbar-menu-borders {
     border-style: none none none solid;
