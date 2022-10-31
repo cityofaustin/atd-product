@@ -107,7 +107,7 @@ export default function HomeView() {
                       ? "product"
                       : "project";
                     return (
-                      <Col>
+                      <Col key={issue.number}>
                         <IndexIsssueListItem issue={issue} type={type} />
                       </Col>
                     );
@@ -123,7 +123,7 @@ export default function HomeView() {
                       ? "product"
                       : "project";
                     return (
-                      <Col>
+                      <Col key={issue.number}>
                         <IndexIsssueListItem issue={issue} type={type} />
                       </Col>
                     );
