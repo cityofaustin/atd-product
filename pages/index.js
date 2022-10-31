@@ -40,7 +40,7 @@ export default function HomeView() {
     <>
       <Page fluid nav hideSeparator>
         <Row>
-          <Card className="herosection p-0 h-100">
+          <Card className="hero-section p-0 h-100">
             <Card.Body className="pt-5">
               <Card.Title className="pt-4 text-center text-white fw-bold">
                 <h1 className="fw-bold" style={{ fontSize: "3.5rem" }}>
