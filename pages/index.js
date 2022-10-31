@@ -14,12 +14,12 @@ import IndexIsssueListItem from "../components/shared/IndexIssueListItem";
 function ServiceItem(props) {
   const { icon, content } = props;
   return (
-    <Col>
+    <Col className="px-3">
       <Row>
         <h1>{icon}</h1>
       </Row>
       <Row>
-        <h5 className="fw-normal">{content}</h5>
+        <p style={{ fontSize: "1.1rem" }}>{content}</p>
       </Row>
     </Col>
   );
@@ -40,23 +40,20 @@ export default function HomeView() {
     <>
       <Page fluid nav hideSeparator>
         <Row>
-          <Card className="p-0">
-            <Card.Img src="/assets/skyline.png" alt="Card Image" />
-            <Card.ImgOverlay>
-              <Card.Body>
-                <Card.Title className="pt-5 text-center text-white fw-bold">
-                  <h1 className="pt-4 fw-bold" style={{ fontSize: "3.5rem" }}>
-                    Tech Support for ATX Mobility
-                  </h1>
-                </Card.Title>
-                <Card.Text className="pt-4 text-center text-white">
-                  <p style={{ fontSize: "1.75rem", fontWeight: 500 }}>
-                    We build and buy technology to help city staff <br></br>
-                    tackle Austin&apos;s mobility challenges.
-                  </p>
-                </Card.Text>
-              </Card.Body>
-            </Card.ImgOverlay>
+          <Card className="herosection p-0 h-100">
+            <Card.Body className="pt-5">
+              <Card.Title className="pt-4 text-center text-white fw-bold">
+                <h1 className="fw-bold" style={{ fontSize: "3.5rem" }}>
+                  Tech Support for ATX Mobility
+                </h1>
+              </Card.Title>
+              <Card.Text className="pt-3 text-center text-white">
+                <p style={{ fontSize: "1.75rem", fontWeight: 500 }}>
+                  We build and buy technology to help city staff <br></br>
+                  tackle Austin&apos;s mobility challenges.
+                </p>
+              </Card.Text>
+            </Card.Body>
           </Card>
         </Row>
         <Row className="py-5 text-primary text-center">
@@ -68,11 +65,13 @@ export default function HomeView() {
           <Col sm={1}></Col>
           <ServiceItem
             content="Modernize software development processes while introducing good agile and human-centered design practices"
-            icon={<IoIosPeople style={{ verticalAlign: "top" }} />}
+            icon={
+              <IoIosPeople style={{ verticalAlign: "top", fontSize: "3rem" }} />
+            }
           />
           <ServiceItem
             content="Improve public-facing services like websites or applications"
-            icon={<MdWeb style={{ verticalAlign: "top" }} />}
+            icon={<MdWeb style={{ verticalAlign: "top", fontSize: "3rem" }} />}
           />
           <ServiceItem
             content="Digitize and streamline internal systems to save time and unlock insights from data"
@@ -88,7 +87,7 @@ export default function HomeView() {
         <Row className="pt-3 pb-4 text-primary">
           <Col sm={1}></Col>
           <Col>
-            <h4 className="fw-bold">Featured projects</h4>
+            <h4 className="fw-bold">Featured</h4>
           </Col>
         </Row>
         <Row>
@@ -98,31 +97,38 @@ export default function HomeView() {
               indicators={false}
               nextIcon={<IoIosArrowDropright className="fs-1 text-primary" />}
               prevIcon={<IoIosArrowDropleft className="fs-1 text-primary" />}
+              interval={null}
             >
               <Carousel.Item>
                 <Row>
-                  <Col></Col>
+                  <Col sm={1}></Col>
                   {featuredIssues.slice(0, 4).map((issue) => {
+                    const type = issue.labels.includes("Product Index")
+                      ? "product"
+                      : "project";
                     return (
                       <Col>
-                        <IndexIsssueListItem issue={issue} type={"product"} />
+                        <IndexIsssueListItem issue={issue} type={type} />
                       </Col>
                     );
                   })}
-                  <Col></Col>
+                  <Col sm={1}></Col>
                 </Row>
               </Carousel.Item>
               <Carousel.Item>
                 <Row>
-                  <Col></Col>
+                  <Col sm={1}></Col>
                   {featuredIssues.slice(4, 9).map((issue) => {
+                    const type = issue.labels.includes("Product Index")
+                      ? "product"
+                      : "project";
                     return (
                       <Col>
-                        <IndexIsssueListItem issue={issue} type={"product"} />
+                        <IndexIsssueListItem issue={issue} type={type} />
                       </Col>
                     );
                   })}
-                  <Col></Col>
+                  <Col sm={1}></Col>
                 </Row>
               </Carousel.Item>
             </Carousel>
