@@ -1,15 +1,9 @@
-import { useContext } from "react";
-import { Row, Col, Card, Carousel } from "react-bootstrap";
-import {
-  IoIosPeople,
-  IoIosArrowDropleft,
-  IoIosArrowDropright,
-} from "react-icons/io";
+import { Row, Col, Card } from "react-bootstrap";
+import { IoIosPeople } from "react-icons/io";
 import { FaGlobe, FaBriefcase } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
-import IssuesContext from "../contexts/IssuesContext";
 import Page from "../components/shared/Page";
-import IndexIsssueListItem from "../components/shared/IndexIssueListItem";
+import FeaturedCarousel from "../components/FeaturedCarousel";
 
 function ServiceItem(props) {
   const { icon, content } = props;
@@ -26,34 +20,18 @@ function ServiceItem(props) {
 }
 
 export default function HomeView() {
-  const { issues } = useContext(IssuesContext);
-
-  const featuredIssues = [];
-
-  issues.map((issue) => {
-    if (issue.isFeatured) {
-      featuredIssues.push(issue);
-    }
-  });
-
   return (
     <>
       <Page fluid nav hideSeparator>
         <Row>
-          <Card className="hero-section p-0 h-100">
-            <Card.Body className="pt-5">
-              <Card.Title className="pt-4 text-center text-white fw-bold">
-                <h1 className="fw-bold" style={{ fontSize: "3.5rem" }}>
-                  Tech Support for ATX Mobility
-                </h1>
-              </Card.Title>
-              <Card.Text className="pt-3 text-center text-white">
-                <p style={{ fontSize: "1.75rem", fontWeight: 500 }}>
-                  We build and buy technology to help city staff <br></br>
-                  tackle Austin&apos;s mobility challenges.
-                </p>
-              </Card.Text>
-            </Card.Body>
+          <Card className="hero-section border-0 d-flex justify-content-center align-items-center">
+            <h1 className="text-white display-3 fw-bold pb-4">
+              Tech Support for ATX Mobility
+            </h1>
+            <h3 className="text-white">
+              We build and buy technology to help city staff <br></br>
+              tackle Austin&apos;s mobility challenges.
+            </h3>
           </Card>
         </Row>
         <Row className="py-5 text-primary text-center">
@@ -92,46 +70,7 @@ export default function HomeView() {
         </Row>
         <Row>
           <Col>
-            <Carousel
-              variant="dark"
-              indicators={false}
-              nextIcon={<IoIosArrowDropright className="fs-1 text-primary" />}
-              prevIcon={<IoIosArrowDropleft className="fs-1 text-primary" />}
-              interval={null}
-            >
-              <Carousel.Item>
-                <Row>
-                  <Col sm={1}></Col>
-                  {featuredIssues.slice(0, 4).map((issue) => {
-                    const type = issue.labels.includes("Product Index")
-                      ? "product"
-                      : "project";
-                    return (
-                      <Col key={issue.number}>
-                        <IndexIsssueListItem issue={issue} type={type} />
-                      </Col>
-                    );
-                  })}
-                  <Col sm={1}></Col>
-                </Row>
-              </Carousel.Item>
-              <Carousel.Item>
-                <Row>
-                  <Col sm={1}></Col>
-                  {featuredIssues.slice(4, 9).map((issue) => {
-                    const type = issue.labels.includes("Product Index")
-                      ? "product"
-                      : "project";
-                    return (
-                      <Col key={issue.number}>
-                        <IndexIsssueListItem issue={issue} type={type} />
-                      </Col>
-                    );
-                  })}
-                  <Col sm={1}></Col>
-                </Row>
-              </Carousel.Item>
-            </Carousel>
+            <FeaturedCarousel className="h-100"></FeaturedCarousel>
           </Col>
         </Row>
       </Page>
