@@ -9,6 +9,7 @@ $link-decoration: none;
 $hr-color: #dee2e6;
 $hr-opacity: 1;
 $link-decoration: none;
+$nav-shadow: #d5d5d5;
 
 .status-filter-inactive {
   border-radius: 0px !important;
@@ -66,6 +67,25 @@ $link-decoration: none;
   border: none !important;
 }
 
+.nav-link:hover {
+  font-weight: bolder;
+}
+
+.nav-shadow {
+  box-shadow: 0px 3px 6px $nav-shadow;
+  z-index: 3;
+}
+
+.nav-tile {
+  cursor: pointer;
+  border: 0.5px solid rgba(213, 213, 213, 0.4) !important;
+  box-shadow: 0px 3px 6px $nav-shadow;
+}
+
+.nav-tile:hover {
+  box-shadow: 0px 7px 10px $nav-shadow;
+}
+
 .footer {
   background-color: #162b4c;
 }
@@ -83,6 +103,7 @@ $link-decoration: none;
   background-image: url("/assets/skyline.png") !important;
   background-size: cover;
   min-height: 350px;
+  border-radius: 0 !important;
 }
 
 @media only screen and (min-width: 768px) {
