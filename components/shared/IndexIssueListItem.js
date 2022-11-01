@@ -21,31 +21,33 @@ function parseBody(body) {
 
 export default function IndexIsssueListItem({ type, issue }) {
   const [description, img] = parseBody(issue.body);
+
   return (
     <Link
+      className="text-decoration-none"
       href={{
         pathname: `${type}s/[issue_number]`,
         query: { issue_number: issue.number },
       }}
       passHref
     >
-      <Card className="h-100 shadow-sm" style={{ cursor: "pointer" }}>
-        <Card.Body>
-          <Card.Title className="text-primary">{issue.title}</Card.Title>
-          {img && (
-            <Row className="pb-2">
-              <Col>
-                <Card.Img variant="top" src={img.src} alt={img.alt} />
+      <a className="text-decoration-none">
+        <Card className="h-100 nav-tile">
+          {img && <Card.Img variant="top" alt={img.alt} src={img.src} />}
+          <Card.Body className="lh-1 pb-0">
+            <Card.Title className="fw-bold fs-6 text-primary">
+              {issue.title}
+            </Card.Title>
+            <Row>
+              <Col className="text-muted">
+                <small>
+                  <ReactMarkdown skipHtml>{description}</ReactMarkdown>
+                </small>
               </Col>
             </Row>
-          )}
-          <Row>
-            <Col className="text-muted">
-              <ReactMarkdown skipHtml>{description}</ReactMarkdown>
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
+          </Card.Body>
+        </Card>
+      </a>
     </Link>
   );
 }
