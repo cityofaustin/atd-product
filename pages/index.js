@@ -23,16 +23,16 @@ export default function HomeView() {
   return (
     <>
       <Page fluid nav hideSeparator>
-        <Row>
-          <Card className="hero-section border-0 d-flex justify-content-center align-items-center">
-            <h1 className="text-white display-3 fw-bold pb-4">
+        <Row className="hero-section d-flex align-items-center">
+          <div>
+            <h1 className="text-white display-3 fw-bold text-center pb-4">
               Tech Support for ATX Mobility
             </h1>
-            <h3 className="text-white">
+            <h3 className="text-white text-center">
               We build and buy technology to help city staff <br></br>
               tackle Austin&apos;s mobility challenges.
             </h3>
-          </Card>
+          </div>
         </Row>
         <Row className="py-5 text-primary text-center">
           <h2>
