@@ -73,10 +73,7 @@ export default function NavComponent(props) {
               const borderClass = idx === 0 ? "" : "navbar-menu-borders";
 
               return (
-                <div
-                  key={page.route}
-                  className={`fw-bold flex-grow-1 mx-0 my-auto`}
-                >
+                <div key={page.route} className={`flex-grow-1 mx-0 my-auto`}>
                   <Link href={page.route} passHref>
                     <Nav.Link
                       className={`text-primary text-center px-3 navbar-menu-link ${fontWeightClass}`}
@@ -89,11 +86,10 @@ export default function NavComponent(props) {
             })}
             <a
               href="https://atd.knack.com/dts#new-service-request"
-              //why are there two of these?
               className="text-white text-center d-inline d-md-none mt-2"
             >
               <Button size="sm">
-                <div className="fw-bold">Get help</div>
+                <div>Get help</div>
               </Button>
             </a>
             <a
@@ -101,7 +97,7 @@ export default function NavComponent(props) {
               className="text-white text-center d-none d-md-inline me-3 ps-3 my-auto"
             >
               <Button size="sm">
-                <div className="fw-bold">Get help</div>
+                <div>Get help</div>
               </Button>
             </a>
           </Nav>
