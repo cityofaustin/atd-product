@@ -4,7 +4,7 @@ import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 function parseBody(body) {
-  // extract content up to the first sentence or linebreak if no periodto use as description
+  // extract content up to the first sentence or linebreak if no period to use as description
   const reDescriptionSentence = /^(.*?)[.?!]\s+/;
   const reDescriptionLinebreak = /.*/;
   const description =
