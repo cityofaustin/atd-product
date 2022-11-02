@@ -1,14 +1,15 @@
 import React from "react";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
 function parseBody(body) {
-  // extract content up to the first linebreak to use as description
-  const reDescription = /.*/;
-  const description = body.match(reDescription)[0];
+  // extract content up to the first sentence or linebreak if no periodto use as description
+  const reDescriptionSentence = /^(.*?)[.?!]\s+/;
+  const reDescriptionLinebreak = /.*/;
+  const description =
+    body.match(reDescriptionSentence)?.[0] ||
+    body.match(reDescriptionLinebreak)[0];
   const reImg = /(?:!\[(.*?)\]\((.*?)\))/;
   // find the first img (if one exists)
   const imgMatch = body.match(reImg);
@@ -19,7 +20,7 @@ function parseBody(body) {
   return [description, img];
 }
 
-export default function IndexIsssueListItem({ type, issue }) {
+export default function IndexIssueListItem({ type, issue }) {
   const [description, img] = parseBody(issue.body);
 
   return (
@@ -32,19 +33,24 @@ export default function IndexIsssueListItem({ type, issue }) {
       passHref
     >
       <a className="text-decoration-none">
-        <Card className="h-100 nav-tile">
-          {img && <Card.Img variant="top" alt={img.alt} src={img.src} />}
-          <Card.Body className="lh-1 pb-0">
+        <Card className="nav-tile" style={{ height: "275px" }}>
+          {img && (
+            <Card.Img
+              variant="top"
+              alt={img.alt}
+              src={img.src}
+              style={{ height: "150px" }}
+            />
+          )}
+          <Card.Body className="overflow-hidden lh-1">
             <Card.Title className="fw-bold fs-6 text-primary">
               {issue.title}
             </Card.Title>
-            <Row>
-              <Col className="text-muted">
-                <small>
-                  <ReactMarkdown skipHtml>{description}</ReactMarkdown>
-                </small>
-              </Col>
-            </Row>
+            <Card.Text>
+              <small className="text-muted">
+                <ReactMarkdown skipHtml>{description}</ReactMarkdown>
+              </small>
+            </Card.Text>
           </Card.Body>
         </Card>
       </a>
