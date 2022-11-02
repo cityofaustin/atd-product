@@ -42,7 +42,7 @@ export default function IndexIssueListItem({ type, issue }) {
               style={{ height: "150px" }}
             />
           )}
-          <Card.Body className="overflow-hidden lh-1">
+          <Card.Body className="lh-1">
             <Card.Title className="fw-bold fs-6 text-primary">
               {issue.title}
             </Card.Title>
