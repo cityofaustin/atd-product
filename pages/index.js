@@ -1,4 +1,5 @@
-import { Row, Col, Card } from "react-bootstrap";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { IoIosPeople } from "react-icons/io";
 import { FaGlobe, FaBriefcase } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
@@ -24,7 +25,7 @@ export default function HomeView() {
     <>
       <Page fluid nav hideSeparator>
         <Row className="hero-section d-flex align-items-center">
-          <div>
+          <Col>
             <h1 className="text-white display-3 fw-bold text-center pb-4">
               Tech Support for ATX Mobility
             </h1>
@@ -32,7 +33,7 @@ export default function HomeView() {
               We build and buy technology to help city staff <br></br>
               tackle Austin&apos;s mobility challenges.
             </h3>
-          </div>
+          </Col>
         </Row>
         <Row className="py-5 text-primary text-center">
           <h2>
@@ -70,7 +71,7 @@ export default function HomeView() {
         </Row>
         <Row>
           <Col>
-            <FeaturedCarousel className="h-100"></FeaturedCarousel>
+            <FeaturedCarousel></FeaturedCarousel>
           </Col>
         </Row>
       </Page>
