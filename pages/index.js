@@ -71,7 +71,7 @@ export default function HomeView() {
         </Row>
         <Row>
           <Col>
-            <FeaturedCarousel></FeaturedCarousel>
+            <FeaturedCarousel />
           </Col>
         </Row>
       </Page>
