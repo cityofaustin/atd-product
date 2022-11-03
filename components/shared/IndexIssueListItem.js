@@ -20,8 +20,10 @@ function parseBody(body) {
   return [description, img];
 }
 
-export default function IndexIssueListItem({ type, issue }) {
+export default function IndexIssueListItem({ issue }) {
   const [description, img] = parseBody(issue.body);
+
+  const type = issue.labels.includes("Product Index") ? "product" : "project";
 
   return (
     <Link
