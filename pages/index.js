@@ -9,7 +9,7 @@ import FeaturedSection from "../components/FeaturedSection";
 function ServiceItem(props) {
   const { icon, content, offset } = props;
   return (
-    <Col lg={{ offset: offset }} className="px-4">
+    <Col className="pb-3 px-4">
       <Row>
         <h1>{icon}</h1>
       </Row>
@@ -60,7 +60,7 @@ export default function HomeView() {
             icon={<FaGlobe style={{ verticalAlign: "top" }} />}
           />
         </Row>
-        <hr className="my-3 mx-4" />
+        <hr className="mt-2 mx-4" />
         <FeaturedSection />
       </Page>
     </>
