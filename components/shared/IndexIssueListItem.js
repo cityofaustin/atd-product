@@ -9,7 +9,7 @@ function parseBody(body) {
   const reDescriptionLinebreak = /.*/;
   const description =
     body.match(reDescriptionSentence)?.[0] ||
-    body.match(reDescriptionLinebreak)[0];
+    body.match(reDescriptionLinebreak)?.[0];
   const reImg = /(?:!\[(.*?)\]\((.*?)\))/;
   // find the first img (if one exists)
   const imgMatch = body.match(reImg);
