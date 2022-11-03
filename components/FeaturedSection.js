@@ -20,7 +20,7 @@ export default function FeaturedSection() {
     <Row>
       {/* Render rows with featured cards if tablet or mobile else render carousel */}
       {isTabletOrMobile ? (
-        <Col className="mx-4">
+        <Col className="mx-5">
           <Row className="pt-3 pb-4 text-primary text-center">
             <Col>
               <h4 className="fw-bold">Featured</h4>
@@ -38,7 +38,7 @@ export default function FeaturedSection() {
           </Row>
         </Col>
       ) : (
-        <Col>
+        <Col className="px-0">
           <Row className="pt-3 pb-4 text-primary">
             <Col sm={1}></Col>
             <Col>
