@@ -14,18 +14,13 @@ export default function FeaturedSection() {
   const { issues } = useContext(IssuesContext);
   const featuredIssues = issues.filter((issue) => issue.isFeatured);
 
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 996px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 992px)" });
 
   return (
     <Row>
       {/* Render rows with featured cards if tablet or mobile else render carousel */}
       {isTabletOrMobile ? (
         <Col className="mx-5">
-          <Row className="pt-3 pb-4 text-primary text-center">
-            <Col>
-              <h4 className="fw-bold">Featured</h4>
-            </Col>
-          </Row>
           <Row>
             {/* This slice is incase there are more than 8 issues with the featured label */}
             {featuredIssues.slice(0, 8).map((issue) => {
@@ -39,12 +34,6 @@ export default function FeaturedSection() {
         </Col>
       ) : (
         <Col className="px-0">
-          <Row className="pt-3 pb-4 text-primary">
-            <Col sm={1}></Col>
-            <Col>
-              <h4 className="fw-bold">Featured</h4>
-            </Col>
-          </Row>
           <Carousel
             variant="dark"
             indicators={false}
