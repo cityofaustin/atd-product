@@ -30,7 +30,7 @@ export default function HomeView() {
               Tech Support for ATX Mobility
             </h1>
             <h3 className="text-white text-center">
-              We build and buy technology to help city staff tackle <br></br>
+              We build and buy technology to help city staff tackle
               Austin&apos;s mobility challenges.
             </h3>
           </Col>
@@ -61,6 +61,11 @@ export default function HomeView() {
           />
         </Row>
         <hr className="mt-2 mx-4" />
+        <Row className="pt-3 pb-4 text-primary text-center">
+          <Col>
+            <h4 className="fw-bold">Featured</h4>
+          </Col>
+        </Row>
         <FeaturedSection />
       </Page>
     </>
