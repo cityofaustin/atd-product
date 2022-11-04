@@ -59,7 +59,7 @@ export default function ProjectFilters({
   setShowChartView,
   workgroups,
 }) {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 996px)" });
+  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 992px)" });
   const router = useRouter();
 
   useEffect(() => {
