@@ -65,6 +65,7 @@ $nav-shadow: #d5d5d5;
 .navbar-toggle {
   // Use !important to override BootStrap class
   border: none !important;
+  box-shadow: none !important;
 }
 
 .nav-shadow {
