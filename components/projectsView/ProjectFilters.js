@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import { useMediaQuery } from "react-responsive";
 import ProjectListToggle from "./ProjectListToggle";
 import FiltersList from "./FiltersList";
+import { LARGE_BREAKPOINT } from "../settings";
 
 const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "needs_scoping" },
@@ -59,7 +60,9 @@ export default function ProjectFilters({
   setShowChartView,
   workgroups,
 }) {
-  const isTabletOrMobile = useMediaQuery({ query: "(max-width: 992px)" });
+  const isTabletOrMobile = useMediaQuery({
+    query: `(max-width: ${LARGE_BREAKPOINT})`,
+  });
   const router = useRouter();
 
   useEffect(() => {
