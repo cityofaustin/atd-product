@@ -76,7 +76,7 @@ export default function NavComponent(props) {
                 <div key={page.route} className={`flex-grow-1 mx-0 my-auto`}>
                   <Link href={page.route} passHref>
                     <Nav.Link
-                      className={`text-primary text-center px-3 py-0 navbar-menu-link ${fontWeightClass}`}
+                      className={`text-primary text-center px-3 py-1 navbar-menu-link ${fontWeightClass}`}
                     >
                       {page.label}
                     </Nav.Link>
