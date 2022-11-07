@@ -130,7 +130,7 @@ export default function ProjectsList(props) {
         <Row key="issues-row">
           {displayIssues.map((project) => (
             <Col key={project.number} sm={12} md={6} lg={4} className="m-0 p-2">
-              <IndexIssueListItem type="project" issue={project} />
+              <IndexIssueListItem issue={project} />
             </Col>
           ))}
         </Row>
