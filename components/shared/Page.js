@@ -8,7 +8,7 @@ import Footer from "./Footer";
 
 function Title(props) {
   return (
-    <Row className="m-0 p-0">
+    <Row>
       <Col className="text-primary">
         <h1>{props.title}</h1>
       </Col>
