@@ -8,10 +8,11 @@ export default function ProjectListToggle(props) {
   return (
     <>
       <Col
-        md="auto"
         role="button"
         className={
-          showChartView ? "chart-toggle-disabled" : "chart-toggle-active"
+          showChartView
+            ? "rounded-start border-end-0 chart-toggle-disabled"
+            : "rounded-start chart-toggle-active"
         }
         onClick={() => setShowChartView(false)}
       >
@@ -20,10 +21,11 @@ export default function ProjectListToggle(props) {
         </p>
       </Col>
       <Col
-        md="auto"
         role="button"
         className={
-          showChartView ? "chart-toggle-active" : "chart-toggle-disabled"
+          showChartView
+            ? "rounded-end chart-toggle-active"
+            : "rounded-end border-start-0 chart-toggle-disabled"
         }
         onClick={() => setShowChartView(true)}
       >
