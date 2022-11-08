@@ -121,15 +121,24 @@ export default function ProjectsList(props) {
       </Row>
       {!showChartView && (
         <Row>
-          <Col className="text-end text-muted">
+          <Col className="text-end text-muted mt-2">
             <small>Showing {displayIssues.length} projects</small>
           </Col>
         </Row>
       )}
+      <Row>
+        <hr className="mt-3" />
+      </Row>
       {!showChartView && (
         <Row key="issues-row">
           {displayIssues.map((project) => (
-            <Col key={project.number} sm={12} md={6} lg={4} className="m-0 p-2">
+            <Col
+              key={project.number}
+              sm={12}
+              md={6}
+              lg={3}
+              className="m-0 py-3"
+            >
               <IndexIssueListItem issue={project} />
             </Col>
           ))}
