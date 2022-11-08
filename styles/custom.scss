@@ -8,54 +8,51 @@ $link-color: #0d3e79;
 $link-decoration: none;
 $hr-color: #dee2e6;
 $hr-opacity: 1;
-$link-decoration: none;
 $nav-shadow: #d5d5d5;
+
+.link {
+  border-bottom: 1px dotted;
+}
 
 .status-filter-inactive {
   border-radius: 0px !important;
   border: none !important;
-  color: #6c757d !important;
+  color: #0d3e79 !important;
   padding-bottom: 5px !important;
 }
 
 .status-filter-active {
   border-radius: 0px !important;
   border: none !important;
-  border-bottom: 5px solid #ff7261 !important;
-  color: #ff7261 !important;
+  border-bottom: 5px solid #0d3e79 !important;
+  font-weight: bold;
+  color: #0d3e79 !important;
 }
 
 .status-filter:hover {
   color: #ff7261 !important;
 }
 
-.chart-toggle-inactive {
-  border-radius: 0px !important;
-  border: none !important;
-  color: #6c757d !important;
+.chart-toggle-disabled {
+  color: #0d3e79 !important;
+  border: 1px solid #ced4da !important;
 }
 
 .chart-toggle-active {
-  border-radius: 0px !important;
-  border: none !important;
   color: #fff !important;
-  background-color: #00bfa5 !important;
-}
-
-.workgroup-select-inactive:hover {
-  color: #ff7261 !important;
+  background-color: #0d3e79 !important;
 }
 
 .workgroup-select-inactive {
-  background-color: #f8f9fa !important;
-  color: #6c757d !important;
-  border: none !important;
+  color: #0d3e79 !important;
+  border: 1px solid #ced4da !important;
+  cursor: pointer !important;
 }
 
 .workgroup-select-active {
-  background-color: #f8f9fa !important;
-  color: #ff7261 !important;
-  border: none !important;
+  color: #0d3e79 !important;
+  border: 1px solid #ced4da !important;
+  cursor: pointer !important;
 }
 
 .form-select:focus {
@@ -113,6 +110,14 @@ $nav-shadow: #d5d5d5;
   min-height: 350px;
   text-shadow: 2px 2px 2px #0d3e79;
 }
+
+// @media only screen and (min-width: 992px) {
+//   // Use !important to override BootStrap class
+//   .navbar-menu-link {
+//     padding-top: 0 !important;
+//     padding-bottom: 0 !important;
+//   }
+// }
 
 @media only screen and (min-width: 768px) {
   .navbar-menu-borders {
