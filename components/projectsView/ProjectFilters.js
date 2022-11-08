@@ -12,7 +12,7 @@ const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "needs_scoping" },
   { label: "Backlog", key: "backlog" },
   { label: "In Progress", key: "in_progress" },
-  { label: "Completed", key: "completed" },
+  { label: "Complete", key: "completed" },
 ];
 
 const WORKGROUP_NAMES = {
@@ -60,8 +60,8 @@ export default function ProjectFilters({
   setShowChartView,
   workgroups,
 }) {
-  const isTabletOrMobile = useMediaQuery({
-    query: `(max-width: ${LARGE_BREAKPOINT})`,
+  const isMobile = useMediaQuery({
+    query: `(max-width: 768px)`,
   });
   const router = useRouter();
 
@@ -75,15 +75,15 @@ export default function ProjectFilters({
 
   return (
     <Row className="text-center">
-      {isTabletOrMobile ? (
+      {isMobile ? (
         <Col key="projectStatusFilter">
-          <Row className="h-100 bg-light">
+          <Row className="h-100 mb-3">
             <Col>
               <Form.Select
                 className={
                   currentFilters.status
-                    ? "workgroup-select-active form-select"
-                    : "workgroup-select-inactive form-select"
+                    ? "workgroup-select-active"
+                    : "workgroup-select-inactive"
                 }
                 key="status"
                 value={currentFilters.status || "In Progress"}
@@ -116,8 +116,8 @@ export default function ProjectFilters({
           statusFilters={STATUS_FILTERS}
         />
       )}
-      <Col key="workgroupFilter" md={6} lg="auto">
-        <Row className="bg-light h-100">
+      <Col key="workgroupFilter" xs={12} lg={3}>
+        <Row className="h-100 mb-3">
           <Col>
             <Form.Select
               className={
@@ -148,8 +148,8 @@ export default function ProjectFilters({
           </Col>
         </Row>
       </Col>
-      <Col key="projectListToggle" md="auto">
-        <Row className="h-100 bg-light">
+      <Col xs={12} lg={3} key="projectListToggle">
+        <Row>
           <ProjectListToggle
             showChartView={showChartView}
             setShowChartView={setShowChartView}
