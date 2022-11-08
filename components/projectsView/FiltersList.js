@@ -15,8 +15,10 @@ const FiltersList = ({
     const tabClass = active ? "status-filter-active" : "status-filter-inactive";
     return (
       <Col
+        md={3}
+        lg={"auto"}
         role="button"
-        className={`align-items-stretch ${tabClass}`}
+        className={`align-items-stretch ${tabClass} mb-3`}
         key={statusFilter.key}
         onClick={() => {
           handleChange(
