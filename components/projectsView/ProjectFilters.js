@@ -116,7 +116,7 @@ export default function ProjectFilters({
           statusFilters={STATUS_FILTERS}
         />
       )}
-      <Col xs={12} lg={3} className="mb-3" key="workgroupFilter">
+      <Col xs={12} lg={3} className="mb-3 me-1" key="workgroupFilter">
         <Row className="h-100">
           <Col>
             <Form.Select
