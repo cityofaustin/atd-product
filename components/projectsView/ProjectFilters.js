@@ -6,7 +6,7 @@ import Form from "react-bootstrap/Form";
 import { useMediaQuery } from "react-responsive";
 import ProjectListToggle from "./ProjectListToggle";
 import FiltersList from "./FiltersList";
-import { LARGE_BREAKPOINT } from "../settings";
+import { MEDIUM_BREAKPOINT } from "../settings";
 
 const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "needs_scoping" },
@@ -61,7 +61,7 @@ export default function ProjectFilters({
   workgroups,
 }) {
   const isMobile = useMediaQuery({
-    query: `(max-width: 768px)`,
+    query: `(max-width: ${MEDIUM_BREAKPOINT})`,
   });
   const router = useRouter();
 
@@ -116,17 +116,17 @@ export default function ProjectFilters({
           statusFilters={STATUS_FILTERS}
         />
       )}
-      <Col key="workgroupFilter" xs={12} lg={3}>
-        <Row className="h-100 mb-3">
+      <Col xs={12} lg={3} className="mb-3" key="workgroupFilter">
+        <Row className="h-100">
           <Col>
             <Form.Select
               className={
                 currentFilters.workgroup
-                  ? "workgroup-select-active"
-                  : "workgroup-select-inactive"
+                  ? "h-100 workgroup-select-active"
+                  : "h-100 workgroup-select-inactive"
               }
               key="status"
-              value={currentFilters.workgroup || "Any workgroup"}
+              value={currentFilters.workgroup || "By workgroup"}
               onChange={(e) =>
                 handleChange(
                   e.target.value,
@@ -136,7 +136,7 @@ export default function ProjectFilters({
                 )
               }
             >
-              <option value="">Any workgroup</option>
+              <option value="">By workgroup</option>
               {workgroups.map((workgroup) => {
                 return (
                   <option key={workgroup} value={workgroup}>
@@ -148,8 +148,8 @@ export default function ProjectFilters({
           </Col>
         </Row>
       </Col>
-      <Col xs={12} lg={3} key="projectListToggle">
-        <Row>
+      <Col xs={12} lg={3} xl={4} className="mb-3" key="projectListToggle">
+        <Row className="h-100 mx-0">
           <ProjectListToggle
             showChartView={showChartView}
             setShowChartView={setShowChartView}
