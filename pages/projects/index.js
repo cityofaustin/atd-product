@@ -8,7 +8,7 @@ import ProjectsList from "../../components/projectsView/ProjectsList";
 function FrontMatter() {
   return (
     <Col className="mb-2">
-      <p className="mb-0 text-black">
+      <p className="mb-2 text-black">
         Projects are temporary endeavors — whether{" "}
         <a
           className="link"
