@@ -16,7 +16,7 @@ const FiltersList = ({
     return (
       <Col
         md={3}
-        lg={"auto"}
+        lg="auto"
         role="button"
         className={`align-items-stretch ${tabClass} mb-3`}
         key={statusFilter.key}
