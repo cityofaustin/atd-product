@@ -1,7 +1,7 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import { FaChartArea } from "react-icons/fa";
-import { FaRegListAlt } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
 
 export default function ProjectListToggle(props) {
   const { showChartView, setShowChartView } = props;
@@ -17,7 +17,7 @@ export default function ProjectListToggle(props) {
         onClick={() => setShowChartView(false)}
       >
         <p className="text-center my-auto p-2">
-          <FaRegListAlt style={{ verticalAlign: "middle" }} /> List
+          <FaList style={{ verticalAlign: "middle" }} /> List
         </p>
       </Col>
       <Col
