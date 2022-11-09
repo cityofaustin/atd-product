@@ -7,3 +7,5 @@ export const EVALUATIONS_ENDPOINT =
 export const EVALS_APP_ID = "595d00ebd315cc4cb98daff4";
 
 export const LARGE_BREAKPOINT = "992px";
+
+export const MEDIUM_BREAKPOINT = "768px";
