@@ -99,7 +99,7 @@ export default function ProjectFilters({
                 <option value="">Project Status</option>
                 {STATUS_FILTERS.map((projectStatus) => {
                   return (
-                    <option key={projectStatus.key} value={projectStatus.label}>
+                    <option key={projectStatus.key} value={projectStatus.key}>
                       {projectStatus.label}
                     </option>
                   );
