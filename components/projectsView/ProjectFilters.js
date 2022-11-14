@@ -116,7 +116,7 @@ export default function ProjectFilters({
           statusFilters={STATUS_FILTERS}
         />
       )}
-      <Col xs={12} lg={3} className="mb-3 me-1" key="workgroupFilter">
+      <Col xs={12} lg={3} className="mb-3 mx-auto" key="workgroupFilter">
         <Row className="h-100">
           <Col>
             <Form.Select
@@ -126,7 +126,7 @@ export default function ProjectFilters({
                   : "h-100 workgroup-select-inactive"
               }
               key="status"
-              value={currentFilters.workgroup || "By workgroup"}
+              value={currentFilters.workgroup || "All workgroups"}
               onChange={(e) =>
                 handleChange(
                   e.target.value,
@@ -136,7 +136,7 @@ export default function ProjectFilters({
                 )
               }
             >
-              <option value="">By workgroup</option>
+              <option value="">All workgroups</option>
               {workgroups.map((workgroup) => {
                 return (
                   <option key={workgroup} value={workgroup}>
@@ -148,7 +148,7 @@ export default function ProjectFilters({
           </Col>
         </Row>
       </Col>
-      <Col xs={12} lg={3} xl={4} className="mb-3" key="projectListToggle">
+      <Col xs={12} lg={3} className="mb-3 ms-auto" key="projectListToggle">
         <Row className="h-100 mx-0">
           <ProjectListToggle
             showChartView={showChartView}
