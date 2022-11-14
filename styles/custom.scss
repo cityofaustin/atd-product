@@ -24,7 +24,7 @@ $nav-shadow: #d5d5d5;
 .status-filter-active {
   border-radius: 0px !important;
   border: none !important;
-  border-bottom: 5px solid #0d3e79 !important;
+  border-bottom: 4px solid #0d3e79 !important;
   font-weight: bold;
   color: #0d3e79 !important;
 }
@@ -84,10 +84,17 @@ $nav-shadow: #d5d5d5;
   object-fit: cover;
 }
 
-.card-text {
+.card-text-img {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.card-text-no-image {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 15;
   overflow: hidden;
 }
 
