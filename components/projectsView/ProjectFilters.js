@@ -99,7 +99,11 @@ export default function ProjectFilters({
                 <option value="">Project Status</option>
                 {STATUS_FILTERS.map((projectStatus) => {
                   return (
-                    <option key={projectStatus.key} value={projectStatus.key}>
+                    <option
+                      className="text-black"
+                      key={projectStatus.key}
+                      value={projectStatus.key}
+                    >
                       {projectStatus.label}
                     </option>
                   );
@@ -139,7 +143,11 @@ export default function ProjectFilters({
               <option value="">All workgroups</option>
               {workgroups.map((workgroup) => {
                 return (
-                  <option key={workgroup} value={workgroup}>
+                  <option
+                    className="text-black"
+                    key={workgroup}
+                    value={workgroup}
+                  >
                     {WORKGROUP_NAMES[workgroup] || workgroup}
                   </option>
                 );
