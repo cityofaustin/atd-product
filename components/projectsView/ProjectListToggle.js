@@ -11,7 +11,7 @@ export default function ProjectListToggle(props) {
         role="button"
         className={
           showChartView
-            ? "rounded-start border-end-0 chart-toggle-disabled"
+            ? "rounded-start border-end-0 chart-toggle-inactive"
             : "rounded-start chart-toggle-active"
         }
         onClick={() => setShowChartView(false)}
@@ -25,7 +25,7 @@ export default function ProjectListToggle(props) {
         className={
           showChartView
             ? "rounded-end chart-toggle-active"
-            : "rounded-end border-start-0 chart-toggle-disabled"
+            : "rounded-end border-start-0 chart-toggle-inactive"
         }
         onClick={() => setShowChartView(true)}
       >
