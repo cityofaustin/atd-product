@@ -18,7 +18,7 @@ const FiltersList = ({
         md={3}
         lg="auto"
         role="button"
-        className={`align-items-stretch ${tabClass} mb-3 px-3`}
+        className={`align-items-stretch ${tabClass} mb-3 px-3 me-auto`}
         key={statusFilter.key}
         onClick={() => {
           handleChange(
