@@ -271,7 +271,6 @@ export default function AboutView(props) {
         <ValueItem
           title="Nurture, include, and grow together"
           content="Delivering great tech cannot not come at the cost of our personal wellbeing. We commit to building a healthy and inclusive workplace by looking out for each other, listening to each other, and advocating for each other."
-          src="/assets/icons/grow.jpg"
           icon={<RiPlantFill />}
         />
         <Col lg={2}></Col>
