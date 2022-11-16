@@ -207,7 +207,7 @@ function TeamMember(props) {
 function ValueItem(props) {
   const { icon, title, content } = props;
   return (
-    <Col xs={12} md={6} lg={4} className="px-5 pb-4">
+    <Col xs={12} md={6} lg={4} className="px-5 pb-4 m-auto">
       <Row>
         <h1>{icon}</h1>
       </Row>
@@ -227,7 +227,7 @@ function ValueItem(props) {
 
 export default function AboutView(props) {
   return (
-    <Page nav title="About Us">
+    <Page nav title="About">
       <Row className="text-primary">
         <Col>
           <p>
@@ -274,13 +274,13 @@ export default function AboutView(props) {
           src="/assets/icons/grow.jpg"
           icon={<RiPlantFill />}
         />
-        <Col md={2}></Col>
+        <Col lg={2}></Col>
       </Row>
       <hr className="mt-2" />
       <Row className="text-primary text-center mt-5 mb-4">
         <Col>
           <a alt="anchor tag for Our team" href="#team">
-            <h2 id="team">Meet the Team</h2>
+            <h2 id="team">Meet the team</h2>
           </a>
         </Col>
       </Row>
