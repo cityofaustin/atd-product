@@ -52,7 +52,7 @@ const TEAM_MEMBERS = [
   {
     name: "Tilly Whitson",
     title: "Junior Software Developer",
-    pronouns: "She/Her",
+    pronouns: "She/They",
     src: "assets/headshots/tilly_whitson.jpeg",
   },
   {
@@ -228,7 +228,7 @@ function ValueItem(props) {
 export default function AboutView(props) {
   return (
     <Page nav title="About">
-      <Row className="text-primary">
+      <Row className="text-black">
         <Col>
           <p>
             We leverage high quality data and modern tech to empower Austin
