@@ -99,7 +99,7 @@ function BackLink(props) {
         <Button
           size="sm"
           type="button"
-          className="btn-link bg-white border-white"
+          className="btn-link bg-white border-white px-0"
           onClick={(e) => {
             e.preventDefault();
             props.history.back();
@@ -166,7 +166,7 @@ export default function IndexIssueDetails({
   return (
     <>
       <BackLink indexType={indexType} history={router} />
-      <h4 className="text-secondary mb-0">
+      <h4 className="text-black mb-0">
         {indexType === "project" ? "Project Details" : "Product Details"}
       </h4>
       <h1 className="text-primary">{issue.title}</h1>
