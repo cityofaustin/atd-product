@@ -127,7 +127,9 @@ export default function ProjectsList(props) {
         </Row>
       )}
       <Row>
-        <hr className="mt-3" />
+        <Col>
+          <hr className="mt-3" />
+        </Col>
       </Row>
       {!showChartView && (
         <Row key="issues-row">
