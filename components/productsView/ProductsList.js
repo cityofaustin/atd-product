@@ -21,8 +21,8 @@ export default function ProductsView(props) {
     <>
       <Row key="issues-row">
         {productIssues.map((product) => (
-          <Col key={product.number} md={4} className="m-0 p-2">
-            <IndexIssueListItem type="product" issue={product} />
+          <Col key={product.number} sm={12} md={6} lg={3} className="m-0 py-3">
+            <IndexIssueListItem issue={product} />
           </Col>
         ))}
       </Row>

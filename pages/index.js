@@ -1,110 +1,77 @@
-import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
-import { FaGlobe, FaUsersCog, FaBusinessTime } from "react-icons/fa";
+import { IoIosPeople } from "react-icons/io";
+import { FaGlobe, FaBriefcase } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
-import IssuesContext from "../contexts/IssuesContext";
 import Page from "../components/shared/Page";
-import IndexIsssueListItem from "../components/shared/IndexIssueListItem";
+import FeaturedSection from "../components/FeaturedSection";
 
 function ServiceItem(props) {
   const { icon, content } = props;
   return (
-    <Col md={3} className="pb-4">
+    <Col className="pb-3 px-4">
       <Row>
-        <Col xs="auto" className="pe-0">
-          <span style={{ color: "#00bfa5" }}>
-            <h1>{icon}</h1>
-          </span>
-        </Col>
-        <Col>
-          <h5>{content}</h5>
-        </Col>
+        <h1>{icon}</h1>
+      </Row>
+      <Row>
+        <p style={{ fontSize: "1.1rem" }}>{content}</p>
       </Row>
     </Col>
   );
 }
 
 export default function HomeView() {
-  const { projectIssues: projects } = useContext(IssuesContext);
-
   return (
     <>
       <Page fluid nav hideSeparator>
-        <Row>
-          <Col xs={1} md={2}></Col>
-          <Col sm={12} md={9} lg={4} className="py-5 px-4 text-primary">
-            <h1 className="homepage-header">
-              <strong>Tech support for ATX mobility</strong>
-            </h1>
-            <p className="text-muted">
-              We build and buy technology to help city staff tackle
-              Austin&apos;s mobility challenges. We&apos;re obsessed with
-              efficiencies, open data, and delivering human-centered tech to
-              government services.
-            </p>
-          </Col>
-          <Col lg={4} className="my-auto d-none d-lg-block">
-            {/* hidden on xs and sm */}
-            <Image
-              fluid
-              src="/assets/sports.jpg"
-              alt="Illustration of a green bicycle"
-            />
-          </Col>
-        </Row>
-        <Row className="py-3 text-primary bg-light">
-          <Col md={2}></Col>
+        <Row className="hero-section d-flex align-items-center">
           <Col>
-            <h2>
-              <strong>We&apos;re here to help</strong>
-            </h2>
+            <h1 className="text-white display-3 fw-bold text-center pb-4">
+              Tech Support for ATX Mobility
+            </h1>
+            {/* Only include this line break at lg breakpoint */}
+            <h3 className="text-white text-center d-none d-lg-block">
+              We build and buy technology to help city staff <br />
+              tackle Austin&apos;s mobility challenges.
+            </h3>
+            <h3 className="text-white text-center d-lg-none mx-5">
+              We build and buy technology to help city staff tackle
+              Austin&apos;s mobility challenges.
+            </h3>
           </Col>
         </Row>
-        <Row className="text-primary bg-light">
-          <Col md={2}></Col>
+        <Row className="pt-5 pb-4 text-primary text-center">
+          <h2>
+            <strong>We&apos;re here to help</strong>
+          </h2>
+        </Row>
+        <Row xs={1} md={2} lg={4} className="mx-5 text-primary text-center">
           <ServiceItem
             content="Modernize software development processes while introducing good agile and human-centered design practices"
-            icon={<FaUsersCog style={{ verticalAlign: "top" }} />}
+            icon={
+              <IoIosPeople style={{ verticalAlign: "top", fontSize: "3rem" }} />
+            }
           />
-          <Col md={2}></Col>
-          <ServiceItem
-            content="Digitize and streamline internal systems to save time and unlock insights from data"
-            icon={<FaBusinessTime style={{ verticalAlign: "top" }} />}
-          />
-          <Col md={2}></Col>
-        </Row>
-        <Row className="pb-4 text-primary bg-light">
-          <Col md={2}></Col>
           <ServiceItem
             content="Improve public-facing services like websites or applications"
-            icon={<MdWeb style={{ verticalAlign: "top" }} />}
+            icon={<MdWeb style={{ verticalAlign: "top", fontSize: "3rem" }} />}
           />
-          <Col md={2}></Col>
+          <ServiceItem
+            content="Digitize and streamline internal systems to save time and unlock insights from data"
+            icon={<FaBriefcase style={{ verticalAlign: "top" }} />}
+          />
           <ServiceItem
             content="Manage geospatial data and publish it on the web"
             icon={<FaGlobe style={{ verticalAlign: "top" }} />}
           />
-          <Col md={2}></Col>
         </Row>
-        <Row className="pt-3 pb-4 text-primary">
-          <Col md={2}></Col>
+        <hr className="mt-2 mx-4" />
+        <Row className="pt-3 pb-4 text-primary text-center">
           <Col>
-            <h2>
-              <strong>Featured projects</strong>
-            </h2>
+            <h4 className="fw-bold">Featured</h4>
           </Col>
         </Row>
-        <Row>
-          {projects.map((project) => {
-            return project.isFeatured ? (
-              <Col key={project.number} md={3} className="m-0 p-2">
-                <IndexIsssueListItem type="project" issue={project} />
-              </Col>
-            ) : null;
-          })}
-        </Row>
+        <FeaturedSection />
       </Page>
     </>
   );

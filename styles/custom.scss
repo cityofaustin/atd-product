@@ -8,25 +8,25 @@ $link-color: #0d3e79;
 $link-decoration: none;
 $hr-color: #dee2e6;
 $hr-opacity: 1;
+$nav-shadow: #d5d5d5;
 
-.homepage-header {
-  font-size: 3.5em !important;
-  color: #ff7261 !important;
-  font-weight: bold !important;
+.link {
+  border-bottom: 1px dotted;
 }
 
 .status-filter-inactive {
   border-radius: 0px !important;
   border: none !important;
-  color: #6c757d !important;
+  color: #0d3e79 !important;
   padding-bottom: 5px !important;
 }
 
 .status-filter-active {
   border-radius: 0px !important;
   border: none !important;
-  border-bottom: 5px solid #ff7261 !important;
-  color: #ff7261 !important;
+  border-bottom: 4px solid #0d3e79 !important;
+  font-weight: bold;
+  color: #0d3e79 !important;
 }
 
 .status-filter:hover {
@@ -34,32 +34,25 @@ $hr-opacity: 1;
 }
 
 .chart-toggle-inactive {
-  border-radius: 0px !important;
-  border: none !important;
-  color: #6c757d !important;
+  color: #0d3e79 !important;
+  border: 1px solid #ced4da !important;
 }
 
 .chart-toggle-active {
-  border-radius: 0px !important;
-  border: none !important;
   color: #fff !important;
-  background-color: #00bfa5 !important;
-}
-
-.workgroup-select-inactive:hover {
-  color: #ff7261 !important;
+  background-color: #0d3e79 !important;
 }
 
 .workgroup-select-inactive {
-  background-color: #f8f9fa !important;
-  color: #6c757d !important;
-  border: none !important;
+  color: #0d3e79 !important;
+  border: 1px solid #ced4da !important;
+  cursor: pointer !important;
 }
 
 .workgroup-select-active {
-  background-color: #f8f9fa !important;
-  color: #ff7261 !important;
-  border: none !important;
+  color: #0d3e79 !important;
+  border: 1px solid #ced4da !important;
+  cursor: pointer !important;
 }
 
 .form-select:focus {
@@ -69,6 +62,45 @@ $hr-opacity: 1;
 .navbar-toggle {
   // Use !important to override BootStrap class
   border: none !important;
+  box-shadow: none !important;
+}
+
+.nav-shadow {
+  box-shadow: 0px 3px 6px $nav-shadow;
+  z-index: 3;
+}
+
+.nav-tile {
+  cursor: pointer;
+  border: 0.5px solid rgba(213, 213, 213, 0.4) !important;
+  box-shadow: 0px 3px 6px $nav-shadow;
+}
+
+.nav-tile:hover {
+  box-shadow: 0px 7px 10px $nav-shadow;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.card-text-img {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+}
+
+.card-text-no-image {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 15;
+  overflow: hidden;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 7% !important;
 }
 
 .footer {
@@ -77,6 +109,13 @@ $hr-opacity: 1;
 
 .footer-link:hover {
   font-weight: bolder;
+}
+
+.hero-section {
+  background-image: url("/assets/skyline.png") !important;
+  background-size: cover;
+  min-height: 350px;
+  text-shadow: 2px 2px 2px #0d3e79;
 }
 
 @media only screen and (min-width: 768px) {
@@ -92,16 +131,6 @@ $hr-opacity: 1;
   .navbar-menu-link {
     padding-top: 0 !important;
     padding-bottom: 0 !important;
-  }
-}
-
-@media (min-width: 1200px) {
-  .container,
-  .container-lg,
-  .container-md,
-  .container-sm,
-  .container-xl {
-    max-width: 1140px !important;
   }
 }
 

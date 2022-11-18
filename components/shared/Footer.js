@@ -42,15 +42,15 @@ export default function Footer({ links }) {
     <Container fluid className="footer mt-5 p-5">
       <Row className="align-items-center">
         <Col xs={12} md={6} lg={8}>
-          <div className="d-flex flex-nowrap">
-            <div className="d-flex align-items-center">
+          <div className="pb-2 d-flex flex-nowrap">
+            <div className="pb-1 d-flex align-items-center">
               <Image
                 height={80}
                 src="/assets/coa_seal_full_white.svg"
                 alt="Generic placeholder"
               />
               <div
-                className="d-flex flex-column align-items-start text-white ms-3"
+                className="d-flex flex-column align-items-start text-white ms-2"
                 style={{ lineHeight: 1 }}
               >
                 <span className="fs-5 fw-bold py-1">
