@@ -20,8 +20,10 @@ function parseBody(body) {
   return [description, img];
 }
 
-export default function IndexIssueListItem({ type, issue }) {
+export default function IndexIssueListItem({ issue }) {
   const [description, img] = parseBody(issue.body);
+
+  const type = issue.labels.includes("Product Index") ? "product" : "project";
 
   return (
     <Link
@@ -46,7 +48,7 @@ export default function IndexIssueListItem({ type, issue }) {
             <Card.Title className="fw-bold fs-6 text-primary">
               {issue.title}
             </Card.Title>
-            <Card.Text>
+            <Card.Text className={img ? "card-text-img" : "card-text-no-image"}>
               <small className="text-muted">
                 <ReactMarkdown skipHtml>{description}</ReactMarkdown>
               </small>

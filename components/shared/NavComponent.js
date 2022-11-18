@@ -76,7 +76,7 @@ export default function NavComponent(props) {
                 <div key={page.route} className={`flex-grow-1 mx-0 my-auto`}>
                   <Link href={page.route} passHref>
                     <Nav.Link
-                      className={`text-primary text-center px-3 navbar-menu-link ${fontWeightClass}`}
+                      className={`text-primary text-center px-3 py-1 navbar-menu-link ${fontWeightClass}`}
                     >
                       {page.label}
                     </Nav.Link>
@@ -86,7 +86,7 @@ export default function NavComponent(props) {
             })}
             <a
               href="https://atd.knack.com/dts#new-service-request"
-              className="text-white text-center d-inline d-md-none mt-2"
+              className="text-white text-center d-inline d-lg-none mt-2 mb-3"
             >
               <Button size="sm">
                 <div>Get help</div>
@@ -94,7 +94,7 @@ export default function NavComponent(props) {
             </a>
             <a
               href="https://atd.knack.com/dts#new-service-request"
-              className="text-white text-center d-none d-md-inline me-3 ps-3 my-auto"
+              className="text-white text-center d-none d-md-none d-lg-inline me-3 ps-3 my-auto"
             >
               <Button size="sm">
                 <div>Get help</div>

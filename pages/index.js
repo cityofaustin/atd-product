@@ -4,12 +4,12 @@ import { IoIosPeople } from "react-icons/io";
 import { FaGlobe, FaBriefcase } from "react-icons/fa";
 import { MdWeb } from "react-icons/md";
 import Page from "../components/shared/Page";
-import FeaturedCarousel from "../components/FeaturedCarousel";
+import FeaturedSection from "../components/FeaturedSection";
 
 function ServiceItem(props) {
   const { icon, content } = props;
   return (
-    <Col className="px-3">
+    <Col className="pb-3 px-4">
       <Row>
         <h1>{icon}</h1>
       </Row>
@@ -29,19 +29,23 @@ export default function HomeView() {
             <h1 className="text-white display-3 fw-bold text-center pb-4">
               Tech Support for ATX Mobility
             </h1>
-            <h3 className="text-white text-center">
-              We build and buy technology to help city staff <br></br>
+            {/* Only include this line break at lg breakpoint */}
+            <h3 className="text-white text-center d-none d-lg-block">
+              We build and buy technology to help city staff <br />
               tackle Austin&apos;s mobility challenges.
+            </h3>
+            <h3 className="text-white text-center d-lg-none mx-5">
+              We build and buy technology to help city staff tackle
+              Austin&apos;s mobility challenges.
             </h3>
           </Col>
         </Row>
-        <Row className="py-5 text-primary text-center">
+        <Row className="pt-5 pb-4 text-primary text-center">
           <h2>
             <strong>We&apos;re here to help</strong>
           </h2>
         </Row>
-        <Row className="text-primary text-center">
-          <Col sm={1}></Col>
+        <Row xs={1} md={2} lg={4} className="mx-5 text-primary text-center">
           <ServiceItem
             content="Modernize software development processes while introducing good agile and human-centered design practices"
             icon={
@@ -60,20 +64,14 @@ export default function HomeView() {
             content="Manage geospatial data and publish it on the web"
             icon={<FaGlobe style={{ verticalAlign: "top" }} />}
           />
-          <Col sm={1}></Col>
         </Row>
-        <hr className="my-3 mx-4"></hr>
-        <Row className="pt-3 pb-4 text-primary">
-          <Col sm={1}></Col>
+        <hr className="mt-2 mx-4" />
+        <Row className="pt-3 pb-4 text-primary text-center">
           <Col>
             <h4 className="fw-bold">Featured</h4>
           </Col>
         </Row>
-        <Row>
-          <Col>
-            <FeaturedCarousel />
-          </Col>
-        </Row>
+        <FeaturedSection />
       </Page>
     </>
   );

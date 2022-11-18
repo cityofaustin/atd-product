@@ -1,29 +1,31 @@
 import React from "react";
 import Col from "react-bootstrap/Col";
 import { FaChartArea } from "react-icons/fa";
-import { FaRegListAlt } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
 
 export default function ProjectListToggle(props) {
   const { showChartView, setShowChartView } = props;
   return (
     <>
       <Col
-        md="auto"
         role="button"
         className={
-          showChartView ? "chart-toggle-disabled" : "chart-toggle-active"
+          showChartView
+            ? "rounded-start border-end-0 chart-toggle-inactive"
+            : "rounded-start chart-toggle-active"
         }
         onClick={() => setShowChartView(false)}
       >
         <p className="text-center my-auto p-2">
-          <FaRegListAlt style={{ verticalAlign: "middle" }} /> List
+          <FaList style={{ verticalAlign: "middle" }} /> List
         </p>
       </Col>
       <Col
-        md="auto"
         role="button"
         className={
-          showChartView ? "chart-toggle-active" : "chart-toggle-disabled"
+          showChartView
+            ? "rounded-end chart-toggle-active"
+            : "rounded-end border-start-0 chart-toggle-inactive"
         }
         onClick={() => setShowChartView(true)}
       >
