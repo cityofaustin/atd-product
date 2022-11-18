@@ -48,7 +48,7 @@ export default function IndexIssueListItem({ issue }) {
             <Card.Title className="fw-bold fs-6 text-primary">
               {issue.title}
             </Card.Title>
-            <Card.Text>
+            <Card.Text className={img ? "card-text-img" : "card-text-no-image"}>
               <small className="text-muted">
                 <ReactMarkdown skipHtml>{description}</ReactMarkdown>
               </small>

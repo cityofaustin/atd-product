@@ -126,10 +126,21 @@ export default function ProjectsList(props) {
           </Col>
         </Row>
       )}
+      <Row>
+        <Col>
+          <hr className="mt-3" />
+        </Col>
+      </Row>
       {!showChartView && (
         <Row key="issues-row">
           {displayIssues.map((project) => (
-            <Col key={project.number} sm={12} md={6} lg={4} className="m-0 p-2">
+            <Col
+              key={project.number}
+              sm={12}
+              md={6}
+              lg={3}
+              className="m-0 py-3"
+            >
               <IndexIssueListItem issue={project} />
             </Col>
           ))}

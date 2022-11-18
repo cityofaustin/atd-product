@@ -7,10 +7,11 @@ import ProjectsList from "../../components/projectsView/ProjectsList";
 
 function FrontMatter() {
   return (
-    <Col className="ms-2 mb-2 border-start border-secondary">
-      <p className="mb-0 ms-1">
-        <strong>Projects</strong> are temporary endeavors — whether{" "}
+    <Col className="mb-2">
+      <p className="mb-2 text-black">
+        Projects are temporary endeavors — whether{" "}
         <a
+          className="link"
           alt="link BI issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/65"
         >
@@ -18,6 +19,7 @@ function FrontMatter() {
         </a>
         ,{" "}
         <a
+          className="link"
           alt="link to 311 module issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/533"
         >
@@ -25,6 +27,7 @@ function FrontMatter() {
         </a>
         ,{" "}
         <a
+          className="link"
           alt="parking data overhaul issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/254"
         >
@@ -32,6 +35,7 @@ function FrontMatter() {
         </a>
         , or{" "}
         <a
+          className="link"
           alt="link to print bike map issue"
           href="https://github.com/cityofaustin/atd-data-tech/issues/1911"
         >
@@ -48,7 +52,7 @@ export default function ProjectsView() {
   const { issues, isLoaded, error, projectIssues, statuses, workgroups } =
     useContext(IssuesContext);
   return (
-    <Page nav title="Our work">
+    <Page nav title="Projects">
       <Row key="front-matter" className="mb-2">
         <FrontMatter />
       </Row>

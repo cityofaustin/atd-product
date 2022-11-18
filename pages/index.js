@@ -7,7 +7,7 @@ import Page from "../components/shared/Page";
 import FeaturedSection from "../components/FeaturedSection";
 
 function ServiceItem(props) {
-  const { icon, content, offset } = props;
+  const { icon, content } = props;
   return (
     <Col className="pb-3 px-4">
       <Row>

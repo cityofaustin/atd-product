@@ -6,13 +6,13 @@ import Form from "react-bootstrap/Form";
 import { useMediaQuery } from "react-responsive";
 import ProjectListToggle from "./ProjectListToggle";
 import FiltersList from "./FiltersList";
-import { LARGE_BREAKPOINT } from "../settings";
+import { MEDIUM_BREAKPOINT } from "../settings";
 
 const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "needs_scoping" },
   { label: "Backlog", key: "backlog" },
   { label: "In Progress", key: "in_progress" },
-  { label: "Completed", key: "completed" },
+  { label: "Complete", key: "completed" },
 ];
 
 const WORKGROUP_NAMES = {
@@ -60,8 +60,8 @@ export default function ProjectFilters({
   setShowChartView,
   workgroups,
 }) {
-  const isTabletOrMobile = useMediaQuery({
-    query: `(max-width: ${LARGE_BREAKPOINT})`,
+  const isMobile = useMediaQuery({
+    query: `(max-width: ${MEDIUM_BREAKPOINT})`,
   });
   const router = useRouter();
 
@@ -75,15 +75,15 @@ export default function ProjectFilters({
 
   return (
     <Row className="text-center">
-      {isTabletOrMobile ? (
+      {isMobile ? (
         <Col key="projectStatusFilter">
-          <Row className="h-100 bg-light">
+          <Row className="h-100 mb-3">
             <Col>
               <Form.Select
                 className={
                   currentFilters.status
-                    ? "workgroup-select-active form-select"
-                    : "workgroup-select-inactive form-select"
+                    ? "workgroup-select-active"
+                    : "workgroup-select-inactive"
                 }
                 key="status"
                 value={currentFilters.status || "In Progress"}
@@ -99,7 +99,11 @@ export default function ProjectFilters({
                 <option value="">Project Status</option>
                 {STATUS_FILTERS.map((projectStatus) => {
                   return (
-                    <option key={projectStatus.key} value={projectStatus.label}>
+                    <option
+                      className="text-black"
+                      key={projectStatus.key}
+                      value={projectStatus.key}
+                    >
                       {projectStatus.label}
                     </option>
                   );
@@ -116,17 +120,17 @@ export default function ProjectFilters({
           statusFilters={STATUS_FILTERS}
         />
       )}
-      <Col key="workgroupFilter" md={6} lg="auto">
-        <Row className="bg-light h-100">
+      <Col xs={12} lg={3} className="mb-3 mx-auto" key="workgroupFilter">
+        <Row className="h-100">
           <Col>
             <Form.Select
               className={
                 currentFilters.workgroup
-                  ? "workgroup-select-active"
-                  : "workgroup-select-inactive"
+                  ? "h-100 workgroup-select-active"
+                  : "h-100 workgroup-select-inactive"
               }
               key="status"
-              value={currentFilters.workgroup || "Any workgroup"}
+              value={currentFilters.workgroup || "All workgroups"}
               onChange={(e) =>
                 handleChange(
                   e.target.value,
@@ -136,10 +140,14 @@ export default function ProjectFilters({
                 )
               }
             >
-              <option value="">Any workgroup</option>
+              <option value="">All workgroups</option>
               {workgroups.map((workgroup) => {
                 return (
-                  <option key={workgroup} value={workgroup}>
+                  <option
+                    className="text-black"
+                    key={workgroup}
+                    value={workgroup}
+                  >
                     {WORKGROUP_NAMES[workgroup] || workgroup}
                   </option>
                 );
@@ -148,8 +156,8 @@ export default function ProjectFilters({
           </Col>
         </Row>
       </Col>
-      <Col key="projectListToggle" md="auto">
-        <Row className="h-100 bg-light">
+      <Col xs={12} lg={3} className="mb-3 ms-auto" key="projectListToggle">
+        <Row className="h-100 mx-0">
           <ProjectListToggle
             showChartView={showChartView}
             setShowChartView={setShowChartView}
