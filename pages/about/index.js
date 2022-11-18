@@ -2,6 +2,13 @@ import React from "react";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
+import {
+  IoIosRocket,
+  IoIosPeople,
+  IoIosHeart,
+  IoMdUnlock,
+} from "react-icons/io";
+import { RiPlantFill } from "react-icons/ri";
 
 import Page from "../../components/shared/Page";
 
@@ -45,7 +52,7 @@ const TEAM_MEMBERS = [
   {
     name: "Tilly Whitson",
     title: "Junior Software Developer",
-    pronouns: "She/Her",
+    pronouns: "She/They",
     src: "assets/headshots/tilly_whitson.jpeg",
   },
   {
@@ -120,6 +127,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/kate_lunceford.jpg",
   },
+  {
+    name: "Zach Berry",
+    title: "IT Geospatial Analyst Sr.",
+    pronouns: "He/Him",
+    src: "assets/headshots/zach_berry.jpeg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
@@ -188,36 +201,30 @@ const TEAM_MEMBER_ALUMNI = [
 function TeamMember(props) {
   const { src, name, title, pronouns } = props;
   return (
-    <Col xs={4} className="my-2 text-center text-primary">
+    <Col xs={6} md={4} lg={3} className="my-2 text-center text-primary">
       <Image width={125} roundedCircle src={src} alt="headshot image" />
       <h6 className="mt-2 mb-0">{name}</h6>
-      <p className="text-muted  mb-0">{title}</p>
-      {props.pronouns && <p className="text-muted ">{pronouns}</p>}
+      <p className="mb-0">{title}</p>
+      {props.pronouns && <p>{pronouns}</p>}
     </Col>
   );
 }
 
 function ValueItem(props) {
-  const { src, title, content } = props;
+  const { icon, title, content } = props;
   return (
-    <Col xs={12} md={6} lg={4} className="pb-4">
+    <Col xs={12} md={6} lg={4} className="px-5 pb-4 m-auto">
       <Row>
-        <Col xs="auto" className="pe-0">
-          <span style={{ color: "#00bfa5" }}>
-            <Image width={"45"} src={src} alt="Value Icon" />
-          </span>
-        </Col>
+        <h1>{icon}</h1>
+      </Row>
+      <Row>
         <Col>
-          <Row>
-            <Col>
-              <h4>{title}</h4>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <p>{content}</p>
-            </Col>
-          </Row>
+          <h4>{title}</h4>
+        </Col>
+      </Row>
+      <Row>
+        <Col>
+          <p>{content}</p>
         </Col>
       </Row>
     </Col>
@@ -226,8 +233,8 @@ function ValueItem(props) {
 
 export default function AboutView(props) {
   return (
-    <Page nav title="About Us">
-      <Row className="text-primary">
+    <Page nav title="About">
+      <Row className="text-black">
         <Col>
           <p>
             We leverage high quality data and modern tech to empower Austin
@@ -237,46 +244,48 @@ export default function AboutView(props) {
           </p>
         </Col>
       </Row>
-      <Row className="text-primary mt-5 mb-4">
+      <hr className="mt-2" />
+      <Row className="text-primary text-center mt-5 mb-5">
         <Col>
           <a alt="anchor tag for Our team" href="#work">
             <h2>How we work</h2>
           </a>
         </Col>
       </Row>
-      <Row className="text-primary">
+      <Row className="text-primary text-center">
         <ValueItem
           title="Embrace change"
           content="Needs change; technologies evolve. We welcome new challenges, and improve by adapting to and embracing change. We are stubborn about our goals, but flexible in our methods."
-          src="/assets/icons/change.jpg"
+          icon={<IoIosRocket />}
         />
         <ValueItem
           title="Users first and always"
           content="We build only what people really need, nothing more. User needs are the driver for all decisions. We build with our users, keeping them involved in our process through ideation, sprint reviews, demos, and usability testing."
-          src="/assets/icons/users.jpg"
+          icon={<IoIosHeart />}
         />
         <ValueItem
           title="Empower great people"
           content="Our work empowers civil servants to discover and cultivate new skills. We aim to provide opportunities for personal and professional growth, and to empower the public to engage with their government through open information and collaboration.          "
-          src="/assets/icons/astronaut.jpg"
+          icon={<IoIosPeople style={{ fontSize: "3rem" }} />}
         />
         <Col lg={2} className="d-none d-lg-block"></Col>
         <ValueItem
           title="Default to open"
           content="The residents of Austin are at the top of our org chart. We share everything we do so that we can collaborate with the public and receive critical feedback. Before we restrict access to a line of code, a dataset, a design brief, or an app, we ask, “Why?”"
-          src="/assets/icons/unlock.jpg"
+          icon={<IoMdUnlock />}
         />
         <ValueItem
           title="Nurture, include, and grow together"
           content="Delivering great tech cannot not come at the cost of our personal wellbeing. We commit to building a healthy and inclusive workplace by looking out for each other, listening to each other, and advocating for each other."
-          src="/assets/icons/grow.jpg"
+          icon={<RiPlantFill />}
         />
-        <Col md={2}></Col>
+        <Col lg={2}></Col>
       </Row>
-      <Row className="text-primary mt-5 mb-4">
+      <hr className="mt-2" />
+      <Row className="text-primary text-center mt-5 mb-4">
         <Col>
           <a alt="anchor tag for Our team" href="#team">
-            <h2 id="team">Our team</h2>
+            <h2 id="team">Meet the team</h2>
           </a>
         </Col>
       </Row>
@@ -285,10 +294,11 @@ export default function AboutView(props) {
           return <TeamMember key={person.name} {...person} />;
         })}
       </Row>
-      <Row className="text-primary mt-5 mb-4">
+      <hr className="mt-2" />
+      <Row className="text-primary text-center mt-5 mb-4">
         <Col>
           <a alt="anchor tag for Our team" href="#alumni">
-            <h2 id="alumni">Team alumni</h2>
+            <h2 id="alumni">Alumni</h2>
           </a>
         </Col>
       </Row>
