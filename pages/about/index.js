@@ -127,6 +127,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/kate_lunceford.jpg",
   },
+  {
+    name: "Zach Berry",
+    title: "IT Geospatial Analyst Sr.",
+    pronouns: "He/Him",
+    src: "assets/headshots/zach_berry.jpeg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
