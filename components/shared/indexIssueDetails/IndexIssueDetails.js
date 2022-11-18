@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import Alert from "react-bootstrap/Alert";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Image from "react-bootstrap/Image";
@@ -92,26 +92,6 @@ function IssueTabs({ indexType, issue }) {
   );
 }
 
-function BackLink(props) {
-  return (
-    <Row>
-      <Col>
-        <Button
-          size="sm"
-          type="button"
-          className="btn-link bg-white border-white px-0"
-          onClick={(e) => {
-            e.preventDefault();
-            props.history.back();
-          }}
-        >
-          <span className="text-muted">{`< Back to ${props.indexType}s`}</span>
-        </Button>
-      </Col>
-    </Row>
-  );
-}
-
 function InfoRow({ issue }) {
   return (
     <Row className="mb-4">
@@ -146,8 +126,6 @@ export default function IndexIssueDetails({
   error,
   isLoaded,
 }) {
-  const router = useRouter();
-
   if (error) {
     return <p>{error}</p>;
   } else if (!isLoaded && !error) {
@@ -165,7 +143,12 @@ export default function IndexIssueDetails({
 
   return (
     <>
-      <BackLink indexType={indexType} history={router} />
+      <Link href={`/${indexType}s`}>
+        <span
+          className="text-muted"
+          role="button"
+        >{`< Back to ${indexType}s`}</span>
+      </Link>
       <h4 className="text-black mb-0">
         {indexType === "project" ? "Project Details" : "Product Details"}
       </h4>
