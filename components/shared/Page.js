@@ -16,18 +16,16 @@ function Title(props) {
   );
 }
 
-export default function Page({ children, fluid, hideSeparator, nav, title }) {
+export default function Page({ children, fluid, nav, title, isHome }) {
   let location = useRouter();
   const [currentPageRoute] = useState(location.pathname);
+
   return (
     <>
       {nav && (
-        <NavComponent
-          hideSeparator={hideSeparator}
-          currentPageRoute={currentPageRoute}
-        />
+        <NavComponent currentPageRoute={currentPageRoute} isHome={isHome} />
       )}
-      <Container fluid={fluid}>
+      <Container fluid={fluid} className={`${!isHome && "mt-3"}`}>
         {title && <Title title={title} />}
         {children}
       </Container>
