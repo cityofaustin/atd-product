@@ -23,11 +23,11 @@ function ServiceItem(props) {
 export default function HomeView() {
   return (
     <>
-      <Page fluid nav hideSeparator>
+      <Page fluid nav isHome>
         <Row className="hero-section d-flex align-items-center">
           <Col>
             <h1 className="text-white display-3 fw-bold text-center pb-4">
-              Tech Support for ATX Mobility
+              Digital Services for ATX Mobility
             </h1>
             {/* Only include this line break at lg breakpoint */}
             <h3 className="text-white text-center d-none d-lg-block">
