@@ -38,10 +38,10 @@ function IconSeparator() {
 }
 
 export default function NavComponent(props) {
-  const { currentPageRoute, hideSeparator } = props;
+  const { currentPageRoute, isHome } = props;
 
   return (
-    <Navbar expand="lg" className={`py-1`}>
+    <Navbar expand="lg" className={`py-1 ${!isHome ? "nav-shadow" : ""}`}>
       <Container fluid key="nav-container">
         <Link href="/" passHref>
           <Navbar.Brand style={{ cursor: "pointer" }} className="ps-2 me-auto">
