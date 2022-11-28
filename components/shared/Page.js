@@ -18,14 +18,13 @@ function Title(props) {
 
 export default function Page({ children, fluid, nav, title, isHome }) {
   let location = useRouter();
-  const [currentPageRoute] = useState(location.pathname);
 
   return (
     <>
       {nav && (
-        <NavComponent currentPageRoute={currentPageRoute} isHome={isHome} />
+        <NavComponent currentPageRoute={location.pathname} isHome={isHome} />
       )}
-      <Container fluid={fluid} className={`${!isHome && "mt-3"}`}>
+      <Container fluid={fluid} className={`${!isHome ? "mt-3" : ""}`}>
         {title && <Title title={title} />}
         {children}
       </Container>
