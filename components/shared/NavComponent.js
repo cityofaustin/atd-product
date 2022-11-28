@@ -41,7 +41,7 @@ export default function NavComponent(props) {
   const { currentPageRoute, isHome } = props;
 
   return (
-    <Navbar expand="lg" className={`py-1 ${!isHome && "nav-shadow"}`}>
+    <Navbar expand="lg" className={`py-1 ${!isHome ? "nav-shadow" : ""}`}>
       <Container fluid key="nav-container">
         <Link href="/" passHref>
           <Navbar.Brand style={{ cursor: "pointer" }} className="ps-2 me-auto">
