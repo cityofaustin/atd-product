@@ -38,12 +38,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/tracy_linder.jpg",
   },
   {
-    name: "Alan De Anda",
-    title: "Senior Geospatial Analyst",
-    pronouns: "He/Him",
-    src: "assets/headshots/alan_de_anda.jpeg",
-  },
-  {
     name: "Amenity Applewhite",
     pronouns: "She/Her",
     title: "Head of Product",
@@ -195,6 +189,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Head of Software Engineering",
     pronouns: "He/Him",
     src: "assets/headshots/mateo_clarke.jpeg",
+  },
+  {
+    name: "Alan De Anda",
+    title: "Senior Geospatial Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/alan_de_anda.jpeg",
   },
 ];
 
