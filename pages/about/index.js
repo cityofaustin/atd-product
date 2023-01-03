@@ -50,12 +50,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/tilly_whitson.jpeg",
   },
   {
-    name: "Stephanie Moorer",
-    title: "Product Manager",
-    pronouns: "",
-    src: "assets/headshots/stephanie_moorer.jpeg",
-  },
-  {
     name: "Nadin Nader",
     title: "Product Delivery Manager",
     pronouns: "He/Him",
@@ -65,7 +59,7 @@ const TEAM_MEMBERS = [
     name: "Chrispin Pullen",
     title: "Senior Application Analyst",
     pronouns: "",
-    src: "assets/headshots/chrispin_pullen.jpeg",
+    src: "assets/headshots/chrispin_pullen.jpg",
   },
   {
     name: "Andrew Shensky",
@@ -77,7 +71,7 @@ const TEAM_MEMBERS = [
     name: "Chia Berry",
     title: "Head of Software Engineering",
     pronouns: "She/Her",
-    src: "assets/headshots/chia_berry.png",
+    src: "assets/headshots/chia_berry.jpg",
   },
   {
     name: "Patrick McDonnell",
@@ -89,7 +83,7 @@ const TEAM_MEMBERS = [
     name: "Frank Hereford",
     title: "Software Developer",
     pronouns: "He/Him",
-    src: "assets/headshots/frank_hereford.jpeg",
+    src: "assets/headshots/frank_hereford.jpg",
   },
   {
     name: "Charlie Henry",
@@ -195,6 +189,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Senior Geospatial Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/alan_de_anda.jpeg",
+  },
+  {
+    name: "Stephanie Moorer",
+    title: "Product Manager",
+    pronouns: "",
+    src: "assets/headshots/stephanie_moorer.jpeg",
   },
 ];
 
