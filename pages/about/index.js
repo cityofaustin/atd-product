@@ -58,7 +58,7 @@ const TEAM_MEMBERS = [
   {
     name: "Chrispin Pullen",
     title: "Senior Application Analyst",
-    pronouns: "",
+    pronouns: null,
     src: "assets/headshots/chrispin_pullen.jpg",
   },
   {
@@ -120,6 +120,24 @@ const TEAM_MEMBERS = [
     title: "IT Geospatial Analyst Sr.",
     pronouns: "He/Him",
     src: "assets/headshots/zach_berry.jpeg",
+  },
+  {
+    name: "Josh Coleman",
+    title: "GIS Technician",
+    pronouns: "He/Him",
+    src: "assets/headshots/josh_coleman.jpg",
+  },
+  {
+    name: "Daniel Stover",
+    title: "GIS Technician",
+    pronouns: "He/Him",
+    src: "assets/headshots/daniel_stover.jpg",
+  },
+  {
+    name: "Christina Tremel",
+    title: "Product Manager",
+    pronouns: "She/Her",
+    src: "assets/headshots/christina_tremel.png",
   },
 ];
 
