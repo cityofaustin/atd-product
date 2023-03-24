@@ -142,7 +142,7 @@ const TEAM_MEMBERS = [
   {
     name: "Susanne Gov",
     title: "Application Analyst",
-    pronouns: "she/her",
+    pronouns: "She/Her",
     src: "assets/headshots/susanne_gov.jpg"
   }
 ];
