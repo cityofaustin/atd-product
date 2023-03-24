@@ -139,6 +139,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/christina_tremel.png",
   },
+  {
+    name: "Susanne Gov",
+    title: "Application Analyst",
+    pronouns: "she/her",
+    src: "assets/headshots/susanne_gov.jpg"
+  }
 ];
 
 const TEAM_MEMBER_ALUMNI = [
