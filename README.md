@@ -2,6 +2,8 @@
 
 A website about ATD's Data & Technology Services team.
 
+![architecture diagram](arch-diagram.png)
+
 ## Get it running
 
 Local development requires `git` and `npm`.
