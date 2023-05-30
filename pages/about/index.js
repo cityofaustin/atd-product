@@ -181,7 +181,7 @@ const TEAM_MEMBER_ALUMNI = [
   {
     name: "Jace Deloney",
     title: "Product Manager",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     src: "assets/headshots/jace_deloney.jpeg",
   },
   {
