@@ -53,7 +53,7 @@ const TEAM_MEMBERS = [
     name: "Nadin Nader",
     title: "Product Delivery Manager",
     pronouns: "He/Him",
-    src: "assets/headshots/nadin_nader.jpeg",
+    src: "assets/headshots/nadin_nader.jpg",
   },
   {
     name: "Chrispin Pullen",
@@ -111,7 +111,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Kate Lunceford",
-    title: "Business Process Consultant",
+    title: "Data Storyteller",
     pronouns: "She/Her",
     src: "assets/headshots/kate_lunceford.jpg",
   },
@@ -123,15 +123,15 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Josh Coleman",
-    title: "GIS Technician",
+    title: "GIS Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/josh_coleman.jpg",
   },
   {
     name: "Daniel Stover",
-    title: "GIS Technician",
+    title: "GIS Analyst",
     pronouns: "He/Him",
-    src: "assets/headshots/daniel_stover.jpg",
+    src: "assets/headshots/daniel_stover.jpeg",
   },
   {
     name: "Christina Tremel",
@@ -143,15 +143,45 @@ const TEAM_MEMBERS = [
     name: "Susanne Gov",
     title: "Application Analyst",
     pronouns: "She/Her",
-    src: "assets/headshots/susanne_gov.jpg"
-  }
+    src: "assets/headshots/susanne_gov.jpg",
+  },
+  {
+    name: "Adriana Martinez Guillen",
+    title: "Application Analyst Senior",
+    pronouns: "She/Her",
+    src: "assets/headshots/adriana_martinez.png",
+  },
+  {
+    name: "Rene Vargas",
+    title: "Application Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/rene_vargas.png",
+  },
+  {
+    name: "Matthew Martinez",
+    title: "Application Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/matthew_martinez.jpg",
+  },
+  {
+    name: "Dipa Yaksh",
+    title: "Senior Application Architect",
+    pronouns: "She/Her",
+    src: "assets/headshots/no_image.png",
+  },
+  {
+    name: "Rebekka Bryant",
+    title: "Business Intelligence Analyst",
+    pronouns: "She/Her",
+    src: "assets/headshots/rebekka_bryant.jpeg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
   {
     name: "Jace Deloney",
     title: "Product Manager",
-    pronouns: "He/him",
+    pronouns: "He/Him",
     src: "assets/headshots/jace_deloney.jpeg",
   },
   {
