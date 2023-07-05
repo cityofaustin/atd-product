@@ -177,13 +177,13 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Rachel Wang",
-    title: "CIF Fellow",
+    title: "Software Developer Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/rachel_wang.png",
   },
   {
     name: "Madison Fan",
-    title: "CIF Fellow",
+    title: "Design Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/madison_fan.png",
   },
