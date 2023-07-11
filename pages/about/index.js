@@ -291,10 +291,7 @@ export default function AboutView(props) {
       <Row className="text-black">
         <Col>
           <p>
-            We leverage high quality data and modern tech to empower Austin
-            Transportation staff to improve operations, make data-informed
-            decisions, and deliver excellent mobility services to the Austin
-            community. We solve real problems for real people.
+          We leverage high-quality data and modern technology to empower Transportation and Public Works staff to improve operations, make data-informed decisions, and deliver excellent mobility services to the Austin community. We solve real problems for real people.
           </p>
         </Col>
       </Row>
