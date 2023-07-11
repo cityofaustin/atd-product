@@ -10,9 +10,8 @@ function FrontMatter() {
     <Col>
       <p className="text-black">
         Products are the solutions we build for our customers, including Knack
-        apps, AMANDA apps, custom software, and data systems. We improve and
-        extend our products over time so that they deliver continuous value to
-        Austin Transportation as business needs evolve.
+        apps, AMANDA apps, custom software, and data systems. We improve and extend our products over time so that 
+        they deliver continuous value to Transportation and Public Works staff as business needs evolve.
       </p>
       <hr className="mt-4" />
     </Col>
