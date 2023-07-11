@@ -56,7 +56,7 @@ export default function NavComponent(props) {
               <Image
                 height={20}
                 src="/assets/transportation_din_navy.svg"
-                alt="Austin transportation logo"
+                alt="Transportation and Public Works wordmark including the City of Austin seal"
               />
             </div>
           </Navbar.Brand>
