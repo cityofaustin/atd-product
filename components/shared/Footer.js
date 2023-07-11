@@ -42,7 +42,7 @@ export default function Footer({ links }) {
       <Row className="align-items-center">
         <Col xs={12} md={6} lg={8}>
           <div className="pb-2 d-flex flex-nowrap">
-            <div className="pb-1 d-flex align-items-center">
+            <a href="https://austinmobility.io" className="pb-1 d-flex align-items-center">
               <div
                 className="d-flex flex-column align-items-start text-white ms-2"
                 style={{ lineHeight: 1 }}
@@ -51,10 +51,10 @@ export default function Footer({ links }) {
                   Data & Technology Services
                 </span>
                 <span className="fs-6 fw-light py-1">
-                  Austin Transportation
+                  Austin Transportation & Public Works
                 </span>
               </div>
-            </div>
+            </a>
           </div>
         </Col>
         <Col className="text-white fw-light">
