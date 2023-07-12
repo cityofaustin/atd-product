@@ -175,6 +175,18 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/rebekka_bryant.jpeg",
   },
+  {
+    name: "Rachel Wang",
+    title: "Software Developer Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/rachel_wang.png",
+  },
+  {
+    name: "Madison Fan",
+    title: "Design Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/madison_fan.png",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
