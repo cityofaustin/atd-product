@@ -1,7 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Image from "react-bootstrap/Image";
 import { FaRegEnvelope } from "react-icons/fa";
 import IconLabel from "./IconLabel";
 
@@ -49,10 +48,10 @@ export default function Footer({ links }) {
                 style={{ lineHeight: 1 }}
               >
                 <span className="fs-5 fw-bold py-1">
-                  Data & Technology Services
+                  Data &amp; Technology Services
                 </span>
                 <span className="fs-6 fw-light py-1">
-                  Austin Transportation
+                  Austin Transportation &amp; Public Works
                 </span>
               </div>
             </a>
