@@ -9,7 +9,7 @@ function FrontMatter() {
   return (
     <Col className="mb-2">
       <p className="mb-2 text-black">
-        Projects are temporary endeavors — whether{" "}
+      Projects are timeboxed endeavors — whether{" "}
         <a
           className="link"
           alt="link BI issue"
