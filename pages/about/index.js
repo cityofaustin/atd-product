@@ -187,6 +187,18 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/madison_fan.png",
   },
+  {
+    name: "Vaishnav Yerram",
+    title: "IT Support Analyst",
+    pronouns: null,
+    src: "assets/headshots/vaishnav_yerram.jpeg",
+  },
+  {
+    name: "Homer Arizpe",
+    title: "Business Systems Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/homer_arizpe.jpeg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
