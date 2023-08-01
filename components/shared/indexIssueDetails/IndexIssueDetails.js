@@ -22,7 +22,7 @@ const markdownComponents = {
     <Image {...props} className="img-fluid" alt="image from github"/>
   ),
   a: ({ node, ...props }) => (
-    <a {...props} className="markdown-link"/>
+    <a {...props} className="link"/>
   ),
 };
 
