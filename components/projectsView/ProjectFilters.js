@@ -66,12 +66,23 @@ export default function ProjectFilters({
   const router = useRouter();
 
   useEffect(() => {
-    router.replace(`/projects/${formatSearchPath(currentFilters)}`, undefined, {
-      shallow: true,
-    });
+    // Update the view parameter in the URL based on the showChartView state
+    const viewParam = showChartView ? "chart" : null;
+    const currentQuery = { ...router.query };
+    if (viewParam) {
+      currentQuery.view = viewParam;
+    } else {
+      delete currentQuery.view;
+    }
+
+    router.replace(
+      `/projects/${formatSearchPath(currentFilters)}`,
+      { query: currentQuery },
+      { shallow: true }
+    );
     // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentFilters]);
+  }, [currentFilters, showChartView]);
 
   return (
     <Row className="text-center">

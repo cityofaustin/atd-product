@@ -68,29 +68,33 @@ const useDisplayScores = ({ displayIssues, scores }) =>
     });
   }, [displayIssues, scores]);
 
-export default function ProjectsList(props) {
-  const issues = props.issues;
-  const projectIssues = props.projectIssues;
-  const error = props.error;
-  const isLoaded = props.isLoaded;
-  const { scores } = useContext(EvaluationsContext);
-  const location = useRouter();
-  const [search] = useState(new URLSearchParams(location.query));
-  const [currentFilters, setCurrentFilters] = useState({});
-  const [showChartView, setShowChartView] = useState(false);
-
-  useEffect(() => {
-    /*
-    check current url for filter params after issues are loaded. set them if present, 
-    otherwise set default filter values
-    */
-    let paramFilters = {};
-    FILTER_DEFS.forEach((filterDef) => {
-      const value = search.get(filterDef.key);
-      paramFilters[filterDef.key] = value ? value : filterDef.default;
-    });
-    setCurrentFilters(paramFilters);
-  }, [issues, search]);
+  export default function ProjectsList(props) {
+    const issues = props.issues;
+    const projectIssues = props.projectIssues;
+    const error = props.error;
+    const isLoaded = props.isLoaded;
+    const { scores } = useContext(EvaluationsContext);
+    const location = useRouter();
+    const [search] = useState(new URLSearchParams(location.query));
+    const [currentFilters, setCurrentFilters] = useState({});
+    const [showChartView, setShowChartView] = useState(false);
+  
+    useEffect(() => {
+      // Check current url for filter params after issues are loaded.
+      // Set them if present, otherwise set default filter values.
+      let paramFilters = {};
+      FILTER_DEFS.forEach((filterDef) => {
+        const value = search.get(filterDef.key);
+        paramFilters[filterDef.key] = value ? value : filterDef.default;
+      });
+      setCurrentFilters(paramFilters);
+  
+      // Check if the view=chart parameter is present in the URL.
+      // If yes, set the showChartView state to true.
+      const viewParam = search.get("view");
+      setShowChartView(viewParam === "chart");
+    }, [issues, search]);
+  
 
   const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
 
