@@ -19,7 +19,10 @@ const markdownComponents = {
   // This custom renderer changes how images are rendered
   // we use it to constrain the max width of an image to its container
   img: ({ node, ...props }) => (
-    <Image className="img-fluid" alt="image from github" {...props} />
+    <Image {...props} className="img-fluid" alt="image from github"/>
+  ),
+  a: ({ node, ...props }) => (
+    <a {...props} className="markdown-link"/>
   ),
 };
 
