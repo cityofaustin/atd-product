@@ -42,17 +42,6 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
   setCurrentFilters(mutableFilters);
 }
 
-function formatSearchPath(currentFilters) {
-  // format the search path to match currently selected filters
-  const searchKwargs = Object.keys(currentFilters)
-    .filter((key) => currentFilters[key])
-    .map((key) => {
-      return `${key}=${currentFilters[key]}`;
-    })
-    .join("&");
-  return `?${searchKwargs}`;
-}
-
 export default function ProjectFilters({
   currentFilters,
   setCurrentFilters,
