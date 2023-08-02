@@ -14,6 +14,10 @@ $nav-shadow: #d5d5d5;
   border-bottom: 1px dotted;
 }
 
+.markdown-link {
+  text-decoration: underline !important;
+}
+
 .status-filter-inactive {
   border-radius: 0px !important;
   border: none !important;
