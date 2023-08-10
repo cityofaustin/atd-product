@@ -167,7 +167,7 @@ const TEAM_MEMBERS = [
     name: "Dipa Yaksh",
     title: "Senior Application Architect",
     pronouns: "She/Her",
-    src: "assets/headshots/no_image.png",
+    src: "assets/headshots/dipa_yaksh.png",
   },
   {
     name: "Rebekka Bryant",
@@ -198,6 +198,12 @@ const TEAM_MEMBERS = [
     title: "Business Systems Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/homer_arizpe.jpeg",
+  },
+  {
+    name: "JB Strange",
+    title: "IT Support Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/jb_strange.jpg",
   },
 ];
 
