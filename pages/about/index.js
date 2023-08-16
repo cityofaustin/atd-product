@@ -122,7 +122,7 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/zach_berry.jpeg",
   },
   {
-    name: "Josh Coleman",
+    name: "Josh Colemon",
     title: "GIS Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/josh_coleman.jpg",
