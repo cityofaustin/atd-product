@@ -42,17 +42,6 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
   setCurrentFilters(mutableFilters);
 }
 
-function formatSearchPath(currentFilters) {
-  // format the search path to match currently selected filters
-  const searchKwargs = Object.keys(currentFilters)
-    .filter((key) => currentFilters[key])
-    .map((key) => {
-      return `${key}=${currentFilters[key]}`;
-    })
-    .join("&");
-  return `?${searchKwargs}`;
-}
-
 export default function ProjectFilters({
   currentFilters,
   setCurrentFilters,
@@ -66,13 +55,32 @@ export default function ProjectFilters({
   const router = useRouter();
 
   useEffect(() => {
-    router.replace(`/projects/${formatSearchPath(currentFilters)}`, undefined, {
-      shallow: true,
-    });
+    // Update the view parameter in the URL based on the showChartView state
+    const viewParam = showChartView ? "chart" : null;
+
+    // Format the search path to match currently selected filters
+    const searchKwargs = Object.keys(currentFilters)
+      .filter((key) => currentFilters[key])
+      .map((key) => {
+        return `${key}=${currentFilters[key]}`;
+      })
+      .join("&");
+
+    // Build the new query string
+    let queryString = `?${searchKwargs}`;
+
+    // Add the view parameter to the query string if chart view is active
+    if (viewParam) {
+      queryString += `&view=${viewParam}`;
+    }
+
+    // Update the URL
+    router.replace(`/projects/${queryString}`, undefined, { shallow: true });
+
     // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentFilters]);
-
+  }, [currentFilters, showChartView]);
+  
   return (
     <Row className="text-center">
       {isMobile ? (
@@ -167,3 +175,4 @@ export default function ProjectFilters({
     </Row>
   );
 }
+
