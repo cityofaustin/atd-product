@@ -125,7 +125,7 @@ const TEAM_MEMBERS = [
     name: "Josh Colemon",
     title: "GIS Analyst",
     pronouns: "He/Him",
-    src: "assets/headshots/josh_coleman.jpg",
+    src: "assets/headshots/josh_colemon.jpg",
   },
   {
     name: "Daniel Stover",
