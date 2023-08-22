@@ -176,18 +176,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/rebekka_bryant.jpeg",
   },
   {
-    name: "Rachel Wang",
-    title: "Software Developer Fellow",
-    pronouns: "She/Her",
-    src: "assets/headshots/rachel_wang.png",
-  },
-  {
-    name: "Madison Fan",
-    title: "Design Fellow",
-    pronouns: "She/Her",
-    src: "assets/headshots/madison_fan.png",
-  },
-  {
     name: "Vaishnav Yerram",
     title: "IT Support Analyst",
     pronouns: null,
@@ -279,6 +267,18 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Product Manager",
     pronouns: "",
     src: "assets/headshots/stephanie_moorer.jpeg",
+  },
+  {
+    name: "Rachel Wang",
+    title: "Software Developer Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/rachel_wang.png",
+  },
+  {
+    name: "Madison Fan",
+    title: "Design Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/madison_fan.png",
   },
 ];
 
