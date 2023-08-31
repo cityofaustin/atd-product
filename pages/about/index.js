@@ -45,7 +45,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Tilly Whitson",
-    title: "Junior Software Developer",
+    title: "Software Developer",
     pronouns: "She/They",
     src: "assets/headshots/tilly_whitson.jpeg",
   },
@@ -87,7 +87,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Charlie Henry",
-    title: "Data Scientist",
+    title: "Head of Data Science",
     pronouns: "He/Him",
     src: "assets/headshots/charlie_henry.jpg",
   },
@@ -105,7 +105,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Rose Eichelmann",
-    title: "Junior Software Developer",
+    title: "Software Developer",
     pronouns: "She/They",
     src: "assets/headshots/rose_eichelmann.jpg",
   },
@@ -193,6 +193,12 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/jb_strange.jpg",
   },
+  {
+    name: "David Gimnich",
+    title: "IT Business Systems Analyst Sr.",
+    pronouns: "He/Him",
+    src: "assets/headshots/david_gimnich.png"
+  }
 ];
 
 const TEAM_MEMBER_ALUMNI = [
