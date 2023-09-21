@@ -27,7 +27,7 @@ export default function HomeView() {
         <Row className="hero-section d-flex align-items-center">
           <Col>
             <h1 className="text-white display-3 fw-bold text-center pb-4">
-              Digital Services for ATX Mobility
+              Data & Technology Services
             </h1>
             {/* Only include this line break at lg breakpoint */}
             <h3 className="text-white text-center d-none d-lg-block">
