@@ -6,7 +6,7 @@ const CustomHead = () => {
     <Head>
       <meta
         name="author"
-        content="Austin Transportation Data & Technology Services"
+        content="Austin Transportation Public Works Data & Technology Services"
       />
       <meta
         name="description"
@@ -15,7 +15,7 @@ const CustomHead = () => {
       {/* <!-- Google / Search Engine Tags --> */}
       <meta
         itemProp="name"
-        content="Austin Transportation Data & Technology Services"
+        content="Austin Transportation Public Works Data & Technology Services"
       />
       <meta
         itemProp="description"
@@ -30,7 +30,7 @@ const CustomHead = () => {
       <meta property="og:type" content="website" />
       <meta
         property="og:title"
-        content="Austin Transportation Data & Technology Services"
+        content="Austin Transportation Public Works Data & Technology Services"
       />
       <meta
         property="og:description"
@@ -44,7 +44,7 @@ const CustomHead = () => {
       <meta name="twitter:card" content="summary_large_image" />
       <meta
         name="twitter:title"
-        content="Austin Transportation Data & Technology Services"
+        content="Austin Transportation Public Works Data & Technology Services"
       />
       <meta
         name="twitter:description"
@@ -57,7 +57,7 @@ const CustomHead = () => {
       <meta name="twitter:creator" content="@austinmobility" />
 
       <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-      <title>Austin Transportation Data & Technology Services</title>
+      <title>Austin Transportation Public Works Data & Technology Services</title>
     </Head>
   );
 };
