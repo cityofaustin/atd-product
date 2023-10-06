@@ -75,22 +75,27 @@ export default function ProjectsList(props) {
   const isLoaded = props.isLoaded;
   const { scores } = useContext(EvaluationsContext);
   const location = useRouter();
-  const [search] = useState(new URLSearchParams(location.query));
   const [currentFilters, setCurrentFilters] = useState({});
   const [showChartView, setShowChartView] = useState(false);
 
   useEffect(() => {
     /*
-    check current url for filter params after issues are loaded. set them if present, 
-    otherwise set default filter values
+    Check current url for filter params after issues are loaded. Set them if present, 
+    otherwise set default filter values.
+    Using the isReady field indicates when the query is fully updated after hydration.
+    Checking if the query is ready before using it makes sure 
+    we carry over the search params on a page refresh.
     */
-    let paramFilters = {};
-    FILTER_DEFS.forEach((filterDef) => {
-      const value = search.get(filterDef.key);
-      paramFilters[filterDef.key] = value ? value : filterDef.default;
-    });
-    setCurrentFilters(paramFilters);
-  }, [issues, search]);
+    if (location.isReady) {
+      const search = new URLSearchParams(location.query);
+      let paramFilters = {};
+      FILTER_DEFS.forEach((filterDef) => {
+        const value = search.get(filterDef.key);
+        paramFilters[filterDef.key] = value ? value : filterDef.default;
+      });
+      setCurrentFilters(paramFilters);
+    }
+  }, [issues, location.isReady]);
 
   const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
 
