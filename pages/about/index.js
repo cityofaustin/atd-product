@@ -164,12 +164,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/matthew_martinez.jpg",
   },
   {
-    name: "Dipa Yaksh",
-    title: "Senior Application Architect",
-    pronouns: "She/Her",
-    src: "assets/headshots/dipa_yaksh.png",
-  },
-  {
     name: "Rebekka Bryant",
     title: "Business Intelligence Analyst",
     pronouns: "She/Her",
@@ -285,6 +279,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Design Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/madison_fan.png",
+  },
+  {
+    name: "Dipa Yaksh",
+    title: "Senior Application Architect",
+    pronouns: "She/Her",
+    src: "assets/headshots/dipa_yaksh.png",
   },
 ];
 
