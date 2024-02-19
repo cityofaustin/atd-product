@@ -176,12 +176,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/vaishnav_yerram.jpeg",
   },
   {
-    name: "Homer Arizpe",
-    title: "Business Systems Analyst",
-    pronouns: "He/Him",
-    src: "assets/headshots/homer_arizpe.jpeg",
-  },
-  {
     name: "JB Strange",
     title: "IT Support Analyst",
     pronouns: "He/Him",
@@ -192,6 +186,12 @@ const TEAM_MEMBERS = [
     title: "IT Business Systems Analyst Sr.",
     pronouns: "He/Him",
     src: "assets/headshots/david_gimnich.png"
+  },
+  {
+    name: "William Graves",
+    title: "Geospatial Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/william_graves.jpg"
   }
 ];
 
@@ -285,6 +285,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Senior Application Architect",
     pronouns: "She/Her",
     src: "assets/headshots/dipa_yaksh.png",
+  },
+  {
+    name: "Homer Arizpe",
+    title: "Business Systems Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/homer_arizpe.jpeg",
   },
 ];
 
