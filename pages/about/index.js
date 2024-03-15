@@ -122,12 +122,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/zach_berry.jpeg",
   },
   {
-    name: "Josh Colemon",
-    title: "GIS Analyst",
-    pronouns: "He/Him",
-    src: "assets/headshots/josh_colemon.jpg",
-  },
-  {
     name: "Daniel Stover",
     title: "GIS Analyst",
     pronouns: "He/Him",
@@ -291,6 +285,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Business Systems Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/homer_arizpe.jpeg",
+  },
+  {
+    name: "Josh Colemon",
+    title: "GIS Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/josh_colemon.jpg",
   },
 ];
 
