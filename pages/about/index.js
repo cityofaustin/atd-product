@@ -33,7 +33,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Tracy Linder",
-    title: "Product Manager",
+    title: "Senior Product Manager",
     pronouns: "She/Her",
     src: "assets/headshots/tracy_linder.jpg",
   },
