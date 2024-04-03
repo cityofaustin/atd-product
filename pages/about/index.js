@@ -33,7 +33,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Tracy Linder",
-    title: "Product Manager",
+    title: "Senior Product Manager",
     pronouns: "She/Her",
     src: "assets/headshots/tracy_linder.jpg",
   },
@@ -186,7 +186,19 @@ const TEAM_MEMBERS = [
     title: "Geospatial Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/william_graves.jpg"
-  }
+  },
+  {
+    name: "Grant Statton",
+    title: "GIS Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/grant_statton.jpg"
+  },
+  {
+    name: "Craig Jacobs",
+    title: "IT Support Analyst",
+    pronouns: null,
+    src: "assets/headshots/craig_jacobs.jpeg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
