@@ -199,6 +199,12 @@ const TEAM_MEMBERS = [
     pronouns: null,
     src: "assets/headshots/craig_jacobs.jpeg",
   },
+  {
+    name: "Patricia Genty-Andrade",
+    title: "Data Engineer/Project Manager",
+    pronouns: "She/Her",
+    src: "assets/headshots/patricia_gentyandrade.jpg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
