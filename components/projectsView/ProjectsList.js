@@ -168,6 +168,19 @@ export default function ProjectsList(props) {
           </Col>
         </Row>
       )}
+      {!showChartView && (
+        <Row>
+          <Col>
+            <div className="text-center" style={{ fontSize: "1.3rem" }}>
+              Visit{" "}
+              <a href="https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue+label%3A%22Project+Index%22+is%3Aclosed">
+                GitHub
+              </a>{" "}
+              for a full list of our completed projects.
+            </div>
+          </Col>
+        </Row>
+      )}
     </>
   );
 }
