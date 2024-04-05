@@ -39,15 +39,24 @@ function applyCurrentFilters(issues, currentFilters, filterDefs) {
   const activeFilterDefs = filterDefs.filter(
     (filterDef) => currentFilters[filterDef.key]
   );
+
   return issues.filter((issue) => {
     // test each issue against all active filters
-    return activeFilterDefs.every((filterDef) => {
+    const isMatch = activeFilterDefs.every((filterDef) => {
       return filterDef.matchFunc(
         issue,
         filterDef.field,
         currentFilters[filterDef.key]
       );
     });
+
+    // if status is 'completed', filter out issues with the label "Archived Project"
+    if (currentFilters.status === "completed") {
+      const hasArchivedProjectLabel = issue.labels.includes("Archived Project");
+      return isMatch && !hasArchivedProjectLabel;
+    }
+
+    return isMatch;
   });
 }
 
