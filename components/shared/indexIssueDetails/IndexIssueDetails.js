@@ -10,7 +10,6 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Image from "react-bootstrap/Image";
 
-import Comments from "./Comments";
 import ProjectEvaluation from "./ProjectEvaluation";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 import Issues from "./Issues";
