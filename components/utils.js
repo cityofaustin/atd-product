@@ -85,7 +85,6 @@ export function handleIssueData(data) {
     newIssue.isFeatured = newIssue.labels.includes("Featured Project");
     return newIssue;
   });
-
   return dataHandled.sort(sortByUpdatedDate);
 }
 
