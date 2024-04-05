@@ -168,7 +168,7 @@ export default function ProjectsList(props) {
           </Col>
         </Row>
       )}
-      {!showChartView && (
+      {!showChartView && currentFilters.status === "completed" && (
         <Row>
           <Col>
             <div className="text-center" style={{ fontSize: "1.3rem" }}>
