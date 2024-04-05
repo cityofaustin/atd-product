@@ -83,9 +83,6 @@ function IssueTabs({ indexType, issue }) {
           <ProjectEvaluation project={issue} />
         </Tab>
       )}
-      <Tab eventKey="activity" title="Activity">
-        <Comments issueNumber={issue.number} />
-      </Tab>
       <Tab eventKey="issues" title="Issues">
         <Issues indexType={indexType} parent={issue} />
       </Tab>
