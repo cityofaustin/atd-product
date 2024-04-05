@@ -39,7 +39,7 @@ function getStatus(pipeline) {
     case "needs scoping":
       return "needs_scoping";
     case "icebox":
-      return "backlog";
+      return "icebox";
     case "backlog":
       return "backlog";
     case "on deck":
@@ -87,7 +87,10 @@ export function handleIssueData(data) {
     newIssue.isFeatured = newIssue.labels.includes("Featured Project");
     return newIssue;
   });
-  return dataHandled.sort(sortByUpdatedDate);
+
+  // filter out issues with a status of 'icebox'
+  const filteredData = dataHandled.filter((issue) => issue.status !== "icebox");
+  return filteredData.sort(sortByUpdatedDate);
 }
 
 export function getTypeIcon(type) {
