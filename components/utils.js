@@ -86,7 +86,7 @@ export function handleIssueData(data) {
     return newIssue;
   });
 
-  return dataHandled;
+  return dataHandled.sort(sortByUpdatedDate);
 }
 
 export function getTypeIcon(type) {
