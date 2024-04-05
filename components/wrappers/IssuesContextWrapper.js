@@ -5,7 +5,7 @@ import { ISSUES_ENDPOINT } from "../settings";
 
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 const QUERY =
-  "$limit=100000&$where=labels like '%Project Index%' or labels like '%Product Index%'";
+  "$limit=100000&$where=(labels like '%Project Index%' or labels like '%Product Index%') and pipeline != 'Icebox'";
 
 function useProjectIssues(data) {
   return useMemo(
