@@ -10,7 +10,6 @@ import Tabs from "react-bootstrap/Tabs";
 import Tab from "react-bootstrap/Tab";
 import Image from "react-bootstrap/Image";
 
-import Comments from "./Comments";
 import ProjectEvaluation from "./ProjectEvaluation";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 import Issues from "./Issues";
@@ -19,11 +18,9 @@ const markdownComponents = {
   // This custom renderer changes how images are rendered
   // we use it to constrain the max width of an image to its container
   img: ({ node, ...props }) => (
-    <Image {...props} className="img-fluid" alt="image from github"/>
+    <Image {...props} className="img-fluid" alt="image from github" />
   ),
-  a: ({ node, ...props }) => (
-    <a {...props} className="link"/>
-  ),
+  a: ({ node, ...props }) => <a {...props} className="link" />,
 };
 
 function Description(props) {
@@ -85,9 +82,6 @@ function IssueTabs({ indexType, issue }) {
           <ProjectEvaluation project={issue} />
         </Tab>
       )}
-      <Tab eventKey="activity" title="Activity">
-        <Comments issueNumber={issue.number} />
-      </Tab>
       <Tab eventKey="issues" title="Issues">
         <Issues indexType={indexType} parent={issue} />
       </Tab>
