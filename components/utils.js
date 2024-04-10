@@ -38,8 +38,6 @@ function getStatus(pipeline) {
       return "backlog";
     case "needs scoping":
       return "needs_scoping";
-    case "icebox":
-      return "backlog";
     case "backlog":
       return "backlog";
     case "on deck":

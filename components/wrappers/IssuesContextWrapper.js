@@ -5,7 +5,7 @@ import { ISSUES_ENDPOINT } from "../settings";
 
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 const QUERY =
-  "$limit=100000&$where=labels like '%Project Index%' or labels like '%Product Index%'";
+  "$limit=100000&$where=(labels like '%Project Index%' or labels like '%Product Index%') and pipeline != 'Icebox'";
 
 function useProjectIssues(data) {
   return useMemo(
@@ -27,7 +27,7 @@ function useWorkgroups(data) {
       .map((issue) => {
         return issue.workgroups;
       })
-      // in addition to concatening sub-arrays of workgroups, flattening drops any empty
+      // in addition to concatenating sub-arrays of workgroups, flattening drops any empty
       // arrays from issues with no workgroup(s)
       .flat();
     return [...new Set(allWorkgroupsLabels)].sort();
