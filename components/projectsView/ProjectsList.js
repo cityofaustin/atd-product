@@ -171,9 +171,12 @@ export default function ProjectsList(props) {
       {!showChartView && currentFilters.status === "completed" && (
         <Row>
           <Col>
-            <div className="text-center" style={{ fontSize: "1.3rem" }}>
+            <div className="mt-4 text-center mb-2 text-black">
               Visit{" "}
-              <a href="https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue+label%3A%22Project+Index%22+is%3Aclosed">
+              <a
+                className="link"
+                href="https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue+label%3A%22Project+Index%22+is%3Aclosed"
+              >
                 GitHub
               </a>{" "}
               for a full list of our completed projects.
