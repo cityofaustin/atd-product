@@ -10,8 +10,8 @@ import IndexIssueListItem from "../shared/IndexIssueListItem";
 import ProjectFilters from "./ProjectFilters";
 import ProjectScoreChart from "../shared/ProjectScoreChart";
 
-function includedInArray(issue, field, arr) {
-  return issue[field] ? arr.includes(issue[field]) : false;
+function includedInStringOrArray(issue, field, value) {
+  return issue[field] ? value.includes(issue[field]) : false;
 }
 
 function arrayIncludesValue(issue, field, value) {
@@ -23,7 +23,17 @@ const FILTER_DEFS = [
     key: "status",
     name: "Status",
     field: "status",
-    matchFunc: includedInArray,
+    matchFunc: (issue, field, value) => {
+      const isIncluded = includedInStringOrArray(issue, field, value);
+
+      if (value === "completed") {
+        const hasArchivedProjectLabel =
+          issue.labels.includes("Archived Project");
+        return isIncluded && !hasArchivedProjectLabel;
+      }
+
+      return isIncluded;
+    },
     default: "in_progress",
   },
   {
@@ -42,21 +52,13 @@ function applyCurrentFilters(issues, currentFilters, filterDefs) {
 
   return issues.filter((issue) => {
     // test each issue against all active filters
-    const isMatch = activeFilterDefs.every((filterDef) => {
+    return activeFilterDefs.every((filterDef) => {
       return filterDef.matchFunc(
         issue,
         filterDef.field,
         currentFilters[filterDef.key]
       );
     });
-
-    // if status is 'completed', filter out issues with the label "Archived Project"
-    if (currentFilters.status === "completed") {
-      const hasArchivedProjectLabel = issue.labels.includes("Archived Project");
-      return isMatch && !hasArchivedProjectLabel;
-    }
-
-    return isMatch;
   });
 }
 
