@@ -7,7 +7,7 @@ const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 
 // The `labels` column is a comma-separated string of labels, so we use wildcard string searching
 const QUERY =
-  "$limit=100000&$where=(labels like '%Project Index%' or labels like '%Product Index%') and labels not like '%Archived Project%'";
+  "$limit=100000&$where=(labels like '%Project Index%' or labels like '%Product Index%') and labels not like '%Archived Project%' and pipeline != 'Icebox'";
 
 function useProjectIssues(data) {
   return useMemo(
