@@ -23,17 +23,7 @@ const FILTER_DEFS = [
     key: "status",
     name: "Status",
     field: "status",
-    matchFunc: (issue, field, value) => {
-      const isIncluded = includedInStringOrArray(issue, field, value);
-
-      if (value === "completed") {
-        const hasArchivedProjectLabel =
-          issue.labels.includes("Archived Project");
-        return isIncluded && !hasArchivedProjectLabel;
-      }
-
-      return isIncluded;
-    },
+    matchFunc: includedInStringOrArray,
     default: "in_progress",
   },
   {
