@@ -4,8 +4,10 @@ import { useSocrata, handleIssueData } from "../utils";
 import { ISSUES_ENDPOINT } from "../settings";
 
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
+
+// The `labels` column is a comma-separated string of labels, so we use wildcard string searching
 const QUERY =
-  "$limit=100000&$where=labels like '%Project Index%' or labels like '%Product Index%'";
+  "$limit=100000&$where=(labels like '%Project Index%' or labels like '%Product Index%') and labels not like '%Archived Project%'";
 
 function useProjectIssues(data) {
   return useMemo(
