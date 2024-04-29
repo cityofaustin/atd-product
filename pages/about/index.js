@@ -205,6 +205,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/patricia_gentyandrade.jpg",
   },
+  {
+    name: "Ulfath Mir",
+    title: "Business Systems Analyst",
+    pronouns: "She/Her",
+    src: "assets/headshots/ulfath_mir.jpg"
+  }
 ];
 
 const TEAM_MEMBER_ALUMNI = [
