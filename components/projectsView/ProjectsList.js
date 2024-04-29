@@ -10,8 +10,8 @@ import IndexIssueListItem from "../shared/IndexIssueListItem";
 import ProjectFilters from "./ProjectFilters";
 import ProjectScoreChart from "../shared/ProjectScoreChart";
 
-function includedInArray(issue, field, arr) {
-  return issue[field] ? arr.includes(issue[field]) : false;
+function includedInStringOrArray(issue, field, value) {
+  return issue[field] ? value.includes(issue[field]) : false;
 }
 
 function arrayIncludesValue(issue, field, value) {
@@ -23,7 +23,7 @@ const FILTER_DEFS = [
     key: "status",
     name: "Status",
     field: "status",
-    matchFunc: includedInArray,
+    matchFunc: includedInStringOrArray,
     default: "in_progress",
   },
   {
@@ -39,6 +39,7 @@ function applyCurrentFilters(issues, currentFilters, filterDefs) {
   const activeFilterDefs = filterDefs.filter(
     (filterDef) => currentFilters[filterDef.key]
   );
+
   return issues.filter((issue) => {
     // test each issue against all active filters
     return activeFilterDefs.every((filterDef) => {
@@ -156,6 +157,22 @@ export default function ProjectsList(props) {
         <Row>
           <Col>
             <Alert variant="dark">No projects found.</Alert>
+          </Col>
+        </Row>
+      )}
+      {!showChartView && currentFilters.status === "completed" && (
+        <Row>
+          <Col>
+            <div className="mt-4 text-center mb-2 text-black">
+              Visit{" "}
+              <a
+                className="link"
+                href="https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue+label%3A%22Project+Index%22+is%3Aclosed"
+              >
+                GitHub
+              </a>{" "}
+              for a full list of our completed projects.
+            </div>
           </Col>
         </Row>
       )}
