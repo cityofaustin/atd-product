@@ -210,6 +210,12 @@ const TEAM_MEMBERS = [
     title: "Business Systems Analyst",
     pronouns: "She/Her",
     src: "assets/headshots/ulfath_mir.jpg"
+  },
+  {
+    name: "Ganesh Kamarapu",
+    title: "Maximo Report Developer",
+    pronouns: "He/Him",
+    src: "assets/headshots/ganesh_kamarapu.jpg"
   }
 ];
 
