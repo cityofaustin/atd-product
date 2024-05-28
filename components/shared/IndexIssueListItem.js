@@ -50,7 +50,16 @@ export default function IndexIssueListItem({ issue }) {
             </Card.Title>
             <Card.Text className={img ? "card-text-img" : "card-text-no-image"}>
               <small className="text-muted">
-                <ReactMarkdown skipHtml>{description}</ReactMarkdown>
+                <ReactMarkdown
+                  components={{
+                    // <Card.Text is a <p> tag, and ReactMarkdown defaults to wrapping its content in a <p> tag
+                    // this throws a nested p tag warning, so changing the p component to fragment get rids of the warning
+                    p: React.Fragment,
+                  }}
+                  skipHtml
+                >
+                  {description}
+                </ReactMarkdown>
               </small>
             </Card.Text>
           </Card.Body>
