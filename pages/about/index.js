@@ -99,7 +99,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Mike Dilley",
-    title: "Software Developer",
+    title: "Technical Product Manager",
     pronouns: "He/Him",
     src: "assets/headshots/mike_dilley.jpeg",
   },
