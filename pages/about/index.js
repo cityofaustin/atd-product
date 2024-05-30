@@ -99,7 +99,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Mike Dilley",
-    title: "Software Developer",
+    title: "Technical Product Manager",
     pronouns: "He/Him",
     src: "assets/headshots/mike_dilley.jpeg",
   },
@@ -216,7 +216,13 @@ const TEAM_MEMBERS = [
     title: "Maximo Report Developer",
     pronouns: "He/Him",
     src: "assets/headshots/ganesh_kamarapu.jpg"
-  }
+  },
+  {
+    name: "Stephanie Moorer",
+    title: "Product Manager",
+    pronouns: null,
+    src: "assets/headshots/stephanie_moorer.jpg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
@@ -285,12 +291,6 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Senior Geospatial Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/alan_de_anda.jpeg",
-  },
-  {
-    name: "Stephanie Moorer",
-    title: "Product Manager",
-    pronouns: "",
-    src: "assets/headshots/stephanie_moorer.jpeg",
   },
   {
     name: "Rachel Wang",
