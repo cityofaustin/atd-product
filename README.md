@@ -3,8 +3,8 @@
 A website about ATD's Data & Technology Services team.
 
 ## Website
-[https://austinmobility.io]([url](https://austinmobility.io))
-![DTS Website Screenshots](https://github.com/cityofaustin/atd-product/assets/1463708/fe7d421a-657f-40b2-a1e8-7fe78bedd46c">
+[https://austinmobility.io](https://austinmobility.io)
+![DTS Website Screenshots](website-screenshots.png)
 
 
 
