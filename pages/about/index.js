@@ -226,7 +226,7 @@ const TEAM_MEMBERS = [
     {
     name: "Arkadeep Bandyopadhyay",
     title: "Data Science Fellow",
-    pronouns: null,
+    pronouns: "He/Him",
     src: "assets/headshots/arkadeep_b.jpg",
   },
 ];
