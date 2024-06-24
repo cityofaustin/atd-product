@@ -140,12 +140,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/susanne_gov.jpg",
   },
   {
-    name: "Adriana Martinez Guillen",
-    title: "Application Analyst Senior",
-    pronouns: "She/Her",
-    src: "assets/headshots/adriana_martinez.png",
-  },
-  {
     name: "Rene Vargas",
     title: "Application Analyst",
     pronouns: "He/Him",
@@ -222,6 +216,18 @@ const TEAM_MEMBERS = [
     title: "Product Manager",
     pronouns: null,
     src: "assets/headshots/stephanie_moorer.jpg",
+  },
+  {
+    name: "Olivia Luk",
+    title: "Design Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/Olivia_Luk.jpg",
+  },
+    {
+    name: "Arkadeep Bandyopadhyay",
+    title: "Data Science Fellow",
+    pronouns: "He/Him",
+    src: "assets/headshots/arkadeep_b.jpg",
   },
 ];
 
@@ -321,6 +327,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "GIS Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/josh_colemon.jpg",
+  },
+  {
+    name: "Adriana Martinez Guillen",
+    title: "Application Analyst Senior",
+    pronouns: "She/Her",
+    src: "assets/headshots/adriana_martinez.png",
   },
 ];
 
