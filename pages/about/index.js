@@ -217,18 +217,6 @@ const TEAM_MEMBERS = [
     pronouns: null,
     src: "assets/headshots/stephanie_moorer.jpg",
   },
-  {
-    name: "Olivia Luk",
-    title: "Design Fellow",
-    pronouns: "She/Her",
-    src: "assets/headshots/Olivia_Luk.jpg",
-  },
-    {
-    name: "Arkadeep Bandyopadhyay",
-    title: "Data Science Fellow",
-    pronouns: "He/Him",
-    src: "assets/headshots/arkadeep_b.jpg",
-  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
@@ -333,6 +321,18 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Application Analyst Senior",
     pronouns: "She/Her",
     src: "assets/headshots/adriana_martinez.png",
+  },
+  {
+    name: "Olivia Luk",
+    title: "Design Fellow",
+    pronouns: "She/Her",
+    src: "assets/headshots/Olivia_Luk.jpg",
+  },
+    {
+    name: "Arkadeep Bandyopadhyay",
+    title: "Data Science Fellow",
+    pronouns: "He/Him",
+    src: "assets/headshots/arkadeep_b.jpg",
   },
 ];
 
