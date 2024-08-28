@@ -217,6 +217,12 @@ const TEAM_MEMBERS = [
     pronouns: null,
     src: "assets/headshots/stephanie_moorer.jpg",
   },
+  {
+    name: "Mateo Clarke",
+    title: "Software Developer",
+    pronouns: "He/Him",
+    src: "assets/headshots/mateo_clarke.jpeg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
@@ -273,12 +279,6 @@ const TEAM_MEMBER_ALUMNI = [
     title: "UX/UI Design Fellow",
     pronouns: "She/Her",
     src: "assets/headshots/rebecca_brand.jpg",
-  },
-  {
-    name: "Mateo Clarke",
-    title: "Head of Software Engineering",
-    pronouns: "He/Him",
-    src: "assets/headshots/mateo_clarke.jpeg",
   },
   {
     name: "Alan De Anda",
