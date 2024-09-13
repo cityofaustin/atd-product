@@ -33,9 +33,9 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Tracy Linder",
-    title: "Senior Product Manager",
+    title: "Enterprise IT Solutions Architect",
     pronouns: "She/Her",
-    src: "assets/headshots/tracy_linder.jpg",
+    src: "assets/headshots/tracy_linder.png",
   },
   {
     name: "Amenity Applewhite",
@@ -173,19 +173,19 @@ const TEAM_MEMBERS = [
     name: "David Gimnich",
     title: "IT Business Systems Analyst Sr.",
     pronouns: "He/Him",
-    src: "assets/headshots/david_gimnich.png"
+    src: "assets/headshots/david_gimnich.png",
   },
   {
     name: "William Graves",
     title: "Geospatial Analyst",
     pronouns: "He/Him",
-    src: "assets/headshots/william_graves.jpg"
+    src: "assets/headshots/william_graves.jpg",
   },
   {
     name: "Grant Statton",
     title: "GIS Analyst",
     pronouns: "He/Him",
-    src: "assets/headshots/grant_statton.jpg"
+    src: "assets/headshots/grant_statton.jpg",
   },
   {
     name: "Craig Jacobs",
@@ -203,13 +203,13 @@ const TEAM_MEMBERS = [
     name: "Ulfath Mir",
     title: "Business Systems Analyst",
     pronouns: "She/Her",
-    src: "assets/headshots/ulfath_mir.jpg"
+    src: "assets/headshots/ulfath_mir.jpg",
   },
   {
     name: "Ganesh Kamarapu",
     title: "Maximo Report Developer",
     pronouns: "He/Him",
-    src: "assets/headshots/ganesh_kamarapu.jpg"
+    src: "assets/headshots/ganesh_kamarapu.jpg",
   },
   {
     name: "Stephanie Moorer",
@@ -328,7 +328,7 @@ const TEAM_MEMBER_ALUMNI = [
     pronouns: "She/Her",
     src: "assets/headshots/Olivia_Luk.jpg",
   },
-    {
+  {
     name: "Arkadeep Bandyopadhyay",
     title: "Data Science Fellow",
     pronouns: "He/Him",
@@ -375,7 +375,10 @@ export default function AboutView(props) {
       <Row className="text-black">
         <Col>
           <p>
-          We leverage high-quality data and modern technology to empower Transportation and Public Works staff to improve operations, make data-informed decisions, and deliver excellent mobility services to the Austin community. We solve real problems for real people.
+            We leverage high-quality data and modern technology to empower
+            Transportation and Public Works staff to improve operations, make
+            data-informed decisions, and deliver excellent mobility services to
+            the Austin community. We solve real problems for real people.
           </p>
         </Col>
       </Row>
