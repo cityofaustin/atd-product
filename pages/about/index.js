@@ -122,12 +122,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/zach_berry.jpeg",
   },
   {
-    name: "Daniel Stover",
-    title: "GIS Analyst",
-    pronouns: "He/Him",
-    src: "assets/headshots/daniel_stover.jpeg",
-  },
-  {
     name: "Christina Tremel",
     title: "Product Manager",
     pronouns: "She/Her",
@@ -333,6 +327,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Data Science Fellow",
     pronouns: "He/Him",
     src: "assets/headshots/arkadeep_b.jpg",
+  },
+  {
+    name: "Daniel Stover",
+    title: "GIS Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/daniel_stover.jpeg",
   },
 ];
 
