@@ -63,7 +63,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Andrew Shensky",
-    title: "Head of Geospatial Analysis",
+    title: "Head of Geospatial Services",
     pronouns: "He/Him",
     src: "assets/headshots/andrew_shensky.png",
   },
@@ -177,7 +177,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Grant Statton",
-    title: "GIS Analyst",
+    title: "Geospatial Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/grant_statton.jpg",
   },
@@ -216,6 +216,12 @@ const TEAM_MEMBERS = [
     title: "Software Developer",
     pronouns: "He/Him",
     src: "assets/headshots/mateo_clarke.jpeg",
+  },
+  {
+    name: "Owen Myers",
+    title: "Geospatial Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/owen_myers.jpg",
   },
 ];
 
