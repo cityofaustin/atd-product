@@ -200,12 +200,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/ulfath_mir.jpg",
   },
   {
-    name: "Ganesh Kamarapu",
-    title: "Maximo Report Developer",
-    pronouns: "He/Him",
-    src: "assets/headshots/ganesh_kamarapu.jpg",
-  },
-  {
     name: "Stephanie Moorer",
     title: "Product Manager",
     pronouns: null,
@@ -339,6 +333,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "GIS Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/daniel_stover.jpeg",
+  },
+  {
+    name: "Ganesh Kamarapu",
+    title: "Maximo Report Developer",
+    pronouns: "He/Him",
+    src: "assets/headshots/ganesh_kamarapu.jpg",
   },
 ];
 
