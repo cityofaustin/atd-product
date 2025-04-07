@@ -74,12 +74,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/chia_berry.jpg",
   },
   {
-    name: "Patrick McDonnell",
-    title: "Senior Product Manager",
-    pronouns: "He/Him",
-    src: "assets/headshots/patrick_mcdonnell.jpg",
-  },
-  {
     name: "Frank Hereford",
     title: "Software Developer",
     pronouns: "He/Him",
@@ -339,6 +333,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Maximo Report Developer",
     pronouns: "He/Him",
     src: "assets/headshots/ganesh_kamarapu.jpg",
+  },
+  {
+    name: "Patrick McDonnell",
+    title: "Senior Product Manager",
+    pronouns: "He/Him",
+    src: "assets/headshots/patrick_mcdonnell.jpg",
   },
 ];
 
