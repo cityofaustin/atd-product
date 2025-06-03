@@ -1,5 +1,3 @@
-// @use "sass:meta";
-
 $theme-colors: (
   "primary": #0d3e79,
   "secondary": #00bfa5,
@@ -135,7 +133,6 @@ $nav-shadow: #d5d5d5;
     padding-bottom: 0 !important;
   }
 }
-
 
 @import "~bootstrap/scss/bootstrap";
 
