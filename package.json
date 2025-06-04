@@ -3,6 +3,7 @@
   "version": "0.3.0",
   "private": true,
   "dependencies": {
+    "@netlify/plugin-nextjs": "^5.10.7",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.6.1",
     "bootstrap": "^5.3.6",
@@ -45,4 +46,3 @@
     "eslint-config-next": "^15.3.3"
   }
 }
-
