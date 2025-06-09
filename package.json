@@ -1,6 +1,6 @@
 {
   "name": "atd-product",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@netlify/plugin-nextjs": "^5.11.2",
@@ -46,4 +46,3 @@
     "eslint-config-next": "^15.3.3"
   }
 }
-
