@@ -43,7 +43,7 @@ export default function NavComponent(props) {
   return (
     <Navbar expand="lg" className={`py-1 ${!isHome ? "nav-shadow" : ""}`}>
       <Container fluid key="nav-container">
-        <Link href="/" passHref>
+        <Navbar.Brand as={Link} href="/" className="ps-2 me-auto">
           <div className="d-flex align-items-center">
             <div className="me-1">
               <Image
@@ -53,7 +53,7 @@ export default function NavComponent(props) {
               />
             </div>
           </div>
-        </Link>
+        </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           className="navbar-toggle"
