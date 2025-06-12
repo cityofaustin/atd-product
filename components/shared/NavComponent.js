@@ -70,7 +70,7 @@ export default function NavComponent(props) {
                   <Link
                     href={page.route}
                     passHref
-                    className={`text-primary text-center px-3 py-1 navbar-menu-link ${fontWeightClass}`}
+                    className={`text-primary text-center px-3 py-1 navbar-menu-link nav-link ${fontWeightClass}`}
                   >
                     {page.label}
                   </Link>
