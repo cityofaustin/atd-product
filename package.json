@@ -1,24 +1,24 @@
 {
   "name": "atd-product",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0",
-    "@testing-library/user-event": "^7.2.1",
-    "bootstrap": "^5.3.2",
-    "next": "^12.3.4",
-    "react": "^17.0.0",
-    "react-bootstrap": "^2.9.0",
-    "react-dom": "^17.0.2",
-    "react-icons": "^3.11.0",
-    "react-markdown": "^8.0.7",
-    "react-responsive": "^8.2.0",
-    "react-select": "^3.2.0",
-    "recharts": "^2.8.0",
-    "remark-gfm": "^3.0.1",
-    "sass": "^1.69.0",
-    "swr": "^1.3.0"
+    "@netlify/plugin-nextjs": "^5.11.2",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/user-event": "^14.6.1",
+    "bootstrap": "^5.3.6",
+    "next": "^15.3.3",
+    "react": "^19.1.0",
+    "react-bootstrap": "^2.10.10",
+    "react-dom": "^19.1.0",
+    "react-icons": "^5.5.0",
+    "react-markdown": "^10.1.0",
+    "react-responsive": "^10.0.1",
+    "react-select": "^5.10.1",
+    "recharts": "^2.15.3",
+    "remark-gfm": "^4.0.1",
+    "sass": "1.77.6",
+    "swr": "^2.3.3"
   },
   "scripts": {
     "dev": "next dev",
@@ -41,7 +41,8 @@
     ]
   },
   "devDependencies": {
-    "eslint": "^8.50.0",
-    "eslint-config-next": "12.3.1"
+    "@testing-library/react": "^16.3.0",
+    "eslint": "^9.28.0",
+    "eslint-config-next": "^15.3.3"
   }
 }

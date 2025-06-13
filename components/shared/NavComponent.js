@@ -43,19 +43,17 @@ export default function NavComponent(props) {
   return (
     <Navbar expand="lg" className={`py-1 ${!isHome ? "nav-shadow" : ""}`}>
       <Container fluid key="nav-container">
-        <Link href="/" passHref>
-          <Navbar.Brand style={{ cursor: "pointer" }} className="ps-2 me-auto">
-            <div className="d-flex align-items-center">
-              <div className="me-1">
-                <Image
-                  height={60}
-                  src="/assets/2023_austin_transportation_public_works_branding_guide_royal.png"
-                  alt="Transportation and Public Works wordmark including the City of Austin seal"
-                />
-              </div>
+        <Navbar.Brand as={Link} href="/" className="ps-2 me-auto">
+          <div className="d-flex align-items-center">
+            <div className="me-1">
+              <Image
+                height={60}
+                src="/assets/2023_austin_transportation_public_works_branding_guide_royal.png"
+                alt="Transportation and Public Works wordmark including the City of Austin seal"
+              />
             </div>
-          </Navbar.Brand>
-        </Link>
+          </div>
+        </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"
           className="navbar-toggle"
@@ -69,12 +67,12 @@ export default function NavComponent(props) {
 
               return (
                 <div key={page.route} className={`flex-grow-1 mx-0 my-auto`}>
-                  <Link href={page.route} passHref>
-                    <Nav.Link
-                      className={`text-primary text-center px-3 py-1 navbar-menu-link ${fontWeightClass}`}
-                    >
-                      {page.label}
-                    </Nav.Link>
+                  <Link
+                    href={page.route}
+                    passHref
+                    className={`text-primary text-center px-3 py-1 navbar-menu-link nav-link ${fontWeightClass}`}
+                  >
+                    {page.label}
                   </Link>
                 </div>
               );

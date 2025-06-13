@@ -1,8 +1,9 @@
 const nextConfig = {
-    i18n: {
-      locales: ["en"],
-      defaultLocale: "en",
-    },
+  i18n: {
+    locales: ["en"],
+    defaultLocale: "en",
+  },
+  reactStrictMode: true,
 };
-  
-module.exports = nextConfig
+
+module.exports = nextConfig;

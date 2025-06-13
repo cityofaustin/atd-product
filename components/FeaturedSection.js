@@ -38,7 +38,6 @@ export default function FeaturedSection() {
       ) : (
         <Col>
           <Carousel
-            variant="dark"
             indicators={false}
             nextIcon={<IoIosArrowDropright className="fs-1 text-primary" />}
             prevIcon={<IoIosArrowDropleft className="fs-1 text-primary" />}
