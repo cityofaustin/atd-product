@@ -213,7 +213,7 @@ const TEAM_MEMBERS = [
   },
     {
     name: "Hanna Lupico",
-    title: "Product Manager",
+    title: "Senior Product Manager",
     pronouns: "She/Her",
     src: "assets/headshots/hanna_lupico.jpg",
   },
