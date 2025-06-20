@@ -211,6 +211,12 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/owen_myers.jpg",
   },
+    {
+    name: "Hanna Lupico",
+    title: "Senior Product Manager",
+    pronouns: "She/Her",
+    src: "assets/headshots/hanna_lupico.jpg",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
