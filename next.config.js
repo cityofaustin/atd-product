@@ -3,6 +3,7 @@ const nextConfig = {
     locales: ["en"],
     defaultLocale: "en",
   },
+  output: "export",
   reactStrictMode: true,
 };
 
