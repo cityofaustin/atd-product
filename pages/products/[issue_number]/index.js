@@ -1,3 +1,4 @@
+'use client'
 import { useContext } from "react";
 import { useRouter } from "next/router";
 import IssuesContext from "../../../contexts/IssuesContext";
