@@ -96,7 +96,7 @@ export default function ProjectsList(props) {
       });
       setCurrentFilters(paramFilters);
     }
-  }, [issues, location.isReady]);
+  }, [issues, location.isReady, location.query]);
 
   const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
 
