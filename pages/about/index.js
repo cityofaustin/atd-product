@@ -164,12 +164,6 @@ const TEAM_MEMBERS = [
     src: "assets/headshots/david_gimnich.png",
   },
   {
-    name: "William Graves",
-    title: "Geospatial Analyst",
-    pronouns: "He/Him",
-    src: "assets/headshots/william_graves.jpg",
-  },
-  {
     name: "Grant Statton",
     title: "Geospatial Analyst",
     pronouns: "He/Him",
@@ -211,7 +205,7 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/owen_myers.jpg",
   },
-    {
+  {
     name: "Hanna Lupico",
     title: "Senior Product Manager",
     pronouns: "She/Her",
@@ -345,6 +339,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Senior Product Manager",
     pronouns: "He/Him",
     src: "assets/headshots/patrick_mcdonnell.jpg",
+  },
+  {
+    name: "William Graves",
+    title: "Geospatial Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/william_graves.jpg",
   },
 ];
 
