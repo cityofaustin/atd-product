@@ -30,6 +30,7 @@ function App({ Component, pageProps }) {
   // Don't render the wrong component
   if (
     !isCorrectRoute &&
+    typeof window !== "undefined" &&
     window.location.pathname !== "/" &&
     router.pathname === "/"
   ) {
