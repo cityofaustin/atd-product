@@ -2,7 +2,6 @@
 [build]
   command = "npm run build"
   publish = "out"
-  environment = { NETLIFY_NEXT_PLUGIN_SKIP = "true" }
 
 # Redirect all traffic to root HTML so that next/router can do its thing
 [[redirects]]
