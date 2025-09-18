@@ -1,9 +1,8 @@
 {
   "name": "atd-product",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@netlify/plugin-nextjs": "^5.12.1",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.6.1",
     "bootstrap": "^5.3.6",
