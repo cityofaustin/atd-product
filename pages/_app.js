@@ -20,9 +20,13 @@ function App({ Component, pageProps }) {
      * page that the next/router thinks we're on. If so, the page
      * is router manually directed to the correct path.
      */
-    if (isCorrectRoute) return;
+    // if (isCorrectRoute) return;
 
     const path = window.location.pathname;
+    console.log("PATH: ", path);
+    console.log("ROUTER: ", router.pathname);
+    return;
+
     // If we're not on the homepage but router thinks we are
     if (path !== "/" && router.pathname === "/") {
       // Push to the actual path
@@ -37,14 +41,14 @@ function App({ Component, pageProps }) {
   }, [router, isCorrectRoute]);
 
   // Don't render until we're on the correct route
-  if (
-    !isCorrectRoute &&
-    typeof window !== "undefined" &&
-    window.location.pathname !== "/" &&
-    router.pathname === "/"
-  ) {
-    return <div>Loading...</div>;
-  }
+  //   if (
+  //     !isCorrectRoute &&
+  //     typeof window !== "undefined" &&
+  //     window.location.pathname !== "/" &&
+  //     router.pathname === "/"
+  //   ) {
+  //     return <div>Loading...</div>;
+  //   }
   return (
     <IssuesContextWrapper>
       <EvaluationsContextWrapper
