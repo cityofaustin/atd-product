@@ -3,8 +3,12 @@ const nextConfig = {
   reactStrictMode: true,
   trailingSlash: true,
   experimental: {
-    // Force client-side navigation for static export
-    clientRouterFilter: false,
+    strictNextHead: false,
+  },
+  // Force Next.js to generate all pages as separate HTML files
+  generateBuildId: async () => {
+    // This can help with route detection
+    return "static-build";
   },
 };
 
