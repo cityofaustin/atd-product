@@ -7,7 +7,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/user-event": "^14.6.1",
     "bootstrap": "^5.3.6",
-    "next": "^15.3.3",
+    "next": "^15.5.3",
     "react": "^19.1.0",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.1.0",
@@ -41,7 +41,6 @@
     ]
   },
   "devDependencies": {
-    "@testing-library/react": "^16.3.0",
     "eslint": "^9.28.0",
     "eslint-config-next": "^15.3.3"
   }
