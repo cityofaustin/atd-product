@@ -1,9 +1,9 @@
 # netlify.toml for Next.js static export
-
 [build]
   command = "npm run build"
   publish = "out"
 
+# Redirect all traffic to root HTML so that next/router can do its thing
 [[redirects]]
   from = "/*"
   to = "/index.html"
