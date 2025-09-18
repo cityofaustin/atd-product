@@ -5,7 +5,6 @@ import IndexIssueDetails from "../../../components/shared/indexIssueDetails/Inde
 import Page from "../../../components/shared/Page";
 
 export default function ProductDetailsView() {
-  console.log("product details view")
   const { issues, isLoaded, error } = useContext(IssuesContext);
   const matches = useRouter("/products/:issue_number");
   const issue_number = matches.query.issue_number;

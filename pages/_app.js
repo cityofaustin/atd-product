@@ -25,7 +25,6 @@ function App({ Component, pageProps }) {
     const path = window.location.pathname;
     // If we're not on the homepage but router thinks we are
     if (path !== "/" && router.pathname === "/") {
-      console.log("Route mismatch detected, forcing correction...");
       // Push to the actual path
       router
         .push(path + window.location.search + window.location.hash)
