@@ -11,13 +11,13 @@ export default function ProjectDetailsView() {
   const issue = issues.find((issue) => issue.number === issue_number);
   useEffect(() => {
     console.log("Router debug:", {
-      isReady: router.isReady,
-      asPath: router.asPath,
-      pathname: router.pathname,
-      query: router.query,
+      isReady: matches.isReady,
+      asPath: matches.asPath,
+      pathname: matches.pathname,
+      query: matches.query,
       windowLocation: window.location.pathname,
     });
-  }, [router.isReady, router.asPath, router.query]);
+  }, [matches.isReady, matches.asPath, matches.query]);
   return (
     <>
       <Page nav title={false}>
