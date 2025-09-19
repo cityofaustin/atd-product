@@ -36,15 +36,6 @@ function App({ Component, pageProps }) {
     }
   }, [router, isCorrectRoute]);
 
-  // Don't render until we're on the correct route
-  if (
-    !isCorrectRoute &&
-    typeof window !== "undefined" &&
-    window.location.pathname !== "/" &&
-    router.pathname === "/"
-  ) {
-    return <div>Loading...</div>;
-  }
   return (
     <IssuesContextWrapper>
       <EvaluationsContextWrapper
