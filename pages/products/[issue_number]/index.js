@@ -10,15 +10,13 @@ export default function ProductDetailsView() {
   const issue_number = matches.query.issue_number;
   const issue = issues.find((issue) => issue.number === issue_number);
   return (
-    <>
-      <Page nav={true} title={false}>
-        <IndexIssueDetails
-          indexType="product"
-          issue={issue}
-          isLoaded={isLoaded}
-          error={error}
-        />
-      </Page>
-    </>
+    <Page nav={true} title={false}>
+      <IndexIssueDetails
+        indexType="product"
+        issue={issue}
+        isLoaded={isLoaded}
+        error={error}
+      />
+    </Page>
   );
 }

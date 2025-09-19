@@ -96,6 +96,12 @@ export default function ProjectsList(props) {
       });
       setCurrentFilters(paramFilters);
     }
+    /**
+     * TODO: Location.query is missing from this dep array, and cannot be added
+     * because of competing useEffect handling in ProjectFilters.js. We need to
+     * refactor the filters/query params state management
+     */ 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [issues, location.isReady]);
 
   const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
