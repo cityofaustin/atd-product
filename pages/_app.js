@@ -16,9 +16,9 @@ function App({ Component, pageProps }) {
      *
      * Upgrading to Next v15 (current: v15.5.3) broke our dynamic page
      * routing. This effect fixes it by manually checking if there is
-     * a mismatch between the current current window.location and the
-     * page that the next/router thinks we're on. If so, the page
-     * is router manually directed to the correct path.
+     * a mismatch between the current window.location and the
+     * page that the next/router thinks we're on. If so, we manually
+     * push the next/router to the correct path.
      */
     if (isCorrectRoute) return;
 
