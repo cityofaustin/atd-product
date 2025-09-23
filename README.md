@@ -39,7 +39,7 @@ $ npm run dev
 
 ### Static export server
 
-As discussed [here](https://github.com/cityofaustin/atd-product/pull/109#discussion_r2364368332), the app's static export should be tested priort to deployment. To do so:
+As discussed [here](https://github.com/cityofaustin/atd-product/pull/109#discussion_r2364368332), the app's static export should be tested prior to deployment. To do so:
 
 1. Build the nextjs app, which will save the output in the `./out` directory: `npm run build`
 2. Run `npx serve@latest out -s` to serve the `./out` directory on `localhost`.
