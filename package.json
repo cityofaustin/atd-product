@@ -1,9 +1,8 @@
 {
   "name": "atd-product",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "dependencies": {
-    "@netlify/plugin-nextjs": "^5.11.2",
     "bootstrap": "^5.3.6",
     "next": "^15.5.3",
     "react": "^19.1.0",
