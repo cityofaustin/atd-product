@@ -11,7 +11,7 @@ export default function SpinnerWrapper(props) {
         role="status"
         aria-hidden="true"
       />
-      <span className="sr-only">Loading...</span>
+      <span className="visually-hidden">Loading...</span>
     </>
   );
 }
