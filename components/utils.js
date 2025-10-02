@@ -76,6 +76,8 @@ export function handleIssueData(data) {
     newIssue.body = newIssue.body || "";
     // remove html comments, which contain content we don't want to share
     newIssue.body = newIssue.body?.replace(/(<!-- .+? -->)/g, "");
+    // finally, remove leading/trailing whitespace
+    newIssue.body = newIssue.body.trim();
     newIssue.labels = newIssue.labels ? newIssue.labels.split(", ") : [];
     newIssue.workgroups = newIssue.workgroups
       ? newIssue.workgroups.split(", ")
