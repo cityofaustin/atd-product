@@ -72,6 +72,8 @@ export function handleIssueData(data) {
   const dataHandled = data.map((issue) => {
     // copy issue to avoid modifying data in-place, which can have unexpected effects on re-render
     const newIssue = { ...issue };
+    // ensure the issue body is defined
+    newIssue.body = newIssue.body || "";
     // remove html comments, which contain content we don't want to share
     newIssue.body = newIssue.body?.replace(/(<!-- .+? -->)/g, "");
     newIssue.labels = newIssue.labels ? newIssue.labels.split(", ") : [];
