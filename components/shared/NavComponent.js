@@ -48,8 +48,8 @@ export default function NavComponent(props) {
             <div className="me-1">
               <Image
                 height={60}
-                src="/assets/ATPW_logo_dark_blue.svg"
-                alt="Austin Transportation and Public Works wordmark including the Austin logo"
+                src="/assets/2023_austin_transportation_public_works_branding_guide_royal.png"
+                alt="Transportation and Public Works wordmark including the City of Austin seal"
               />
             </div>
           </div>
