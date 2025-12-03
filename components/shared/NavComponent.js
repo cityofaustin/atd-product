@@ -45,10 +45,10 @@ export default function NavComponent(props) {
       <Container fluid key="nav-container">
         <Navbar.Brand as={Link} href="/" className="ps-2 me-auto">
           <div className="d-flex align-items-center">
-            <div className="me-1">
+            <div className="me-1 py-3">
               <Image
-                height={60}
-                src="/assets/ATPW_logo_dark_blue.svg"
+                height={36}
+                src="/assets/COA-Logo-Horizontal-Official-RGB.svg"
                 alt="Austin Transportation and Public Works wordmark including the Austin logo"
               />
             </div>
