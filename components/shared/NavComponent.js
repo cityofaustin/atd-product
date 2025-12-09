@@ -48,7 +48,7 @@ export default function NavComponent(props) {
             <div className="me-1 py-3">
               <Image
                 height={36}
-                src="/assets/ATPW_logo_dark_blue.svg"
+                src="/assets/COA-Logo-Horizontal-Official-RGB.svg"
                 alt="Austin Transportation and Public Works wordmark including the Austin logo"
               />
             </div>
