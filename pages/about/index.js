@@ -177,7 +177,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Patricia Genty-Andrade",
-    title: "Data Engineer/Project Manager",
+    title: "Data Engineer / Project Manager",
     pronouns: "She/Her",
     src: "assets/headshots/patricia_gentyandrade.jpg",
   },
