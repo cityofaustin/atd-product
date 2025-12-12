@@ -105,7 +105,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Kate Lunceford",
-    title: "Data Storyteller",
+    title: "Senior Product Manager / Data Storyteller",
     pronouns: "She/Her",
     src: "assets/headshots/kate_lunceford.jpg",
   },
@@ -117,7 +117,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Christina Tremel",
-    title: "Product Manager",
+    title: "Senior Product Manager",
     pronouns: "She/Her",
     src: "assets/headshots/christina_tremel.png",
   },
@@ -177,7 +177,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Patricia Genty-Andrade",
-    title: "Data Engineer/Project Manager",
+    title: "Data Engineer / Project Manager",
     pronouns: "She/Her",
     src: "assets/headshots/patricia_gentyandrade.jpg",
   },
@@ -189,7 +189,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Stephanie Moorer",
-    title: "Product Manager",
+    title: "Senior Product Manager",
     pronouns: null,
     src: "assets/headshots/stephanie_moorer.jpg",
   },
