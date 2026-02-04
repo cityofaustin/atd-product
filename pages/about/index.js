@@ -211,6 +211,12 @@ const TEAM_MEMBERS = [
     pronouns: "She/Her",
     src: "assets/headshots/hanna_lupico.jpg",
   },
+  {
+    name: "Kyle Anderson",
+    title: "Geospatial Analyst",
+    pronouns: "He/Him",
+    src: "assets/headshots/kyle_anderson.png",
+  },
 ];
 
 const TEAM_MEMBER_ALUMNI = [
