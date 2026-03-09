@@ -6,7 +6,7 @@ import Alert from "react-bootstrap/Alert";
 import SpinnerWrapper from "../../components/wrappers/SpinnerWrapper";
 import IndexIssueListItem from "../shared/IndexIssueListItem";
 
-export default function ProductsView(props) {
+export default function ProductsList(props) {
   const { isLoaded, error, productIssues } = props;
 
   if (error) {
@@ -18,14 +18,12 @@ export default function ProductsView(props) {
   }
 
   return (
-    <>
-      <Row key="issues-row">
-        {productIssues.map((product) => (
-          <Col key={product.number} sm={12} md={6} lg={3} className="m-0 py-3">
-            <IndexIssueListItem issue={product} />
-          </Col>
-        ))}
-      </Row>
-    </>
+    <Row key="issues-row">
+      {productIssues.map((product) => (
+        <Col key={product.number} sm={12} md={6} lg={3} className="m-0 py-3">
+          <IndexIssueListItem issue={product} />
+        </Col>
+      ))}
+    </Row>
   );
 }
