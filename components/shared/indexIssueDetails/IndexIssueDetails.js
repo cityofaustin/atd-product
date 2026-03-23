@@ -120,7 +120,7 @@ function InfoRow({ issue }) {
         </a>{" "}
         |{" "}
         <a
-          href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20state%3Aopen%20label%3A"${projectLabel}"`}
+          href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20state%3Aopen%20label%3A${encodeURIComponent(`"${projectLabel}"`)}`}
         >
           Tasks
         </a>
