@@ -15,7 +15,7 @@ A website about ATD's Data & Technology Services team.
 
 ### Get it running
 
-Local development requires `git` and `npm`.
+Local development requires `git`, `npm` and `nvm`.
 
 Clone this repo
 
@@ -23,18 +23,29 @@ Clone this repo
 $ git clone git@github.com:cityofaustin/atd-product.git
 ```
 
+Get the latest supported npm version on the current node version
+```bash
+nvm install-latest-npm
+```
+
+Use the intended version
+
+```bash
+nvm use
+```
+
 Install packages
 
-```
-$ npm install
+```bash
+npm install
 ```
 
 Start the local development server
 
 ⚠️ Running the Next development server is fine for most use cases, but does not test the static site export. See [Static export server](#static-export-server).
 
-```
-$ npm run dev
+```bash
+npm run dev
 ```
 
 ### Static export server
