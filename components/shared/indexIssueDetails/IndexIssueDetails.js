@@ -91,9 +91,9 @@ function IssueTabs({ indexType, issue }) {
   );
 }
 
-function InfoRow({ issue }) {
-  const projectLabel = issue.labels.filter((label) =>
-    label.startsWith("Project:")
+function InfoRow({ indexType, issue }) {
+  const taskLabel = issue.labels.filter((label) =>
+    label.startsWith(indexType === "project" ? "Project:" : "Product:")
   )[0];
   return (
     <Row className="mb-4">
@@ -120,7 +120,7 @@ function InfoRow({ issue }) {
         </a>{" "}
         |{" "}
         <a
-          href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20state%3Aopen%20label%3A${encodeURIComponent(`"${projectLabel}"`)}`}
+          href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20state%3Aopen%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
         >
           Tasks
         </a>
