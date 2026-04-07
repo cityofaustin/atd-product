@@ -80,7 +80,7 @@ export default function ProjectFilters({
     // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentFilters, showChartView]);
-  
+
   return (
     <Row className="text-center">
       {isMobile ? (
@@ -132,6 +132,7 @@ export default function ProjectFilters({
         <Row className="h-100">
           <Col>
             <Form.Select
+              aria-label="Workgroup filter"
               className={
                 currentFilters.workgroup
                   ? "h-100 workgroup-select-active"
@@ -175,4 +176,3 @@ export default function ProjectFilters({
     </Row>
   );
 }
-

@@ -11,7 +11,9 @@ function ServiceItem(props) {
   return (
     <Col className="pb-3 px-4">
       <Row>
-        <h1>{icon}</h1>
+        <div style={{ fontSize: "2.5rem" }} aria-hidden="true">
+          {icon}
+        </div>
       </Row>
       <Row>
         <p style={{ fontSize: "1.1rem" }}>{content}</p>
@@ -31,11 +33,13 @@ export default function HomeView() {
             </h1>
             {/* Only include this line break at lg breakpoint */}
             <h3 className="text-white text-center d-none d-lg-block">
-              We build and buy technology to help Austin Transportation<br />
-              Public Works staff tackle the city's mobility challenges.
+              We build and buy technology to help Austin Transportation
+              <br />
+              Public Works staff tackle the city&apos;s mobility challenges.
             </h3>
             <h3 className="text-white text-center d-lg-none mx-5">
-              We build and buy technology to help Austin Transportation Public Works staff tackle the city&apos;s mobility challenges.
+              We build and buy technology to help Austin Transportation Public
+              Works staff tackle the city&apos;s mobility challenges.
             </h3>
           </Col>
         </Row>

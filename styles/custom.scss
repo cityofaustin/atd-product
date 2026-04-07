@@ -5,7 +5,7 @@ $theme-colors: (
 );
 
 $link-color: #0d3e79;
-$link-decoration: none;
+$link-decoration: underline;
 $hr-color: #dee2e6;
 $hr-opacity: 1;
 $nav-shadow: #d5d5d5;
@@ -127,6 +127,7 @@ $nav-shadow: #d5d5d5;
 }
 
 @media only screen and (min-width: 576px) {
+
   // Use !important to override BootStrap class
   .navbar-menu-link {
     padding-top: 0 !important;
