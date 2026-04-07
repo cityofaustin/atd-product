@@ -126,7 +126,7 @@ function InfoRow({ indexType, issue }) {
         |{" "}
         {taskLabel && (
           <a
-            href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20state%3Aopen%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
+            href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
           >
             Tasks
           </a>
