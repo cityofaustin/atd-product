@@ -92,9 +92,14 @@ function IssueTabs({ indexType, issue }) {
 }
 
 function InfoRow({ indexType, issue }) {
-  const taskLabel = issue.labels.filter((label) =>
-    label.startsWith(indexType === "project" ? "Project:" : "Product:")
-  )[0];
+  const taskLabel = issue.labels.filter((label) => {
+    if (indexType === "project") {
+      return label.startsWith("Project:");
+    } else if (indexType === "product") {
+      return label.startsWith("Product:");
+    }
+    return null;
+  })[0];
   return (
     <Row className="mb-4">
       {issue.type && (
@@ -119,11 +124,13 @@ function InfoRow({ indexType, issue }) {
           GitHub Issue
         </a>{" "}
         |{" "}
-        <a
-          href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20state%3Aopen%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
-        >
-          Tasks
-        </a>
+        {taskLabel && (
+          <a
+            href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20state%3Aopen%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
+          >
+            Tasks
+          </a>
+        )}
       </Col>
     </Row>
   );
