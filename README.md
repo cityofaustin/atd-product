@@ -23,15 +23,15 @@ Clone this repo
 $ git clone git@github.com:cityofaustin/atd-product.git
 ```
 
-Get the latest supported npm version on the current node version
-```bash
-nvm install-latest-npm
-```
-
-Use the intended version
+Use the intended version of Node
 
 ```bash
 nvm use
+```
+
+Get the latest supported npm version on the current Node version
+```bash
+nvm install-latest-npm
 ```
 
 Install packages
