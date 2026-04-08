@@ -118,14 +118,6 @@ $nav-shadow: #d5d5d5;
   text-shadow: 2px 2px 2px #0d3e79;
 }
 
-@media only screen and (min-width: 768px) {
-  .navbar-menu-borders {
-    border-style: none none none solid;
-    border-color: #00bfa5;
-    border-width: 1px;
-  }
-}
-
 @media only screen and (min-width: 576px) {
 
   // Use !important to override BootStrap class
