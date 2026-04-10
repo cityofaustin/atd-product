@@ -91,24 +91,3 @@ export function handleIssueData(data) {
   });
   return dataHandled.sort(sortByUpdatedDate);
 }
-
-export function getTypeIcon(type) {
-  switch (type) {
-    case "Feature":
-      return <BsFilePlus />;
-    case "New Application":
-      return <BsReverseLayoutTextWindowReverse />;
-    case "Enhancement":
-      return <FaWrench />;
-    case "Tech Debt":
-      return <RiBankFill />;
-    case "Research":
-      return <FaSearch />;
-    case "Data":
-      return <FaDatabase />;
-    case "Documentation":
-      return <FaEdit />;
-    default:
-      return null;
-  }
-}

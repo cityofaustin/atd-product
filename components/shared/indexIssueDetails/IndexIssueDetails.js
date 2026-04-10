@@ -13,7 +13,6 @@ import Image from "react-bootstrap/Image";
 import Comments from "./Comments";
 import ProjectEvaluation from "./ProjectEvaluation";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
-import Issues from "./Issues";
 
 const markdownComponents = {
   // This custom renderer changes how images are rendered
@@ -88,14 +87,19 @@ function IssueTabs({ indexType, issue }) {
           <Comments issueNumber={issue.number} />
         </Tab>
       )}
-      <Tab eventKey="issues" title="Issues">
-        <Issues indexType={indexType} parent={issue} />
-      </Tab>
     </Tabs>
   );
 }
 
-function InfoRow({ issue }) {
+function InfoRow({ indexType, issue }) {
+  const taskLabel = issue.labels.filter((label) => {
+    if (indexType === "project") {
+      return label.startsWith("Project:");
+    } else if (indexType === "product") {
+      return label.startsWith("Product:");
+    }
+    return null;
+  })[0];
   return (
     <Row className="mb-4">
       {issue.type && (
@@ -108,15 +112,25 @@ function InfoRow({ issue }) {
       </Col>
       {issue.workgroups.length > 0 && (
         <Col sm={3} md="auto">
-          <h6 className="mb-0 mt-2 text-muted">Workgroup(s)</h6>
+          <h6 className="mb-0 mt-2 text-muted">Division(s)</h6>
           {issue.workgroups.join(", ")}
         </Col>
       )}
       <Col sm={3} md="auto">
-        <h6 className="mb-0 mt-2 text-muted">Issue</h6>
+        <h6 className="mb-0 mt-2 text-muted">Learn more</h6>
         <a
           href={`https://github.com/cityofaustin/atd-data-tech/issues/${issue.number}`}
-        >{`#${issue.number}`}</a>
+        >
+          GitHub Issue
+        </a>{" "}
+        |{" "}
+        {taskLabel && (
+          <a
+            href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
+          >
+            Tasks
+          </a>
+        )}
       </Col>
     </Row>
   );
