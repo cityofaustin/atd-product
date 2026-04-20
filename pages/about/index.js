@@ -371,7 +371,7 @@ function ValueItem(props) {
   return (
     <Col xs={12} md={6} lg={4} className="px-5 pb-4 m-auto">
       <Row>
-        <div style={{ fontSize: "2.5rem" }} aria-hidden="true">
+        <div className="fs-1" aria-hidden="true">
           {icon}
         </div>
       </Row>
