@@ -9,7 +9,7 @@ export const LINKS = [
   { label: "Data", href: "https://data.austintexas.gov" },
   {
     label: "Disclaimer",
-    href: "https://www.austintexas.gov/page/city-austin-open-data-terms-use",
+    href: "https://datahub.austintexas.gov/stories/s/City-of-Austin-Open-Data-Terms-of-Use/ranj-cccq/",
   },
   {
     label: "Code",
@@ -42,7 +42,10 @@ export default function Footer({ links }) {
       <Row className="align-items-center">
         <Col xs={12} md={6} lg={8}>
           <div className="pb-2 d-flex flex-nowrap">
-            <a href="https://austinmobility.io" className="pb-1 d-flex align-items-center">
+            <a
+              href="https://austinmobility.io"
+              className="pb-1 d-flex align-items-center"
+            >
               <div
                 className="d-flex flex-column align-items-start text-white ms-2"
                 style={{ lineHeight: 1 }}

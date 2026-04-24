@@ -63,7 +63,6 @@ export default function NavComponent(props) {
             {PAGES.map((page, idx) => {
               const fontWeightClass =
                 currentPageRoute === page.route ? "fw-bold" : "";
-              const borderClass = idx === 0 ? "" : "navbar-menu-borders";
 
               return (
                 <div key={page.route} className={`flex-grow-1 mx-0 my-auto`}>
@@ -87,9 +86,9 @@ export default function NavComponent(props) {
             </a>
             <a
               href="https://atd.knack.com/dts#new-service-request"
-              className="text-white text-center d-none d-md-none d-lg-inline me-3 ps-3 my-auto"
+              className="text-white text-center d-none d-md-none d-lg-inline ps-3 my-auto"
             >
-              <Button size="sm">
+              <Button size="sm" className="me-4">
                 <div>Get help</div>
               </Button>
             </a>
