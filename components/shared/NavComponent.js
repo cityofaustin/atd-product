@@ -13,6 +13,7 @@ import {
 const PAGES = [
   { label: "Products", route: "/products" },
   { label: "Projects", route: "/projects" },
+  { label: "Services", route: "/services" },
   { label: "About", route: "/about" },
 ];
 
