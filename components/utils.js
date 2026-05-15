@@ -1,11 +1,4 @@
 import useSWR from "swr";
-import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
-import { BsFilePlus } from "react-icons/bs";
-import { FaWrench } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
-import { RiBankFill } from "react-icons/ri";
-import { FaDatabase } from "react-icons/fa";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
