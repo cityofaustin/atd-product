@@ -9,8 +9,9 @@ function FrontMatter() {
   return (
     <Col>
       <p className="text-black">
-      Products are the solutions we build and support for our customers. We improve and extend 
-      our products over time so that they deliver continuous value to staff as business needs evolve.
+        Products are the solutions we build and support for our customers. We
+        improve and extend our products over time so that they deliver
+        continuous value to staff as business needs evolve.
       </p>
       <hr className="mt-4" />
     </Col>
