@@ -7,7 +7,7 @@ const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 
 // The `labels` column is a comma-separated string of labels, so we use wildcard string searching
 const QUERY =
-  "$limit=100000&$where=(labels like '%Project Index%' or labels like '%Product Index%') and labels not like '%Archived Project%' and (pipeline != 'Icebox' or pipeline is null)";
+  "$limit=100000&$where=(labels like '%Project Index%' or labels like '%Product Index%' or labels like '%Service Index%') and labels not like '%Archived Project%' and (pipeline != 'Icebox' or pipeline is null)";
 
 function useProjectIssues(data) {
   return useMemo(
@@ -19,6 +19,13 @@ function useProjectIssues(data) {
 function useProductIssues(data) {
   return useMemo(
     () => data.filter((issue) => issue.labels.includes("Product Index")),
+    [data]
+  );
+}
+
+function useServiceIssues(data) {
+  return useMemo(
+    () => data.filter((issue) => issue.labels.includes("Service Index")),
     [data]
   );
 }
@@ -49,6 +56,7 @@ export function IssuesContextWrapper({ children }) {
 
   const projectIssues = useProjectIssues(dataHandled);
   const productIssues = useProductIssues(dataHandled);
+  const serviceIssues = useServiceIssues(dataHandled);
   const workgroups = useWorkgroups(dataHandled);
   return (
     <IssuesContext.Provider
@@ -58,6 +66,7 @@ export function IssuesContextWrapper({ children }) {
         isLoaded,
         projectIssues,
         productIssues,
+        serviceIssues,
         workgroups,
         statuses: STATUSES,
       }}
