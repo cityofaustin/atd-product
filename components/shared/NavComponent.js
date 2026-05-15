@@ -17,27 +17,6 @@ const PAGES = [
   { label: "About", route: "/about" },
 ];
 
-function IconSeparator() {
-  return (
-    <Row>
-      <Col className="flex-grow-1 ps-0">
-        <hr className="w-100" />
-      </Col>
-      <Col xs="auto" className="pt-2 px-sm-0 mx-sm-0">
-        <Image
-          className="float-end"
-          height={17}
-          src="/assets/icos.jpg"
-          alt="Generic placeholder"
-        />
-      </Col>
-      <Col sm={1} className="d-none d-sm-block pe-0">
-        <hr className="w-100" />
-      </Col>
-    </Row>
-  );
-}
-
 export default function NavComponent(props) {
   const { currentPageRoute, isHome } = props;
 
