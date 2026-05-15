@@ -3,6 +3,7 @@ import Row from "react-bootstrap/Col";
 import Col from "react-bootstrap/Col";
 import Page from "../../components/shared/Page";
 import IssuesContext from "../../contexts/IssuesContext";
+import ServicesList from "../../components/servicesView/ServicesList";
 
 function FrontMatter() {
   return (
@@ -17,19 +18,19 @@ function FrontMatter() {
 }
 
 export default function ProductsView() {
-  const { issues, productIssues, isLoaded, error } = useContext(IssuesContext);
+  const { issues, serviceIssues, isLoaded, error } = useContext(IssuesContext);
 
   return (
     <Page nav title="Services">
       <Row key="front-matter" className="mb-2">
         <FrontMatter />
       </Row>
-      {/* <ProductsList
+      <ServicesList
         issues={issues}
         isLoaded={isLoaded}
         error={error}
-        productIssues={productIssues}
-      /> */}
+        serviceIssues={serviceIssues}
+      />
     </Page>
   );
 }
