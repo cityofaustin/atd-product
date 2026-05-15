@@ -16,8 +16,6 @@ export default function ServicesList(props) {
     return <Alert variant="dark">No data found.</Alert>;
   }
 
-  console.log(serviceIssues, "service issues");
-
   return (
     <Row key="issues-row">
       {serviceIssues.map((service) => (
