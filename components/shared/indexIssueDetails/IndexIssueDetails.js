@@ -167,7 +167,11 @@ export default function IndexIssueDetails({
         >{`< Back to ${indexType}s`}</span>
       </Link>
       <h4 className="text-black mb-0">
-        {indexType === "project" ? "Project Details" : "Product Details"}
+        {indexType === "project"
+          ? "Project Details"
+          : indexType === "product"
+            ? "Product Details"
+            : "Service Details"}
       </h4>
       <h1 className="text-primary">{issue.title}</h1>
       <InfoRow indexType={indexType} issue={issue} />
