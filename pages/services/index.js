@@ -5,7 +5,7 @@ import Page from "../../components/shared/Page";
 import IssuesContext from "../../contexts/IssuesContext";
 import ServicesList from "../../components/servicesView/ServicesList";
 
-function FrontMatter() {
+function ServicesDescription() {
   return (
     <Col>
       <p className="text-black">
@@ -17,13 +17,13 @@ function FrontMatter() {
   );
 }
 
-export default function ProductsView() {
+export default function ServicesView() {
   const { issues, serviceIssues, isLoaded, error } = useContext(IssuesContext);
 
   return (
     <Page nav title="Services">
       <Row key="front-matter" className="mb-2">
-        <FrontMatter />
+        <ServicesDescription />
       </Row>
       <ServicesList
         issues={issues}
