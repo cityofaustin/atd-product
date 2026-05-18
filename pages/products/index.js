@@ -5,7 +5,7 @@ import Page from "../../components/shared/Page";
 import IssuesContext from "../../contexts/IssuesContext";
 import ProductsList from "../../components/productsView/ProductsList";
 
-function FrontMatter() {
+function ProductsDescription() {
   return (
     <Col>
       <p className="text-black">
@@ -24,7 +24,7 @@ export default function ProductsView() {
   return (
     <Page nav title="Products">
       <Row key="front-matter" className="mb-2">
-        <FrontMatter />
+        <ProductsDescription />
       </Row>
       <ProductsList
         issues={issues}
