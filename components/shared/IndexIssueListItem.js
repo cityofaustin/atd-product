@@ -23,8 +23,7 @@ function parseBody(body) {
 function getIndexType(issue) {
   if (issue.labels.includes("Product Index")) return "product";
   if (issue.labels.includes("Project Index")) return "project";
-  if (issue.labels.includes("Service Index")) return "service";
-  return null;
+  return "service";
 }
 
 export default function IndexIssueListItem({ issue }) {
