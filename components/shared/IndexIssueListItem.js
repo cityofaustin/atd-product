@@ -20,16 +20,20 @@ function parseBody(body) {
   return [description, img];
 }
 
+function getIndexType(issue) {
+  if (issue.labels.includes("Product Index")) return "product";
+  if (issue.labels.includes("Project Index")) return "project";
+  return "service";
+}
+
 export default function IndexIssueListItem({ issue }) {
   const [description, img] = parseBody(issue.body);
-
-  const type = issue.labels.includes("Product Index") ? "product" : "project";
 
   return (
     <Link
       className="text-decoration-none"
       href={{
-        pathname: `${type}s/[issue_number]`,
+        pathname: `${getIndexType(issue)}s/[issue_number]`,
         query: { issue_number: issue.number },
       }}
       passHref
