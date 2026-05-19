@@ -69,13 +69,13 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Chia Berry",
-    title: "Head of Software Engineering",
+    title: "Software Developer",
     pronouns: "She/Her",
     src: "assets/headshots/chia_berry.jpg",
   },
   {
     name: "Frank Hereford",
-    title: "Software Developer",
+    title: "Head of Software Engineering",
     pronouns: "He/Him",
     src: "assets/headshots/frank_hereford.jpg",
   },
