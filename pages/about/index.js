@@ -69,7 +69,7 @@ const TEAM_MEMBERS = [
   },
   {
     name: "Chia Berry",
-    title: "Software Developer",
+    title: "Senior Software Developer",
     pronouns: "She/Her",
     src: "assets/headshots/chia_berry.jpg",
   },
