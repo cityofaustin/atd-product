@@ -61,7 +61,7 @@ function sortByUpdatedDate(a, b) {
 }
 
 export function handleIssueData(data) {
-  // do some global tidying of the data.
+  // do some global tidying of the data
   const dataHandled = data.map((issue) => {
     // copy issue to avoid modifying data in-place, which can have unexpected effects on re-render
     const newIssue = { ...issue };
