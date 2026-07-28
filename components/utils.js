@@ -18,7 +18,7 @@ export function useSocrata({ url }) {
   };
 }
 
-function getIssueType(labels) {
+function getLabelType(labels) {
   // if an issue has more than one `type: ` label, all but one are ignored
   const types = labels.filter((label) => label.startsWith("Type"));
   const typesParsed = types.map((type) => type.split("Type: ")[1]);
@@ -75,7 +75,10 @@ export function handleIssueData(data) {
     newIssue.workgroups = newIssue.workgroups
       ? newIssue.workgroups.split(", ")
       : [];
-    newIssue.type = getIssueType(newIssue.labels);
+    // labelType is found in the label
+    newIssue.labelType = getLabelType(newIssue.labels);
+    // type is the Github issue type
+    newIssue.type.trim();
     // assign a generalized "status" based on the issue pipeline
     newIssue.status = getStatus(newIssue.pipeline);
     newIssue.title = dropTitlePrefix(newIssue.title);
