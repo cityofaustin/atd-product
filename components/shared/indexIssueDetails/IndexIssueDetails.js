@@ -110,9 +110,9 @@ function InfoRow({ indexType, issue }) {
   })[0];
   return (
     <Row className="mb-4">
-      {issue.type && (
+      {issue.labelType && (
         <Col sm={3} md="auto">
-          <h6 className="mb-0 mt-2 text-muted">Type</h6> {issue.type}
+          <h6 className="mb-0 mt-2 text-muted">Type</h6> {issue.labelType}
         </Col>
       )}
       <Col sm={3} md="auto">
