@@ -205,12 +205,7 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/owen_myers.jpg",
   },
-  {
-    name: "Hanna Lupico",
-    title: "Senior Product Manager",
-    pronouns: "She/Her",
-    src: "assets/headshots/hanna_lupico.jpg",
-  },
+
   {
     name: "Kyle Anderson",
     title: "Geospatial Analyst",
@@ -351,6 +346,12 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Geospatial Analyst",
     pronouns: "He/Him",
     src: "assets/headshots/william_graves.jpg",
+  },
+  {
+    name: "Hanna Lupico",
+    title: "Senior Product Manager",
+    pronouns: "She/Her",
+    src: "assets/headshots/hanna_lupico.jpg",
   },
 ];
 
