@@ -205,7 +205,6 @@ const TEAM_MEMBERS = [
     pronouns: "He/Him",
     src: "assets/headshots/owen_myers.jpg",
   },
-
   {
     name: "Kyle Anderson",
     title: "Geospatial Analyst",
