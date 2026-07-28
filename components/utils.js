@@ -77,10 +77,12 @@ export function handleIssueData(data) {
       : [];
     // labelType is found in the label
     newIssue.labelType = getLabelType(newIssue.labels);
-    // type is the Github issue type
+    // type is the Github project issue Type
     newIssue.type.trim();
     // assign a generalized "status" based on the issue pipeline
     newIssue.status = getStatus(newIssue.pipeline);
+    // Github project field called DTS Description
+    newIssue.description = newIssue.description?.trim() || "";
     newIssue.title = dropTitlePrefix(newIssue.title);
     newIssue.isFeatured = newIssue.labels.includes("Featured Project");
     return newIssue;

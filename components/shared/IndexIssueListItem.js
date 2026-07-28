@@ -3,21 +3,15 @@ import Card from "react-bootstrap/Card";
 import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 
-function parseBody(body) {
-  // extract content up to the first sentence or linebreak if no period to use as description
-  const reDescriptionSentence = /^(.*?)[.?!]\s+/;
-  const reDescriptionLinebreak = /.*/;
-  const description =
-    body.match(reDescriptionSentence)?.[0] ||
-    body.match(reDescriptionLinebreak)?.[0];
-  const reImg = /(?:!\[(.*?)\]\((.*?)\))/;
+function parseImage(body) {
   // find the first img (if one exists)
+  const reImg = /(?:!\[(.*?)\]\((.*?)\))/;
   const imgMatch = body.match(reImg);
   let img = null;
   if (imgMatch && imgMatch.length > 0) {
     img = { alt: imgMatch[1], src: imgMatch[2] };
   }
-  return [description, img];
+  return img;
 }
 
 function getIndexType(issue) {
@@ -27,7 +21,7 @@ function getIndexType(issue) {
 }
 
 export default function IndexIssueListItem({ issue }) {
-  const [description, img] = parseBody(issue.body);
+  const img = parseImage(issue.body);
 
   return (
     <Link
@@ -61,7 +55,7 @@ export default function IndexIssueListItem({ issue }) {
                 }}
                 skipHtml
               >
-                {description}
+                {issue.description}
               </ReactMarkdown>
             </small>
           </Card.Text>
