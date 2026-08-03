@@ -6,7 +6,7 @@ import { ISSUES_ENDPOINT } from "../settings";
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 
 const QUERY =
-  "$limit=100000&$where=(type like '%Project%' or type like '%Product%' or type like '%Service%') and type not like '%Archived Project%' and (pipeline != 'Icebox' or pipeline is null)";
+  "$limit=100000&$where=(type like '%Project%' or type like '%Product%' or type like '%Service%') and labels not like '%Archived Project%' and (pipeline != 'Icebox' or pipeline is null)";
 
 function useProjectIssues(data) {
   return useMemo(
