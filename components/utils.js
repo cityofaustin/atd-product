@@ -53,7 +53,10 @@ function getStatus(pipeline) {
 }
 
 function dropTitlePrefix(title) {
-  return title.replace("Project: ", "").replace("Product: ", "");
+  return title
+    .replace("Project: ", "")
+    .replace("Product: ", "")
+    .replace("Service: ", "");
 }
 
 function sortByUpdatedDate(a, b) {
