@@ -33,7 +33,6 @@ function handleScores(scores) {
 export function EvaluationsContextWrapper(props) {
   const { issues } = useContext(IssuesContext);
   const [data, setData] = useState([]);
-  const [scores, setScores] = useState([]);
   const [error, setError] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const { url, appId, children } = props;
@@ -53,18 +52,12 @@ export function EvaluationsContextWrapper(props) {
       );
   }, [url, appId]);
 
-  useEffect(() => {
-    const allScores = handleScores(data);
-    const scoresWithIssues = allScores.filter((score) => {
-      const number = score.number;
-      // exclude issues that do not have a score
-      const matchesIssues = issues.filter(
-        (issue) => parseInt(issue.number) === number
-      );
-      return matchesIssues.length > 0;
-    });
-    setScores(scoresWithIssues);
-  }, [issues, data]);
+  // Derive scores during render (not in an effect)
+  // https://react.dev/learn/you-might-not-need-an-effect#updating-state-based-on-props-or-state
+  const scores = handleScores(data).filter((score) =>
+    // exclude issues that do not have a score
+    issues.some((issue) => parseInt(issue.number) === score.number)
+  );
 
   return (
     <EvaluationsContext.Provider
