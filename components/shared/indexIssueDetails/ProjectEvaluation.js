@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
@@ -8,20 +8,12 @@ import ProjectEvaluationTable from "./ProjectEvaluationTable";
 
 export default function ProjectEvaluation({ project }) {
   const { scores, isLoaded, error } = useContext(EvaluationsContext);
-  const [projectScore, setProjectScore] = useState(null);
-
-  useEffect(() => {
-    if (project) {
-      const matchesThisProjectScores = scores.filter(
-        (score) => score.number === parseInt(project.number)
-      );
-      const thisProjectScore =
-        matchesThisProjectScores.length > 0
-          ? matchesThisProjectScores[0]
-          : null;
-      setProjectScore(thisProjectScore);
-    }
-  }, [scores, project]);
+  // Derive project score during render (not in an effect)
+  // https://react.dev/learn/you-might-not-need-an-effect#updating-state-based-on-props-or-state
+  const projectScore = project
+    ? (scores.find((score) => score.number === parseInt(project.number)) ??
+      null)
+    : null;
 
   if (error) {
     return <p>{error}</p>;
