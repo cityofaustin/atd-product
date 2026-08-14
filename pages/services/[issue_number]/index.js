@@ -1,0 +1,22 @@
+import { useContext } from "react";
+import { useRouter } from "next/router";
+import IssuesContext from "../../../contexts/IssuesContext";
+import IndexIssueDetails from "../../../components/shared/indexIssueDetails/IndexIssueDetails";
+import Page from "../../../components/shared/Page";
+
+export default function ServiceDetailsView() {
+  const { issues, isLoaded, error } = useContext(IssuesContext);
+  const matches = useRouter("/services/:issue_number");
+  const issue_number = matches.query.issue_number;
+  const issue = issues.find((issue) => issue.number === issue_number);
+  return (
+    <Page nav={true} title={false}>
+      <IndexIssueDetails
+        indexType="service"
+        issue={issue}
+        isLoaded={isLoaded}
+        error={error}
+      />
+    </Page>
+  );
+}

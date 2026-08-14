@@ -23,6 +23,12 @@ const markdownComponents = {
   a: ({ node, ...props }) => <a {...props} className="link" />,
 };
 
+const titles = {
+  project: "Project Details",
+  product: "Product Details",
+  service: "Service Details",
+};
+
 function Description(props) {
   return (
     <Row className="mt-2">
@@ -97,14 +103,16 @@ function InfoRow({ indexType, issue }) {
       return label.startsWith("Project:");
     } else if (indexType === "product") {
       return label.startsWith("Product:");
+    } else if (indexType === "service") {
+      return label.startsWith("Service:");
     }
     return null;
   })[0];
   return (
     <Row className="mb-4">
-      {issue.type && (
+      {issue.labelType && (
         <Col sm={3} md="auto">
-          <h6 className="mb-0 mt-2 text-muted">Type</h6> {issue.type}
+          <h6 className="mb-0 mt-2 text-muted">Type</h6> {issue.labelType}
         </Col>
       )}
       <Col sm={3} md="auto">
@@ -166,9 +174,7 @@ export default function IndexIssueDetails({
           role="button"
         >{`< Back to ${indexType}s`}</span>
       </Link>
-      <h4 className="text-black mb-0">
-        {indexType === "project" ? "Project Details" : "Product Details"}
-      </h4>
+      <h4 className="text-black mb-0">{titles[indexType]}</h4>
       <h1 className="text-primary">{issue.title}</h1>
       <InfoRow indexType={indexType} issue={issue} />
       <IssueTabs indexType={indexType} issue={issue} />

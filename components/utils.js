@@ -1,11 +1,4 @@
 import useSWR from "swr";
-import { BsReverseLayoutTextWindowReverse } from "react-icons/bs";
-import { BsFilePlus } from "react-icons/bs";
-import { FaWrench } from "react-icons/fa";
-import { FaSearch } from "react-icons/fa";
-import { FaEdit } from "react-icons/fa";
-import { RiBankFill } from "react-icons/ri";
-import { FaDatabase } from "react-icons/fa";
 
 const fetcher = async (url) => {
   const res = await fetch(url);
@@ -25,7 +18,7 @@ export function useSocrata({ url }) {
   };
 }
 
-function getIssueType(labels) {
+function getLabelType(labels) {
   // if an issue has more than one `type: ` label, all but one are ignored
   const types = labels.filter((label) => label.startsWith("Type"));
   const typesParsed = types.map((type) => type.split("Type: ")[1]);
@@ -60,7 +53,10 @@ function getStatus(pipeline) {
 }
 
 function dropTitlePrefix(title) {
-  return title.replace("Project: ", "").replace("Product: ", "");
+  return title
+    .replace("Project: ", "")
+    .replace("Product: ", "")
+    .replace("Service: ", "");
 }
 
 function sortByUpdatedDate(a, b) {
@@ -68,7 +64,7 @@ function sortByUpdatedDate(a, b) {
 }
 
 export function handleIssueData(data) {
-  // do some global tidying of the data.
+  // do some global tidying of the data
   const dataHandled = data.map((issue) => {
     // copy issue to avoid modifying data in-place, which can have unexpected effects on re-render
     const newIssue = { ...issue };
@@ -82,9 +78,14 @@ export function handleIssueData(data) {
     newIssue.workgroups = newIssue.workgroups
       ? newIssue.workgroups.split(", ")
       : [];
-    newIssue.type = getIssueType(newIssue.labels);
+    // labelType is found in the label
+    newIssue.labelType = getLabelType(newIssue.labels);
+    // type is the Github project issue Type
+    newIssue.type.trim();
     // assign a generalized "status" based on the issue pipeline
     newIssue.status = getStatus(newIssue.pipeline);
+    // Github project field called DTS Description
+    newIssue.description = newIssue.description?.trim() || "";
     newIssue.title = dropTitlePrefix(newIssue.title);
     newIssue.isFeatured = newIssue.labels.includes("Featured Project");
     return newIssue;

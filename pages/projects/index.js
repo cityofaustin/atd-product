@@ -5,11 +5,11 @@ import IssuesContext from "../../contexts/IssuesContext";
 import Page from "../../components/shared/Page";
 import ProjectsList from "../../components/projectsView/ProjectsList";
 
-function FrontMatter() {
+function ProjectsDescription() {
   return (
     <Col className="mb-2">
       <p className="mb-2 text-black">
-      Projects are timeboxed endeavors — whether{" "}
+        Projects are timeboxed endeavors — whether{" "}
         <a
           className="link"
           alt="link BI issue"
@@ -54,7 +54,7 @@ export default function ProjectsView() {
   return (
     <Page nav title="Projects">
       <Row key="front-matter" className="mb-2">
-        <FrontMatter />
+        <ProjectsDescription />
       </Row>
       <ProjectsList
         issues={issues}
