@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/router";
 import { IssuesContextWrapper } from "../components/wrappers/IssuesContextWrapper";
 import { EvaluationsContextWrapper } from "../components/wrappers/EvaluationsContextWrapper";
@@ -8,7 +8,7 @@ import "../styles/custom.scss";
 
 function App({ Component, pageProps }) {
   const router = useRouter();
-  const [isCorrectRoute, setIsCorrectRoute] = useState(false);
+  const didCorrectRoute = useRef(false);
 
   useEffect(() => {
     /**
@@ -20,21 +20,18 @@ function App({ Component, pageProps }) {
      * page that the next/router thinks we're on. If so, we manually
      * push the next/router to the correct path.
      */
-    if (isCorrectRoute) return;
+    if (didCorrectRoute.current) return;
 
     const path = window.location.pathname;
     // If we're not on the homepage but router thinks we are
     if (path !== "/" && router.pathname === "/") {
+      didCorrectRoute.current = true;
       // Push to the actual path
-      router
-        .push(path + window.location.search + window.location.hash)
-        .then(() => {
-          setIsCorrectRoute(true);
-        });
+      router.push(path + window.location.search + window.location.hash);
     } else {
-      setIsCorrectRoute(true);
+      didCorrectRoute.current = true;
     }
-  }, [router, isCorrectRoute]);
+  }, [router]);
 
   return (
     <IssuesContextWrapper>

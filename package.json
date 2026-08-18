@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^5.3.6",
-    "next": "^16.0.10",
+    "next": "^16.3.0",
     "react": "^19.2.1",
     "react-bootstrap": "^2.10.10",
     "react-dom": "^19.2.1",
@@ -18,9 +18,9 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run lint && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "eslint ."
   },
   "browserslist": {
     "production": [
@@ -38,6 +38,6 @@
   },
   "devDependencies": {
     "eslint": "^9.28.0",
-    "eslint-config-next": "^16.0.7"
+    "eslint-config-next": "^16.3.0"
   }
 }
