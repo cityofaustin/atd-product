@@ -1,14 +1,12 @@
-import { useContext, useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
 
 import SpinnerWrapper from "../wrappers/SpinnerWrapper";
-import EvaluationsContext from "../../contexts/EvaluationsContext";
 import IndexIssueListItem from "../shared/IndexIssueListItem";
 import ProjectFilters from "./ProjectFilters";
-import ProjectScoreChart from "../shared/ProjectScoreChart";
 
 function includedInStringOrArray(issue, field, value) {
   return issue[field] ? value.includes(issue[field]) : false;
@@ -57,27 +55,13 @@ const useDisplayIssues = ({ currentFilters, projectIssues }) =>
     return applyCurrentFilters(projectIssues, currentFilters, FILTER_DEFS);
   }, [currentFilters, projectIssues]);
 
-const useDisplayScores = ({ displayIssues, scores }) =>
-  useMemo(() => {
-    return scores.filter((score) => {
-      const number = score.number;
-      // exclude issues that do not have a score
-      const matchesIssues = displayIssues.filter(
-        (issue) => parseInt(issue.number) === number
-      );
-      return matchesIssues.length > 0;
-    });
-  }, [displayIssues, scores]);
-
 export default function ProjectsList(props) {
   const issues = props.issues;
   const projectIssues = props.projectIssues;
   const error = props.error;
   const isLoaded = props.isLoaded;
-  const { scores } = useContext(EvaluationsContext);
   const location = useRouter();
   const [currentFilters, setCurrentFilters] = useState({});
-  const [showChartView, setShowChartView] = useState(false);
 
   useEffect(() => {
     /*
@@ -100,13 +84,11 @@ export default function ProjectsList(props) {
      * TODO: Location.query is missing from this dep array, and cannot be added
      * because of competing useEffect handling in ProjectFilters.js. We need to
      * refactor the filters/query params state management
-     */ 
+     */
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [issues, location.isReady]);
 
   const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
-
-  const displayScores = useDisplayScores({ displayIssues, scores });
 
   if (error) {
     return <p>{error}</p>;
@@ -124,41 +106,28 @@ export default function ProjectsList(props) {
             filterDefs={FILTER_DEFS}
             currentFilters={currentFilters}
             setCurrentFilters={setCurrentFilters}
-            showChartView={showChartView}
-            setShowChartView={setShowChartView}
             statuses={props.statuses}
             workgroups={props.workgroups}
           />
         </Col>
       </Row>
-      {!showChartView && (
-        <Row>
-          <Col className="text-end text-muted">
-            <small>Showing {displayIssues.length} projects</small>
-          </Col>
-        </Row>
-      )}
+      <Row>
+        <Col className="text-end text-muted">
+          <small>Showing {displayIssues.length} projects</small>
+        </Col>
+      </Row>
       <Row>
         <Col>
           <hr className="mt-3" />
         </Col>
       </Row>
-      {!showChartView && (
-        <Row key="issues-row">
-          {displayIssues.map((project) => (
-            <Col
-              key={project.number}
-              sm={12}
-              md={6}
-              lg={3}
-              className="m-0 py-3"
-            >
-              <IndexIssueListItem issue={project} />
-            </Col>
-          ))}
-        </Row>
-      )}
-      {showChartView && <ProjectScoreChart scores={displayScores} />}
+      <Row key="issues-row">
+        {displayIssues.map((project) => (
+          <Col key={project.number} sm={12} md={6} lg={3} className="m-0 py-3">
+            <IndexIssueListItem issue={project} />
+          </Col>
+        ))}
+      </Row>
       {displayIssues && displayIssues.length === 0 && (
         <Row>
           <Col>
@@ -166,22 +135,20 @@ export default function ProjectsList(props) {
           </Col>
         </Row>
       )}
-      {!showChartView && currentFilters.status === "completed" && (
-        <Row>
-          <Col>
-            <div className="mt-4 text-center mb-2 text-black">
-              Visit{" "}
-              <a
-                className="link"
-                href="https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue+label%3A%22Project+Index%22+is%3Aclosed"
-              >
-                GitHub
-              </a>{" "}
-              for a full list of our completed projects.
-            </div>
-          </Col>
-        </Row>
-      )}
+      <Row>
+        <Col>
+          <div className="mt-4 text-center mb-2 text-black">
+            Visit{" "}
+            <a
+              className="link"
+              href="https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue+label%3A%22Project+Index%22+is%3Aclosed"
+            >
+              GitHub
+            </a>{" "}
+            for a full list of our completed projects.
+          </div>
+        </Col>
+      </Row>
     </>
   );
 }

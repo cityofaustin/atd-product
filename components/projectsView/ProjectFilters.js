@@ -4,7 +4,6 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { useMediaQuery } from "react-responsive";
-import ProjectListToggle from "./ProjectListToggle";
 import FiltersList from "./FiltersList";
 import { MEDIUM_BREAKPOINT } from "../settings";
 
@@ -45,8 +44,6 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
 export default function ProjectFilters({
   currentFilters,
   setCurrentFilters,
-  showChartView,
-  setShowChartView,
   workgroups,
 }) {
   const isMobile = useMediaQuery({
@@ -55,9 +52,6 @@ export default function ProjectFilters({
   const router = useRouter();
 
   useEffect(() => {
-    // Update the view parameter in the URL based on the showChartView state
-    const viewParam = showChartView ? "chart" : null;
-
     // Format the search path to match currently selected filters
     const searchKwargs = Object.keys(currentFilters)
       .filter((key) => currentFilters[key])
@@ -69,17 +63,12 @@ export default function ProjectFilters({
     // Build the new query string
     let queryString = `?${searchKwargs}`;
 
-    // Add the view parameter to the query string if chart view is active
-    if (viewParam) {
-      queryString += `&view=${viewParam}`;
-    }
-
     // Update the URL
     router.replace(`/projects/${queryString}`, undefined, { shallow: true });
 
     // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentFilters, showChartView]);
+  }, [currentFilters]);
 
   return (
     <Row className="text-center">
@@ -163,14 +152,6 @@ export default function ProjectFilters({
               })}
             </Form.Select>
           </Col>
-        </Row>
-      </Col>
-      <Col xs={12} lg={3} className="mb-3 ms-auto" key="projectListToggle">
-        <Row className="h-100 mx-0">
-          <ProjectListToggle
-            showChartView={showChartView}
-            setShowChartView={setShowChartView}
-          />
         </Row>
       </Col>
     </Row>
