@@ -11,7 +11,6 @@ import Tab from "react-bootstrap/Tab";
 import Image from "react-bootstrap/Image";
 
 import Comments from "./Comments";
-import ProjectEvaluation from "./ProjectEvaluation";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 
 const markdownComponents = {
@@ -84,11 +83,6 @@ function IssueTabs({ indexType, issue }) {
         <Description issue={issue} />
       </Tab>
       {indexType === "project" && (
-        <Tab eventKey="evaluation" title="Evaluation">
-          <ProjectEvaluation project={issue} />
-        </Tab>
-      )}
-      {indexType === "project" && (
         <Tab eventKey="activity" title="Activity">
           <Comments issueNumber={issue.number} />
         </Tab>
@@ -130,13 +124,13 @@ function InfoRow({ indexType, issue }) {
           href={`https://github.com/cityofaustin/atd-data-tech/issues/${issue.number}`}
         >
           GitHub Issue
-        </a>{" "}
-        |{" "}
+        </a>
         {taskLabel && (
           <a
             href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
           >
-            Tasks
+            {" "}
+            | Tasks
           </a>
         )}
       </Col>
