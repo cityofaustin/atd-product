@@ -11,7 +11,6 @@ import Tab from "react-bootstrap/Tab";
 import Image from "react-bootstrap/Image";
 
 import Comments from "./Comments";
-import ProjectEvaluation from "./ProjectEvaluation";
 import SpinnerWrapper from "../../wrappers/SpinnerWrapper";
 
 const markdownComponents = {
@@ -83,11 +82,6 @@ function IssueTabs({ indexType, issue }) {
       <Tab eventKey="description" title="Description">
         <Description issue={issue} />
       </Tab>
-      {indexType === "project" && (
-        <Tab eventKey="evaluation" title="Evaluation">
-          <ProjectEvaluation project={issue} />
-        </Tab>
-      )}
       {indexType === "project" && (
         <Tab eventKey="activity" title="Activity">
           <Comments issueNumber={issue.number} />
