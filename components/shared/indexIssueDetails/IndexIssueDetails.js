@@ -130,13 +130,13 @@ function InfoRow({ indexType, issue }) {
           href={`https://github.com/cityofaustin/atd-data-tech/issues/${issue.number}`}
         >
           GitHub Issue
-        </a>{" "}
-        |{" "}
+        </a>
         {taskLabel && (
           <a
             href={`https://github.com/cityofaustin/atd-data-tech/issues?q=is%3Aissue%20label%3A${encodeURIComponent(`"${taskLabel}"`)}`}
           >
-            Tasks
+            {" "}
+            | Tasks
           </a>
         )}
       </Col>
