@@ -3,9 +3,22 @@
   command = "npm run build"
   publish = "out"
 
-# Redirect all traffic to root HTML so that next/router can do its thing
+# Issue detail URLs are not static files. Rewrite only those single-segment
+# routes to the homepage shell so the client router can render them.
+# Unmatched paths 404. A /* catch-all would return 200 and the homepage
+# for missing URLs, including scanner probes.
 [[redirects]]
-  from = "/*"
+  from = "/projects/:issue_number"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/products/:issue_number"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/services/:issue_number"
   to = "/index.html"
   status = 200
 
