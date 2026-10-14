@@ -14,12 +14,6 @@ import Page from "../../components/shared/Page";
 
 const TEAM_MEMBERS = [
   {
-    name: "Peggy MacCallum",
-    pronouns: "She/Her",
-    title: "Division Manager",
-    src: "assets/headshots/peggy_maccallum.jpg",
-  },
-  {
     name: "Scott Reedy",
     pronouns: "He/Him",
     title: "Network Systems Administrator",
@@ -90,12 +84,6 @@ const TEAM_MEMBERS = [
     title: "Application Architect",
     pronouns: "She/Her",
     src: "assets/headshots/karo_engstrom.jpg",
-  },
-  {
-    name: "Mike Dilley",
-    title: "Technical Product Manager",
-    pronouns: "He/Him",
-    src: "assets/headshots/mike_dilley.jpeg",
   },
   {
     name: "Rose Eichelmann",
@@ -351,6 +339,18 @@ const TEAM_MEMBER_ALUMNI = [
     title: "Senior Product Manager",
     pronouns: "She/Her",
     src: "assets/headshots/hanna_lupico.jpg",
+  },
+  {
+    name: "Peggy MacCallum",
+    pronouns: "She/Her",
+    title: "Division Manager",
+    src: "assets/headshots/peggy_maccallum.jpg",
+  },
+  {
+    name: "Mike Dilley",
+    title: "Technical Product Manager",
+    pronouns: "He/Him",
+    src: "assets/headshots/mike_dilley.jpeg",
   },
 ];
 
