@@ -1,0 +1,5 @@
+# Issue detail URLs are not static files. Rewrite only those routes.
+# _redirects is applied before netlify.toml, so this file must stay in sync.
+/projects/:issue_number   /index.html   200
+/products/:issue_number   /index.html   200
+/services/:issue_number   /index.html   200
