@@ -2,11 +2,12 @@ import { useMemo } from "react";
 import IssuesContext from "../../contexts/IssuesContext";
 import { useSocrata, handleIssueData } from "../utils";
 import { ISSUES_ENDPOINT } from "../settings";
+import data from './issues.json'
 
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 
 const QUERY =
-  "$limit=100000&$where=(type like '%Project%' or type like '%Product%' or type like '%Service%') and labels not like '%Archived Project%' and (pipeline != 'Icebox' or pipeline is null)";
+  "$limit=100000&$where=(type like '%Project%' or type like '%Product%' or type like '%Service%') and labels not like '%Archived Project%' and (status != 'Icebox' or status is null)";
 
 function useProjectIssues(data) {
   return useMemo(
