@@ -14,7 +14,8 @@ const STATUS_FILTERS = [
   { label: "Complete", key: "completed" },
 ];
 
-const WORKGROUP_NAMES = {
+// TODO: update this list
+const DIVISION_NAMES = {
   AMD: "Arterial Management",
   VZ: "Vision Zero",
   SMB: "Signs & Markings",
@@ -44,7 +45,7 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
 export default function ProjectFilters({
   currentFilters,
   setCurrentFilters,
-  workgroups,
+  divisions,
 }) {
   const isMobile = useMediaQuery({
     query: `(max-width: ${MEDIUM_BREAKPOINT})`,
@@ -79,8 +80,8 @@ export default function ProjectFilters({
               <Form.Select
                 className={
                   currentFilters.status
-                    ? "workgroup-select-active"
-                    : "workgroup-select-inactive"
+                    ? "division-select-active"
+                    : "division-select-inactive"
                 }
                 key="status"
                 value={currentFilters.status || "In Progress"}
@@ -117,36 +118,36 @@ export default function ProjectFilters({
           statusFilters={STATUS_FILTERS}
         />
       )}
-      <Col xs={12} lg={3} className="mb-3" key="workgroupFilter">
+      <Col xs={12} lg={3} className="mb-3" key="divisionFilter">
         <Row className="h-100">
           <Col>
             <Form.Select
-              aria-label="Workgroup filter"
+              aria-label="Division filter"
               className={
-                currentFilters.workgroup
-                  ? "h-100 workgroup-select-active"
-                  : "h-100 workgroup-select-inactive"
+                currentFilters.division
+                  ? "h-100 division-select-active"
+                  : "h-100 division-select-inactive"
               }
-              key="status"
-              value={currentFilters.workgroup || "All workgroups"}
+              key="division"
+              value={currentFilters.division || "All divisions"}
               onChange={(e) =>
                 handleChange(
                   e.target.value,
                   currentFilters,
                   setCurrentFilters,
-                  "workgroup"
+                  "division"
                 )
               }
             >
-              <option value="">All workgroups</option>
-              {workgroups.map((workgroup) => {
+              <option value="">All divisions</option>
+              {divisions.map((division) => {
                 return (
                   <option
                     className="text-black"
-                    key={workgroup}
-                    value={workgroup}
+                    key={division}
+                    value={division}
                   >
-                    {WORKGROUP_NAMES[workgroup] || workgroup}
+                    {DIVISION_NAMES[division] || division}
                   </option>
                 );
               })}

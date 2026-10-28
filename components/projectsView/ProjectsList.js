@@ -25,9 +25,9 @@ const FILTER_DEFS = [
     default: "in_progress",
   },
   {
-    key: "workgroup",
-    name: "Workgroup",
-    field: "workgroups",
+    key: "division",
+    name: "Division",
+    field: "divisions",
     matchFunc: arrayIncludesValue,
     default: "",
   },
@@ -107,7 +107,7 @@ export default function ProjectsList(props) {
             currentFilters={currentFilters}
             setCurrentFilters={setCurrentFilters}
             statuses={props.statuses}
-            workgroups={props.workgroups}
+            divisions={props.divisions}
           />
         </Col>
       </Row>

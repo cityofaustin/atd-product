@@ -112,10 +112,10 @@ function InfoRow({ indexType, issue }) {
       <Col sm={3} md="auto">
         <h6 className="mb-0 mt-2 text-muted">Status</h6> {issue.status}
       </Col>
-      {issue.workgroups.length > 0 && (
+      {issue.divisions.length > 0 && (
         <Col sm={3} md="auto">
           <h6 className="mb-0 mt-2 text-muted">Division(s)</h6>
-          {issue.workgroups.join(", ")}
+          {issue.divisions.join(", ")}
         </Col>
       )}
       <Col sm={3} md="auto">

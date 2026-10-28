@@ -30,16 +30,16 @@ function useServiceIssues(data) {
   );
 }
 
-function useWorkgroups(data) {
+function useDivisions(data) {
   return useMemo(() => {
-    const allWorkgroupsLabels = data
+    const allDivisionNames = data
       .map((issue) => {
-        return issue.workgroups;
+        return issue.divisions;
       })
-      // in addition to concatenating sub-arrays of workgroups, flattening drops any empty
-      // arrays from issues with no workgroup(s)
+      // in addition to concatenating sub-arrays of divisions, flattening drops any empty
+      // arrays from issues with no division(s)
       .flat();
-    return [...new Set(allWorkgroupsLabels)].sort();
+    return [...new Set(allDivisionNames)].sort();
   }, [data]);
 }
 
@@ -57,7 +57,8 @@ export function IssuesContextWrapper({ children }) {
   const projectIssues = useProjectIssues(dataHandled);
   const productIssues = useProductIssues(dataHandled);
   const serviceIssues = useServiceIssues(dataHandled);
-  const workgroups = useWorkgroups(dataHandled);
+  const divisions = useDivisions(dataHandled);
+
   return (
     <IssuesContext.Provider
       value={{
@@ -67,7 +68,7 @@ export function IssuesContextWrapper({ children }) {
         projectIssues,
         productIssues,
         serviceIssues,
-        workgroups,
+        divisions,
         statuses: STATUSES,
       }}
     >

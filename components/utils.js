@@ -75,8 +75,8 @@ export function handleIssueData(data) {
     // finally, remove leading/trailing whitespace
     newIssue.body = newIssue.body.trim();
     newIssue.labels = newIssue.labels ? newIssue.labels.split(", ") : [];
-    newIssue.workgroups = newIssue.workgroups
-      ? newIssue.workgroups.split(", ")
+    newIssue.divisions = newIssue.divisions
+      ? newIssue.divisions.split(", ")
       : [];
     // labelType is found in the label
     newIssue.labelType = getLabelType(newIssue.labels);
