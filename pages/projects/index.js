@@ -48,14 +48,12 @@ function ProjectsDescription() {
 }
 
 export default function ProjectsView() {
-  // todo: why not useContext inside of <ProjectList> ?
   return (
     <Page nav title="Projects">
       <Row key="front-matter" className="mb-2">
         <ProjectsDescription />
       </Row>
-      <ProjectsList
-      />
+      <ProjectsList />
     </Page>
   );
 }
