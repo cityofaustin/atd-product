@@ -65,7 +65,6 @@ export default function ProjectsList(props) {
     if (router.isReady) {
       FILTER_DEFS.forEach((filterDef) => {
         const queryValue = router.query[filterDef.key];
-        console.log(queryValue);
         filters[filterDef.key] = queryValue ? queryValue : filterDef.default;
       });
     }
