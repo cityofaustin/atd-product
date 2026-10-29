@@ -1,5 +1,4 @@
-import { useEffect, useContext } from "react";
-import { useRouter } from "next/router";
+import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
@@ -43,36 +42,14 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
 }
 
 /**
- *
- * @param {Object} currentFilters - state of filters
- * @param {Function} setCurrentFilters - setState of current Filters
- * @returns
+ * @param {Object} currentFilters - filter object based on query in url
+ * @param {Function} setCurrentFilters - accepts new filters, update query in url 
  */
 export default function ProjectFilters({ currentFilters, setCurrentFilters }) {
   const isMobile = useMediaQuery({
     query: `(max-width: ${MEDIUM_BREAKPOINT})`,
   });
-  const router = useRouter();
   const { workgroups } = useContext(IssuesContext);
-
-  useEffect(() => {
-    // Format the search path to match currently selected filters
-    const searchKwargs = Object.keys(currentFilters)
-      .filter((key) => currentFilters[key])
-      .map((key) => {
-        return `${key}=${currentFilters[key]}`;
-      })
-      .join("&");
-
-    // Build the new query string
-    let queryString = `?${searchKwargs}`;
-
-    // Update the URL
-    router.replace(`/projects/${queryString}`, undefined, { shallow: true });
-
-    // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentFilters]);
 
   return (
     <Row className="text-center">

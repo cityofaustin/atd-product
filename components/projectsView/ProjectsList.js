@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo, useContext } from "react";
+import { useCallback, useMemo, useContext } from "react";
 import IssuesContext from "../../contexts/IssuesContext";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
@@ -57,34 +57,35 @@ const useDisplayIssues = ({ currentFilters, projectIssues }) =>
   }, [currentFilters, projectIssues]);
 
 export default function ProjectsList(props) {
-  const { issues, isLoaded, error, projectIssues } = useContext(IssuesContext);
-  const location = useRouter();
-  const [currentFilters, setCurrentFilters] = useState({});
+  const { isLoaded, error, projectIssues } = useContext(IssuesContext);
+  const router = useRouter();
 
-  useEffect(() => {
-    /*
-    Check current url for filter params after issues are loaded. Set them if present, 
-    otherwise set default filter values.
-    Using the isReady field indicates when the query is fully updated after hydration.
-    Checking if the query is ready before using it makes sure 
-    we carry over the search params on a page refresh.
-    */
-    if (location.isReady) {
-      const search = new URLSearchParams(location.query);
-      let paramFilters = {};
+  const currentFilters = useMemo(() => {
+    const filters = {};
+    if (router.isReady) {
       FILTER_DEFS.forEach((filterDef) => {
-        const value = search.get(filterDef.key);
-        paramFilters[filterDef.key] = value ? value : filterDef.default;
+        const queryValue = router.query[filterDef.key];
+        console.log(queryValue);
+        filters[filterDef.key] = queryValue ? queryValue : filterDef.default;
       });
-      setCurrentFilters(paramFilters);
     }
-    /**
-     * TODO: Location.query is missing from this dep array, and cannot be added
-     * because of competing useEffect handling in ProjectFilters.js. We need to
-     * refactor the filters/query params state management
-     */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [issues, location.isReady]);
+    return filters;
+  }, [router.isReady, router.query]);
+
+
+  const setCurrentFilters = useCallback(
+    (nextFilters) => {
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: { ...router.query, ...nextFilters },
+        },
+        undefined,
+        { shallow: true }
+      );
+    },
+    [router]
+  );
 
   const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
 
