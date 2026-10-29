@@ -49,7 +49,7 @@ function ProjectsDescription() {
 
 export default function ProjectsView() {
   // todo: why not useContext inside of <ProjectList> ?
-  const { issues, isLoaded, error, projectIssues, statuses, workgroups } =
+  const { issues, isLoaded, error, projectIssues, workgroups } =
     useContext(IssuesContext);
   return (
     <Page nav title="Projects">
@@ -61,7 +61,6 @@ export default function ProjectsView() {
         isLoaded={isLoaded}
         error={error}
         projectIssues={projectIssues}
-        statuses={statuses}
         workgroups={workgroups}
       />
     </Page>

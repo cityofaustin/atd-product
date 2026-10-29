@@ -103,10 +103,8 @@ export default function ProjectsList(props) {
       <Row key="filter-row">
         <Col>
           <ProjectFilters
-            filterDefs={FILTER_DEFS}
             currentFilters={currentFilters}
             setCurrentFilters={setCurrentFilters}
-            statuses={props.statuses}
             workgroups={props.workgroups}
           />
         </Col>
