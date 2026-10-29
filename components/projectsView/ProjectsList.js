@@ -56,7 +56,7 @@ const useDisplayIssues = ({ currentFilters, projectIssues }) =>
     return applyCurrentFilters(projectIssues, currentFilters, FILTER_DEFS);
   }, [currentFilters, projectIssues]);
 
-export default function ProjectsList(props) {
+export default function ProjectsList() {
   const { isLoaded, error, projectIssues } = useContext(IssuesContext);
   const router = useRouter();
 
@@ -103,7 +103,6 @@ export default function ProjectsList(props) {
           <ProjectFilters
             currentFilters={currentFilters}
             setCurrentFilters={setCurrentFilters}
-            workgroups={props.workgroups}
           />
         </Col>
       </Row>
