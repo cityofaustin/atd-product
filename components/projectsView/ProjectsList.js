@@ -1,4 +1,5 @@
-import { useEffect, useState, useMemo } from "react";
+import { useEffect, useState, useMemo, useContext } from "react";
+import IssuesContext from "../../contexts/IssuesContext";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -56,10 +57,7 @@ const useDisplayIssues = ({ currentFilters, projectIssues }) =>
   }, [currentFilters, projectIssues]);
 
 export default function ProjectsList(props) {
-  const issues = props.issues;
-  const projectIssues = props.projectIssues;
-  const error = props.error;
-  const isLoaded = props.isLoaded;
+  const { issues, isLoaded, error, projectIssues } = useContext(IssuesContext);
   const location = useRouter();
   const [currentFilters, setCurrentFilters] = useState({});
 

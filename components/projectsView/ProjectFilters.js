@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useContext } from "react";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -6,6 +6,7 @@ import Form from "react-bootstrap/Form";
 import { useMediaQuery } from "react-responsive";
 import FiltersList from "./FiltersList";
 import { MEDIUM_BREAKPOINT } from "../settings";
+import IssuesContext from "../../contexts/IssuesContext";
 
 const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "needs_scoping" },
@@ -41,15 +42,18 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
   setCurrentFilters(mutableFilters);
 }
 
-export default function ProjectFilters({
-  currentFilters,
-  setCurrentFilters,
-  workgroups,
-}) {
+/**
+ *
+ * @param {Object} currentFilters - state of filters
+ * @param {Function} setCurrentFilters - setState of current Filters
+ * @returns
+ */
+export default function ProjectFilters({ currentFilters, setCurrentFilters }) {
   const isMobile = useMediaQuery({
     query: `(max-width: ${MEDIUM_BREAKPOINT})`,
   });
   const router = useRouter();
+  const { workgroups } = useContext(IssuesContext);
 
   useEffect(() => {
     // Format the search path to match currently selected filters
