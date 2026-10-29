@@ -2,7 +2,6 @@ import { useMemo } from "react";
 import IssuesContext from "../../contexts/IssuesContext";
 import { useSocrata, handleIssueData } from "../utils";
 import { ISSUES_ENDPOINT } from "../settings";
-import data from './issues.json'
 
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 
