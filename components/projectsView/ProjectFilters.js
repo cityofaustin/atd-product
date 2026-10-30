@@ -14,25 +14,36 @@ const STATUS_FILTERS = [
   { label: "Complete", key: "completed" },
 ];
 
-const WORKGROUP_NAMES = {
+const DIVISION_NAMES = {
   AMD: "Arterial Management",
-  VZ: "Vision Zero",
-  SMB: "Signs & Markings",
-  CPO: "Capital Planning",
+  ATSD: "Active Transportation & Street Design",
+  CCG: "Construction Coordination Group",
+  CSD: "Community Services",
+  DM: "District Maintenance",
   DTS: "Data & Tech Services",
+  EM: "Emergency Management",
   Finance: "Finance",
   HR: "Human Resources",
-  OOD: "Office of the Director",
+  LDE: "Land Development Engineering",
+  OCE: "Office of the City Engineer",
+  OPM: "Office of Performance Management",
   OSE: "Office of Special Events",
+  PD: "Project Delivery",
   PE: "Parking Enterprise",
-  PIO: "Parking Information Office",
-  PWD: "Public Works Dept",
+  PIO: "Public Information Office",
+  PO: "Pavement Operations",
   ROW: "Right of Way",
+  SBO: "Infrastructure Operations",
   SDD: "Systems Development",
-  SM: "Smart Mobility",
-  TDSD: "Transportation Development Services",
+  SMD: "Signs & Markings",
+  SP: "Strategic Projects",
+  SUTD: "Sidewalks & Urban Trails",
+  TDS: "Transportation Development Services",
   TED: "Transportation Engineering",
-  ATSD: "Active Transportation & Street Design",
+  TPW: "Transportation & Public Works",
+  UF: "Urban Forestry",
+  US: "Utilities & Structures",
+  VZ: "Vision Zero",
 };
 
 function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
@@ -44,7 +55,7 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
 export default function ProjectFilters({
   currentFilters,
   setCurrentFilters,
-  workgroups,
+  divisions,
 }) {
   const isMobile = useMediaQuery({
     query: `(max-width: ${MEDIUM_BREAKPOINT})`,
@@ -79,8 +90,8 @@ export default function ProjectFilters({
               <Form.Select
                 className={
                   currentFilters.status
-                    ? "workgroup-select-active"
-                    : "workgroup-select-inactive"
+                    ? "division-select-active"
+                    : "division-select-inactive"
                 }
                 key="status"
                 value={currentFilters.status || "In Progress"}
@@ -117,36 +128,36 @@ export default function ProjectFilters({
           statusFilters={STATUS_FILTERS}
         />
       )}
-      <Col xs={12} lg={3} className="mb-3" key="workgroupFilter">
+      <Col xs={12} lg={3} className="mb-3" key="divisionFilter">
         <Row className="h-100">
           <Col>
             <Form.Select
-              aria-label="Workgroup filter"
+              aria-label="Division filter"
               className={
-                currentFilters.workgroup
-                  ? "h-100 workgroup-select-active"
-                  : "h-100 workgroup-select-inactive"
+                currentFilters.division
+                  ? "h-100 division-select-active"
+                  : "h-100 division-select-inactive"
               }
-              key="status"
-              value={currentFilters.workgroup || "All workgroups"}
+              key="division"
+              value={currentFilters.division || "All divisions"}
               onChange={(e) =>
                 handleChange(
                   e.target.value,
                   currentFilters,
                   setCurrentFilters,
-                  "workgroup"
+                  "division"
                 )
               }
             >
-              <option value="">All workgroups</option>
-              {workgroups.map((workgroup) => {
+              <option value="">All divisions</option>
+              {divisions.map((division) => {
                 return (
                   <option
                     className="text-black"
-                    key={workgroup}
-                    value={workgroup}
+                    key={division}
+                    value={division}
                   >
-                    {WORKGROUP_NAMES[workgroup] || workgroup}
+                    {DIVISION_NAMES[division] || division}
                   </option>
                 );
               })}

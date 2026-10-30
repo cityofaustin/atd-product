@@ -6,7 +6,7 @@ import { ISSUES_ENDPOINT } from "../settings";
 const STATUSES = ["needs_scoping", "backlog", "in_progress", "completed"];
 
 const QUERY =
-  "$limit=100000&$where=(type like '%Project%' or type like '%Product%' or type like '%Service%') and labels not like '%Archived Project%' and (pipeline != 'Icebox' or pipeline is null)";
+  "$limit=100000&$where=(type like '%Project%' or type like '%Product%' or type like '%Service%') and labels not like '%Archived Project%' and (status != 'Icebox' or status is null)";
 
 function useProjectIssues(data) {
   return useMemo(
@@ -29,16 +29,16 @@ function useServiceIssues(data) {
   );
 }
 
-function useWorkgroups(data) {
+function useDivisions(data) {
   return useMemo(() => {
-    const allWorkgroupsLabels = data
+    const allDivisionNames = data
       .map((issue) => {
-        return issue.workgroups;
+        return issue.divisions;
       })
-      // in addition to concatenating sub-arrays of workgroups, flattening drops any empty
-      // arrays from issues with no workgroup(s)
+      // in addition to concatenating sub-arrays of divisions, flattening drops any empty
+      // arrays from issues with no division(s)
       .flat();
-    return [...new Set(allWorkgroupsLabels)].sort();
+    return [...new Set(allDivisionNames)].sort();
   }, [data]);
 }
 
@@ -56,7 +56,8 @@ export function IssuesContextWrapper({ children }) {
   const projectIssues = useProjectIssues(dataHandled);
   const productIssues = useProductIssues(dataHandled);
   const serviceIssues = useServiceIssues(dataHandled);
-  const workgroups = useWorkgroups(dataHandled);
+  const divisions = useDivisions(dataHandled);
+
   return (
     <IssuesContext.Provider
       value={{
@@ -66,7 +67,7 @@ export function IssuesContextWrapper({ children }) {
         projectIssues,
         productIssues,
         serviceIssues,
-        workgroups,
+        divisions,
         statuses: STATUSES,
       }}
     >

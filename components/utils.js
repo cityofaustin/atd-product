@@ -25,8 +25,8 @@ function getLabelType(labels) {
   return typesParsed[0];
 }
 
-function getStatus(pipeline) {
-  switch (pipeline && pipeline.toLowerCase()) {
+function getStatus(status) {
+  switch (status && status.toLowerCase()) {
     case "new":
       return "backlog";
     case "needs scoping":
@@ -75,15 +75,15 @@ export function handleIssueData(data) {
     // finally, remove leading/trailing whitespace
     newIssue.body = newIssue.body.trim();
     newIssue.labels = newIssue.labels ? newIssue.labels.split(", ") : [];
-    newIssue.workgroups = newIssue.workgroups
-      ? newIssue.workgroups.split(", ")
+    newIssue.divisions = newIssue.divisions
+      ? newIssue.divisions.split(", ")
       : [];
     // labelType is found in the label
     newIssue.labelType = getLabelType(newIssue.labels);
     // type is the Github project issue Type
     newIssue.type.trim();
-    // assign a generalized "status" based on the issue pipeline
-    newIssue.status = getStatus(newIssue.pipeline);
+    // assign a generalized "status" based on the issue status
+    newIssue.status = getStatus(newIssue.status);
     // Github project field called DTS Description
     newIssue.description = newIssue.description?.trim() || "";
     newIssue.title = dropTitlePrefix(newIssue.title);
