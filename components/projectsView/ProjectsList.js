@@ -60,6 +60,7 @@ export default function ProjectsList() {
   const { isLoaded, error, projectIssues } = useContext(IssuesContext);
   const router = useRouter();
 
+  // use filters from url to filter which issues to display
   const currentFilters = useMemo(() => {
     const filters = {};
     if (router.isReady) {
@@ -71,7 +72,7 @@ export default function ProjectsList() {
     return filters;
   }, [router.isReady, router.query]);
 
-
+  // set updated filters in url
   const setCurrentFilters = useCallback(
     (nextFilters) => {
       router.replace(
