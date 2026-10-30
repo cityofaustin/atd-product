@@ -1,11 +1,11 @@
-import { useEffect } from "react";
-import { useRouter } from "next/router";
+import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import { useMediaQuery } from "react-responsive";
 import FiltersList from "./FiltersList";
 import { MEDIUM_BREAKPOINT } from "../settings";
+import IssuesContext from "../../contexts/IssuesContext";
 
 const STATUS_FILTERS = [
   { label: "Needs Scoping", key: "needs_scoping" },
@@ -41,34 +41,15 @@ function handleChange(value, currentFilters, setCurrentFilters, filterKey) {
   setCurrentFilters(mutableFilters);
 }
 
-export default function ProjectFilters({
-  currentFilters,
-  setCurrentFilters,
-  workgroups,
-}) {
+/**
+ * @param {Object} currentFilters - filter object based on query in url
+ * @param {Function} setCurrentFilters - accepts new filters, update query in url 
+ */
+export default function ProjectFilters({ currentFilters, setCurrentFilters }) {
   const isMobile = useMediaQuery({
     query: `(max-width: ${MEDIUM_BREAKPOINT})`,
   });
-  const router = useRouter();
-
-  useEffect(() => {
-    // Format the search path to match currently selected filters
-    const searchKwargs = Object.keys(currentFilters)
-      .filter((key) => currentFilters[key])
-      .map((key) => {
-        return `${key}=${currentFilters[key]}`;
-      })
-      .join("&");
-
-    // Build the new query string
-    let queryString = `?${searchKwargs}`;
-
-    // Update the URL
-    router.replace(`/projects/${queryString}`, undefined, { shallow: true });
-
-    // we can't put the router in the dep array: https://github.com/vercel/next.js/issues/18127
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentFilters]);
+  const { workgroups } = useContext(IssuesContext);
 
   return (
     <Row className="text-center">

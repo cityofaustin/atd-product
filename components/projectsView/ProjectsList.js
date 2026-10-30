@@ -1,4 +1,5 @@
-import { useEffect, useState, useMemo } from "react";
+import { useCallback, useMemo, useContext } from "react";
+import IssuesContext from "../../contexts/IssuesContext";
 import { useRouter } from "next/router";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -55,38 +56,36 @@ const useDisplayIssues = ({ currentFilters, projectIssues }) =>
     return applyCurrentFilters(projectIssues, currentFilters, FILTER_DEFS);
   }, [currentFilters, projectIssues]);
 
-export default function ProjectsList(props) {
-  const issues = props.issues;
-  const projectIssues = props.projectIssues;
-  const error = props.error;
-  const isLoaded = props.isLoaded;
-  const location = useRouter();
-  const [currentFilters, setCurrentFilters] = useState({});
+export default function ProjectsList() {
+  const { isLoaded, error, projectIssues } = useContext(IssuesContext);
+  const router = useRouter();
 
-  useEffect(() => {
-    /*
-    Check current url for filter params after issues are loaded. Set them if present, 
-    otherwise set default filter values.
-    Using the isReady field indicates when the query is fully updated after hydration.
-    Checking if the query is ready before using it makes sure 
-    we carry over the search params on a page refresh.
-    */
-    if (location.isReady) {
-      const search = new URLSearchParams(location.query);
-      let paramFilters = {};
+  // use filters from url to filter which issues to display
+  const currentFilters = useMemo(() => {
+    const filters = {};
+    if (router.isReady) {
       FILTER_DEFS.forEach((filterDef) => {
-        const value = search.get(filterDef.key);
-        paramFilters[filterDef.key] = value ? value : filterDef.default;
+        const queryValue = router.query[filterDef.key];
+        filters[filterDef.key] = queryValue ? queryValue : filterDef.default;
       });
-      setCurrentFilters(paramFilters);
     }
-    /**
-     * TODO: Location.query is missing from this dep array, and cannot be added
-     * because of competing useEffect handling in ProjectFilters.js. We need to
-     * refactor the filters/query params state management
-     */
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [issues, location.isReady]);
+    return filters;
+  }, [router.isReady, router.query]);
+
+  // set updated filters in url
+  const setCurrentFilters = useCallback(
+    (nextFilters) => {
+      router.replace(
+        {
+          pathname: router.pathname,
+          query: { ...router.query, ...nextFilters },
+        },
+        undefined,
+        { shallow: true }
+      );
+    },
+    [router]
+  );
 
   const displayIssues = useDisplayIssues({ currentFilters, projectIssues });
 
@@ -103,11 +102,8 @@ export default function ProjectsList(props) {
       <Row key="filter-row">
         <Col>
           <ProjectFilters
-            filterDefs={FILTER_DEFS}
             currentFilters={currentFilters}
             setCurrentFilters={setCurrentFilters}
-            statuses={props.statuses}
-            workgroups={props.workgroups}
           />
         </Col>
       </Row>
