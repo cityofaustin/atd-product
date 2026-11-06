@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import IssuesContext from "../../contexts/IssuesContext";
 import Page from "../../components/shared/Page";
 import ProjectsList from "../../components/projectsView/ProjectsList";
 
@@ -48,22 +46,12 @@ function ProjectsDescription() {
 }
 
 export default function ProjectsView() {
-  // todo: why not useContext inside of <ProjectList> ?
-  const { issues, isLoaded, error, projectIssues, statuses, divisions } =
-    useContext(IssuesContext);
   return (
     <Page nav title="Projects">
       <Row key="front-matter" className="mb-2">
         <ProjectsDescription />
       </Row>
-      <ProjectsList
-        issues={issues}
-        isLoaded={isLoaded}
-        error={error}
-        projectIssues={projectIssues}
-        statuses={statuses}
-        divisions={divisions}
-      />
+      <ProjectsList />
     </Page>
   );
 }
