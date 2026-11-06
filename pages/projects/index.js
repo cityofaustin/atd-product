@@ -1,7 +1,5 @@
-import { useContext } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import IssuesContext from "../../contexts/IssuesContext";
 import Page from "../../components/shared/Page";
 import ProjectsList from "../../components/projectsView/ProjectsList";
 
