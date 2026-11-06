@@ -110,7 +110,7 @@ function InfoRow({ indexType, issue }) {
         </Col>
       )}
       <Col sm={3} md="auto">
-        <h6 className="mb-0 mt-2 text-muted">Status</h6> {issue.status}
+        <h6 className="mb-0 mt-2 text-muted">Status</h6> {issue.issueStatus}
       </Col>
       {issue.divisions.length > 0 && (
         <Col sm={3} md="auto">

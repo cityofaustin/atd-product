@@ -82,6 +82,8 @@ export function handleIssueData(data) {
     newIssue.labelType = getLabelType(newIssue.labels);
     // type is the Github project issue Type
     newIssue.type.trim();
+    // make copy of issue status to show on detail pages
+    newIssue.issueStatus = newIssue.status;
     // assign a generalized "status" based on the issue status
     newIssue.status = getStatus(newIssue.status);
     // Github project field called DTS Description
