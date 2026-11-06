@@ -48,22 +48,12 @@ function ProjectsDescription() {
 }
 
 export default function ProjectsView() {
-  // todo: why not useContext inside of <ProjectList> ?
-  const { issues, isLoaded, error, projectIssues, statuses, workgroups } =
-    useContext(IssuesContext);
   return (
     <Page nav title="Projects">
       <Row key="front-matter" className="mb-2">
         <ProjectsDescription />
       </Row>
-      <ProjectsList
-        issues={issues}
-        isLoaded={isLoaded}
-        error={error}
-        projectIssues={projectIssues}
-        statuses={statuses}
-        workgroups={workgroups}
-      />
+      <ProjectsList />
     </Page>
   );
 }
