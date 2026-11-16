@@ -36,7 +36,7 @@ const DIVISION_NAMES = {
   SBO: "Infrastructure Operations",
   SDD: "Systems Development",
   SMD: "Signs & Markings",
-  SP: "Strategic Projects",
+  SPD: "Strategic Projects",
   SUTD: "Sidewalks & Urban Trails",
   TDS: "Transportation Development Services",
   TED: "Transportation Engineering",
